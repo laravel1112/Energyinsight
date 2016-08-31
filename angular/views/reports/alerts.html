@@ -1,0 +1,84 @@
+<ion-view view-title="楼宇信息">
+<!-- 	<ion-list>
+		<ion-item ui-sref="root.home.unit.reports.alerts.details({id: $index})" nav-direction="forward" ng-repeat="item in alerts" >
+	            <h4 class="lh20 m0" ng-bind="item.title">节能信息早知道</h4>
+	            <span class="fs14 wsnw" ng-bind="item.created| date:'MMM dd, yyyy'"></span> &mdash; 
+	            <span class="fs14" ng-bind="item.category" ng-style="{color: getCategoryColor(item.category)}"></span>
+	            <p ng-bind-html="item.content | to_trusted">在过度季节及冬季，可以通过室外 含值比对送风设置点，当室外温度...</p>
+		</ion-item>
+	</ion-list>
+ -->	
+
+<!-- 
+	<ion-list class="w100p flex-absolute p15" ng-repeat="(key, value) in alerts" style="margin-top: -1px;">
+        <ion-item class="item-divider" ng-bind="key" ion-affix data-affix-within-parent-with-class="list"></ion-item>
+        
+        <ion-item ng-repeat="item in value" ng-click="setActiveView('content'); go('root.home.unit.reports.alerts.details', {id: $stateParams.id, aid: item.id}, 'forward');" class="layout layout-col rel" md-ink-ripple class="md-clickable" nav-transition="ios" nav-direction="forward">
+            -- <span class="fs12 wsnw" ng-bind="item.created| date:'MMM dd, yyyy'"></span> &mdash;  --
+
+			<div class="layout layout-row" ng-class="{'unread', item.alertstatus == 0}">
+	            <div class="flex-noresize pr20">
+	                <button class="btn btn-link" style="width: 50px; height: 50px; border-radius: 100%; text-align: center;" ng-style="{background: getCategoryColor(item.alerttype)}">
+		                <i class="icon-lightbulb-2 cfff fs24" ng-show="item.alerttype == 1"></i>
+		                <i class="icon-snowflake cfff fs24 lh20" ng-show="item.alerttype == 2"></i>
+		            </button>
+	            </div>
+
+				<div class="jcc">
+		            <h3 class="m0">{{item.title}}<sub>kWh</sub></h3>
+		            <p ng-bind="item.description">...</p>
+				</div>
+
+				<div class="jcc">
+		            <h3 class="m0 fs24">{{item.saving_potential}} <sub>kWh</sub></h3>
+				</div>
+				
+				<div class="jcc">
+		            <h3 class="m0 fs24">{{item.energy_saved}} <sub>kWh</sub></h3>
+				</div>
+
+	            <div class="flex-noresize pr20">
+	                <button class="btn btn-link p0" style="width: 50px; height: 50px; border-radius: 100%; text-align: center;" ng-style="{background: '#fff'}">
+		                <i class="svg-checked fs24 db" style="width: 30px; height: 30px;display:flex;background: #dfdfdf; margin: 0 auto;" ng-style="{'background': item.alertstatus == 0 || item.alertstatus == 1 ? '#dfdfdf' : 'rgb(76, 217, 100)' }"></i>
+		            </button>
+	            </div>
+			</div>
+         </ion-item>
+
+     </ion-list> -->
+    
+    <div class="layout layout-col p15 bg-lighter-gray ov">
+			
+		<div class="flex-noresize h75 ov" uib-dropdown auto-close="disabled" is-open="isCompareOpen" datepicker-append-to-body>
+
+            <div class="flex flex-row flex-resize flex-absolute p2">
+                <div class="flex flex-row flex-resize rel flex-center jcfe" uib-dropdown-toggle >
+                    	<span class="fs24 dib pr15">{{dateConfig.getDateRange()}}</span>
+                        <i class="svg-calendar-2 svg-35"></i>
+                </div>
+            </div>
+
+            <div class="uib-dropdown-menu datepicker" style="position: absolute; right: 0; left: 0; bottom:auto;  border: solid 1px #ccc;">
+
+                <div class="flex ">
+
+                    <div class="flex flex-row flex-resize" style="padding: 7.5px; background: #efefef; box-shadow: 0 5px 10px rgba(0,0,0,.05) inset;">
+                        <div class="flex  flex-center" style="padding: 7.5px">
+                            <div daterange="dateConfig"></div>
+                        </div>
+                    </div>
+
+                    <div class="flex " style="padding: 7.5px">
+                        <button class="btn btn-default btn-blue" ng-click="applyDateRange()">Apply</button>
+                    </div>
+                </div>
+
+            </div>
+
+    	</div>
+        <div>
+    		<div ui-grid="gridOptions1" class="ui-grid-custom flex-resize bg-white" ui-grid-auto-resize ui-grid-selection ui-grid-grouping></div>
+        </div>
+    </div>
+
+</ion-view>

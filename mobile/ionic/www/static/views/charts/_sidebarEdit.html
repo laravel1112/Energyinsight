@@ -1,0 +1,44 @@
+<ion-view class="layout layout-column">
+    <ion-header-bar align-title="center" class="bar-balanced flex-noresize">
+        <div class="buttons">
+            <button class="btn btn-link" ng-click="onBack()">
+                <i class="svg-arrow-left"></i>
+            </button>
+        </div>
+        <div class="title">
+            <h3 ng-show="$state.current.data.title.length > 0">{{currentUnit.name}}</h3>
+            <h5 ng-show="$state.current.data.subtitle.length > 0">{{$state.current.data.subtitle}}</h5>
+        </div>
+        <div class="buttons">
+            <button class="btn btn-link" ng-click="onAdd($event)" ng-show="$stateParams.uid > 0">
+
+                <!-- plus icon --> 
+                <svg style="width: 30px; height: 30px;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 455 455" xml:space="preserve">
+                    <polygon fill="#FFFFFF" points="455,212.5 242.5,212.5 242.5,0 212.5,0 212.5,212.5 0,212.5 0,242.5 212.5,242.5 212.5,455 242.5,455 242.5,242.5 455,242.5 "/>
+                </svg>
+
+                <!-- pen icon 
+                 <svg style="width: 30px; height: 30px;"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 64.631 64.631" xml:space="preserve">
+                    <g>
+                        <path d="M9.51,43.707l-0.115,0.114L0,62.611l2.02,2.02l18.79-9.395l43.821-43.822L53.217,0L9.51,43.707z M11.631,44.414    l32.586-32.586l8.586,8.586L20.217,53L11.631,44.414z M45.631,10.414l2.586-2.586l8.586,8.586L54.217,19L45.631,10.414z     M10.491,46.102l8.038,8.037l-7.644,3.822l-0.843-3.372l-3.373-0.844L10.491,46.102z M5.753,55.578l2.64,0.66l0.66,2.64    l-6.599,3.3L5.753,55.578z M58.217,15l-8.586-8.586l3.586-3.586l8.586,8.586L58.217,15z" fill="#FFFFFF"/>
+                    </g>
+                </svg>
+                -->
+
+            </button>     
+        </div>
+    </ion-header-bar>
+
+    <ion-content class="xcontent p0 pt15 rel">
+
+        <!-- SUBNAV CONTENT -->
+
+        <div class="ion-tree-list" ui-tree data-drag-delay="500" data-nodrag>
+            <div ui-tree-nodes="" ng-model="nodes" id="tree-root">
+                <div ng-repeat="node in nodes" ui-tree-node ng-include="'/static/views/charts/templates/ion-tree-node.html'"></div>
+            </div>
+        </div>
+
+    </ion-content>
+
+</ion-view>

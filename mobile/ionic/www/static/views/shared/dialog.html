@@ -1,0 +1,16 @@
+<form name="dialogForm">
+    <div class="heading">
+        <h3><i class="fa fa-bars"></i> 进展描述</h3>
+    </div>
+    <div class="content">
+        <div class="inner">
+            <div ng-include="modalOptions.templateUrl"></div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="btn-group pull-right">
+            <button class="btn btn-link" ng-disabled="dialogForm.$invalid" ng-click="modalOptions.close()">取消</button>
+            <button class="btn btn-default btn-flat btn-light-green" ng-disabled="dialogForm.$invalid" ng-click="modalOptions.ok(modalOptions)">确定</button>
+        </div>
+    </div>
+</form>

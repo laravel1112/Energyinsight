@@ -1,0 +1,73 @@
+﻿{% load staticfiles %}
+{% load hijack_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>EnergyInsight by Equota Energy</title>
+
+    <link rel="shortcut icon" href="{% static 'img/favicon.png' %}">
+
+    <!-- HTML5 mode urls -->
+    <base href="/" />
+
+     <!-- app style -->
+    <link rel="stylesheet" href="/static/css/app.min.css" />
+
+    <!-- In the head -->
+    <link rel="stylesheet" type="text/css" href="{% static 'hijack/hijack-styles.css' %}" />
+ 
+    <!-- First time load animation styles -->
+    <style>#loading-container{text-align:center;padding-top:100px; position: fixed; top: 0; left: 0;width: 100%;height:100%; background: #fafafa; z-index: 10000}.loading-title{font-size:26px;letter-spacing:2px;font-weight:100;font-family:Helvetica Neue,Segoe UI,Arial,sans-serif;margin-bottom:20px}.loading-title{margin-top:10px;}.spinner{display:inline-block;margin:10px;width:30px;height:30px;border-radius:50%;border-right:solid 2px #f9f9f9;border-top:solid 3px rgb(145, 196, 107);background:#f9f9f9;box-shadow:0 0 0 5px #f9f9f9;-webkit-animation:spinoffPulse 1s linear infinite;-moz-animation:spinoffPulse 1s linear infinite;-ms-animation:spinoffPulse 1s linear infinite;animation:spinoffPulse 1s linear infinite;}@-webkit-keyframes spinoffPulse{0%{-webkit-transform:rotate(0deg);}100%{-webkit-transform:rotate(360deg);}}@-moz-keyframes spinoffPulse{0%{-moz-transform:rotate(0deg);}100%{-moz-transform:rotate(360deg);}}@-ms-keyframes spinoffPulse{0%{-ms-transform:rotate(0deg);}100%{-ms-transform:rotate(360deg);}}@keyframes spinoffPulse{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}</style>
+    <!--[if lte IE 9]>
+    <style>.spinner {display: none;}</style>
+    <![endif]-->
+
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.1.135/jspdf.min.js" type="text/javascript"></script>-->
+</head>
+<body ng-cloak">
+
+    <div id="loading-container">
+        <div class="loading-title">Loading</div>
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Hijack tool bar -->
+    {{ request|hijackNotification }}
+
+    <!-- Views will load here -->
+    <div id="after-hijack" ui-view class="flex  p15" style="min-height:100%"></div>
+
+    <!-- Compiled script -->
+    <script src="/static/js/vendor.min.js" type="text/javascript"></script>
+
+    <script src="/static/js/vendor.highcharts.min.js" type="text/javascript"></script>
+
+    <script src="/static/js/app.min.js" type="text/javascript"></script>
+
+    <!-- JQuery is avaialble from now on -->
+
+    <script type="text/javascript">
+        var hijack=$('a[href="/hijack/release-hijack/"]');
+        if(hijack.length>0){ // hijack toolbar is shown
+            hijack.attr("target","_self");
+            var height=$('#hijacked-warning').css("height")||0;
+            $('#after-hijack').css("position","relative");
+            $('#after-hijack').css("top",height);
+            // $('#main-navbar-wrapper').css("top",35);
+            // var containerh=$('main-container').css("padding-top");
+            // $('main-container').css("padding-top",105);
+        }
+        hijack=$('a[href="/hijack/disable-hijack-warning/?next=/"]');
+        if(hijack.length>0){
+            hijack.attr("target","_self");
+        }
+
+        /* First time load animation styles */
+        window.onload = function(){ $("#loading-container").fadeOut(1000);}
+    </script>
+
+
+</body>
+</html>

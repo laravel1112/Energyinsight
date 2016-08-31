@@ -1,0 +1,19 @@
+{% extends 'common/base.html' %}
+{% load staticfiles %}
+
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+<div class="wrapper">
+
+	<div class="row full-height">
+		<div class="col-md-2 leftbar">
+			<span class="fa fa-globe" style="margin-left: 6px;"></span> <strong>Building List</strong>
+			<div id="graph-tree"></div>
+		</div>
+		
+		<div class="col-md-10 full-height" style="border-left: solid 1px #cccccc">
+		</div>
+	</div>
+</div>
+{% endblock content %}

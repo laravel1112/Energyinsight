@@ -1,0 +1,84 @@
+{% load staticfiles %}
+
+<div class="navbar navbar-default navbar-static-top">
+    <div class="container">
+
+        <!-- logo -->
+
+        <div class="navbar-header">
+            <a href="" class="navbar-brand">
+                <img src="{% static 'img/new/logo.png' %}" height="69" />
+            </a>
+        </div>
+
+        <!-- links -->
+
+        <ul class="nav navbar-nav navbar-links" id="main-navbar">
+            <li{% if active_tab == 'home' %} class="active"{% endif %}><a href="{% url 'home' %}">首页</a></li>
+            <li{% if active_tab == 'report' %} class="active"{% endif %}><a href="{% url 'energy_report' %}">能源报告</a></li>
+            <li{% if active_tab == 'recommendation' %} class="active"{% endif %}><a href="{% url 'recommendation' %}">能源建议</a></li>
+            <li{% if active_tab == 'chart' %} class="active"{% endif %}><a href="{% url 'chart_index' %}">能源数据</a></li>
+            <li{% if active_tab == 'admin' %} class="active"{% endif %}><a href="{% url 'user_admin' %}">能源管理</a></li>
+        </ul>
+
+        <!-- search & equota -->
+
+        <div class="nav navbar-group">
+            <ul>
+                <li class="navbar-search">
+
+                    <!-- search -->
+
+                    <form class="navbar-form navbar-left" role="search">
+                        <div class="form-group">
+                            <div class="fake-input">
+                                <i class="fa fa-search"></i>
+                                <input type="text" class="form-control" placeholder="Search">
+                            </div>
+                        </div>
+                    </form>
+
+
+                </li>
+                <li class="navbar-equota">
+
+                    <!-- equota link -->
+
+                    <!--<ul class="nav navbar-nav ">
+                    <li>-->
+                    <a href="#"><img src="{% static 'img/new/equota.png' %}" alt="equota" height="69"/></a>
+                    <!--</li>
+                    </ul>-->
+
+
+                </li>
+                <li></li>
+            </ul>
+        </div>
+
+        <!-- signin / signup -->
+
+        <div class="nav navbar-nav navbar-login dropdown">
+            {% if user.is_authenticated %}
+                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    <div class="avatar">
+                        <!-- TODO: USER AVATAR SOURCE URL -->
+                        <div class="badge">2</div>
+                    </div>
+                    <span>{{ request.user }}</span>
+                    <img src="{% static 'img/new/caret.png' %}" alt="caret" />
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a data-toggle="modal" data-target="#modalUser"><span class="fa fa-cog"></span> 设置</a></li>
+                    <li><a data-toggle="modal" data-target="#modalFAQ"><span class="fa fa-question-circle"></span> 帮助</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="/logout/"><span class="fa fa-sign-out"></span> 退出</a></li>
+                </ul>
+            {% endif %}
+        </div>
+
+
+    </div>
+</div>
+
+{% block nav_tabs %}{% endblock nav_tabs %}

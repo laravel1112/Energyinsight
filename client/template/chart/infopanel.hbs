@@ -1,0 +1,79 @@
+<div class="panel panel-customGreen">
+		<div id="tableContainer">
+
+		
+
+					<table class="display" cellspacing="0" width="100%" id="infoTableBottom">
+						<thead>
+							<tr>
+								<th class="text-center" width="25%">能耗指标</th>
+								{{#each this}}
+									<td class="text-center">{{name}}</td>
+								{{/each}}
+							</tr>
+						</thead>
+
+						<tbody>
+							<tr>
+								<td width="25%"><div class="popoverOption" data-content="显示时间段的日总能耗的平均值" rel="popover" data-placement="left" data-original-title="指标说明"><b>显示时段日平均能耗(Daily Average)：</b><div></td>
+								{{#each this}}
+									<td class="text-center">{{dailyavg}}</td>
+								{{/each}}
+							</tr>
+
+							<tr>
+								<td width="25%"><div class="popoverOption" data-content="显示时间段的日总能耗的最高值" rel="popover" data-placement="left" data-original-title="指标说明"><b>显示时段每日最高能耗(Daily Max)：</b></div></td>
+								{{#each this}}
+									<td class="text-center">{{dailymax}}</td>
+								{{/each}}
+
+							</tr>
+
+							<tr>
+
+								<td width="25%"><div class="popoverOption" data-content="显示时间段的日总能耗的最低值" rel="popover" data-placement="left" data-original-title="指标说明"><b>显示时段每日最低能耗(Daily Min)：</b></div></td>
+								{{#each this}}
+									<td class="text-center">{{dailymin}}</td>
+								{{/each}}
+
+							</tr>
+
+							<tr>
+
+								<td width="25%"><div class="popoverOption" data-content="显示时间段每小时能耗的最高值" rel="popover" data-placement="left" data-original-title="指标说明"><b>日内最高小时能耗(Hourly Max): </b></div></td>
+								{{#each this}}
+									<td class="text-center">{{hourlymax}}</td>
+								{{/each}}
+							</tr>
+
+							<tr>
+
+								<td width="25%"><div class="popoverOption" data-content="显示时间段每小时能耗的最低值" rel="popover" data-placement="left" data-original-title="指标说明"><b>日内最低小时能耗(Hourly Min)：</b></div></td>
+								{{#each this}}
+									<td class="text-center">{{hourlymin}}</td>
+								{{/each}}
+							</tr>
+
+
+
+							<tr>
+
+								<td width="25%"><div class="popoverOption" data-content="显示时间段高峰期用电的百分比" rel="popover" data-placement="left" data-original-title="指标说明"><b>高峰用电百分比(Peak energy %): </b></div></td>
+								{{#each this}}
+									<td class="text-center">100%</td>
+								{{/each}}
+							</tr>
+
+							<tr>
+
+								<td width="25%"><div class="popoverOption" data-content="显示时间段平均用电和最高用电的比值" rel="popover" data-placement="left" data-original-title="指标说明"><b>系统负载因数 (load factor):</b></div></td>
+								{{#each this}}
+									<td class="text-center">0.9</td>
+								{{/each}}
+							</tr>
+						</tbody>
+					</table>
+
+
+	</div>
+</div><!--end of pannel primary-->

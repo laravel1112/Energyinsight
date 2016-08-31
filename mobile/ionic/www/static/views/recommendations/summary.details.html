@@ -1,0 +1,186 @@
+<!-- 
+<div class="heading flex flex-row flex-center flex-noresize" style="background: #fff; border-bottom: solid 1px #eee;min-height:73px;min-width: 0px;">
+    <a class="flex flex-noresize" ui-sref="root.home.unit.recommendations.summary({uid:$stateParams.id, id:$stateParams.id})" nav-direction="back">
+        <i class="icon-angle-left" style="font-size:31px; line-height: 48px; padding-right: 15px"></i>
+    </a>
+
+    <div class="flex flex-noresize" style="font-size:31px; line-height: 50px; padding-right: 15px;">
+       <i class="icon-lightbulb-2 cyellow" ng-show="selectedRow.category == '1'"></i>
+       <i class="icon-lightbulb-2 cyellow" ng-show="selectedRow.category == '2'"></i>
+       <i class="icon-lightbulb-2 cyellow" ng-show="selectedRow.category == '3'"></i>
+       <i class="icon-snowflake cblue" ng-show="selectedRow.category == '4'"></i>
+       <i class="icon-snowflake cblue" ng-show="selectedRow.category == '5'"></i>
+    </div>
+
+    <div class="flex flex-resize" ng-bind="selectedRow.title" style="overflow: hidden; text-overflow: ellipsis;line-height:50px;font-size:24px;width:100%;min-width:0;height:50px;"></div>
+    
+    <button class="btn btn-link" style="position:relative;padding: 3px 10px;margin: 0;" ng-click="showWalkthrough()"><i class="icon-help lh0 fs34"></i></button>
+    <button class="btn btn-default btn-blue" style="position:relative;margin: 0 15px;" ng-click="export()"><i class="icon-download mr5"></i> 报告导出</button>
+
+</div> -->
+
+<!-- walkthrough-step="{ templateId: 'contentStep1' }" -->
+
+
+<ion-view>
+
+    <ion-header-bar align-title="center" class="bar-balanced flex-noresize">
+        <div class="buttons">
+            <button class="btn btn-link" ng-click="go('root.home.unit.recommendations.summary', {}, 'back'); setActiveView('content')">
+                <i class="svg-arrow-left"></i>
+            </button>
+            <button class="btn btn-link">
+                <i class="icon-lightbulb-2 cfff" ng-show="selectedRow.category == '1'"></i>
+                <i class="icon-lightbulb-2 cfff" ng-show="selectedRow.category == '2'"></i>
+                <i class="icon-lightbulb-2 cfff" ng-show="selectedRow.category == '3'"></i>
+                <i class="icon-snowflake cfff" ng-show="selectedRow.category == '4'"></i>
+                <i class="icon-snowflake cfff" ng-show="selectedRow.category == '5'"></i>
+            </button>
+        </div>
+        <div class="title">
+            <div class="flex flex-noresize">
+                <h3 ng-show="$state.current.data.title.length > 0">{{$state.current.data.title}}</h3>
+                <h5 ng-show="$state.current.data.subtitle.length > 0">{{$state.current.data.subtitle}}</h5>
+            </div>
+        </div>
+        <div class="buttons">
+                <button class="btn btn-link" ng-click="getExporter().toPDF()"><i class="svg-arrow-down-circle svg-40"></i> <!-- 报告导出 --></button>
+                <button class="btn btn-link" ng-click="onSetStatus()"><i class="svg-pen-3 svg-40"></i> <!-- 报告导出 --></button>
+                <!-- ??? 添加节能方案 ??? -->
+        </div>
+    </ion-header-bar>
+
+    <ion-content class="flex bg-lighter-gray" style="top: 70px!important;">
+        <div class="flex" export-pdf="{filePrefix: 'Recommendation.Details'}">          
+
+            <!-- DETAILS -->
+
+            <div class="flex flex-row p15" style="flex-wrap: wrap;" ng-show="selectedRow" ng-init="isLogRowSelected = false">
+                <div class="flex" style="flex: 2 0 350px; min-height:550px;" ng-hide="isLogRowSelected">
+                    <div class="flex panel panel-embedded panel-light m0 b1eee mr15" style="min-height: 350px"> <!-- walkthrough-step="{ templateId: 'contentStep5' }" -->
+
+                        <div class="panel-heading">
+                            <h3 class="panel-title">
+                                <i class="icon-rss pr10"></i>方案主要指标
+                            </h3>
+                        </div>
+
+                        <div class="panel-body flex flex-absolute">
+                            
+                            <!-- SAMPLE CHART -->
+
+                            <div class="flex rel br5" style="margin-right: -10px; margin-left: -10px;">
+                                <!--
+                                    <highchart config="chartOptions1" class="flex-resize flex-absolute" highcharts-redraw highcharts-panning></highchart> 
+                                -->
+                                <div lazy-highcharts="chartOptions1" class="flex-absolute"></div>
+
+                            </div>
+
+                            <!-- GAUGES -->
+
+                            <div class="flex flex-row flex-noresize" style="min-height:150px; padding-top: 20px">
+
+                                <!--                            
+                                <div class="flex rel">
+                                    <highchart config="chartGaugeOptions1" highcharts-redraw class="flex-center flex-absolute" style="height: 150px"></highchart>
+                                </div>
+                                <div class="flex rel">
+                                    <highchart config="chartGaugeOptions0" highcharts-redraw class="flex-center flex-absolute" style="height: 150px"></highchart>
+                                </div>
+
+                                <div class="flex rel">
+                                    <highchart config="chartGaugeOptions2" highcharts-redraw class="flex-center flex-absolute" style="height: 150px"></highchart>
+                                </div> 
+                                -->
+
+                                <div class="flex rel indi blue tal b1ccc m5">
+                                    <span>ENERGY SAVED kWh</span>
+                                    <h2 class="flex-center flex-absolute tal" style="height: 135px; justify-content: flex-start;">{{selectedRow.energy_saved}}</h2>
+                                </div>
+
+                                <div class="flex rel indi green b1ccc m5">
+                                    <span>PAYBACK TIME</span>
+                                    <h2 class="flex-center flex-absolute" style="height: 135px; justify-content: flex-start;">{{selectedRow.paybacktime}}</h2>
+                                </div>
+
+                                <div class="flex rel indi orange b1ccc m5">
+                                    <span>COMPEXITY</span>
+                                    <h2 class="flex-center flex-absolute" style="height: 135px; justify-content: flex-start;">{{selectedRow.complexity}}</h2>
+                                </div>
+
+                            </div>
+
+                            <!-- paybacktime & complexity -->
+
+                            <!--
+                                <div class="flex-noresize"  style="min-height: 125px;">
+                                    <div class="flex flex-row flex-resize">
+                                        <div class="price flex-resize" style="font-size: 35px; font-weight: bold; color: rgb(21, 134, 61); text-align: left; margin-right: 15px">
+                                            <span class="dib mr10 fs16 lh24 pb5 w100p bb1green">方案可节省<br/><span class="ffArial fwn">¥</span></span><br/>
+                                            <span style="font-size: 50px; white-space: nowrap;" ng-bind="((money | number: 0))||'---'"></span>
+                                        </div>
+                                        <div class="price flex-resize" style="font-size: 35px; font-weight: bold; color: rgb(21, 134, 61); text-align: left;">
+                                            <span class="dib mr10 fs16 lh24 pb5 w100p bb1green">碳排节放量<br/><span class="ffArial fwn">吨</span></span><br/>
+                                            <span style="font-size: 50px; white-space: nowrap;" ng-bind="((co2 | number: 0))||'---'"></span>
+                                        </div>
+                                    </div>
+                                </div> 
+                            -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT -->
+
+
+                <div class="flex flex-column" style="flex: 1 0 350px; " ng-hide="isLogRowSelected">
+                    
+                    <!-- DESCRIPTION -->
+
+                    <div class="flex flex-resize panel panel-embedded panel-light m0 b1eee mb15"> <!-- walkthrough-step="{ templateId: 'contentStep6' }" -->
+
+                        <div class="panel-heading">
+                            <h3 class="panel-title">
+                                <i class="icon-file pr10"></i>方案详情
+                            </h3>
+                        </div>
+
+                        <div class="panel-body recommendation-footer">
+
+                            <!-- Description -->
+
+                            <div class="inner">
+                                <h3 class="fs24">分析报告结果</h5>
+                                <p class="fs18 lh36" ng-bind-html="description | to_trusted"><!-- 安装冷机群控系统 器检测温度分层线位置，以调整，供同冷时主需机在开温启度台梯数度及垂水直泵等频距率离。上布置温度传 其水次机组蓄与冷，冰均用蓄可水冷直系池接统往用相于比可水以，蓄水和冷蓄消，冷防因系水而统池即一等使般共在投用蓄资，冷因较阶而低段可，也首以可先节以因省保为水持一池较般结高用构的于部制空分冷调及效的占率冷地； 道的单即可独。投资。如下图，按照酒店现有冷机配置，只需新增左侧蓄冷水池和相应 --></p>
+                            </div>
+
+                        </div>
+                    </div>
+                    
+                    <!-- HISTORY -->
+
+                    <div class="flex flex-resize panel panel-embedded panel-light m0 b1eee" ng-class="{'flex-absolute': isLogRowSelected}"> <!-- walkthrough-step="{ templateId: 'contentStep7' }" -->
+
+                        <div class="panel-heading">
+                            <h3 class="panel-title">
+                                <i class="icon-comment pr10"></i>历史纪录
+                                <i class="fr icon-close fr" ng-click="hideLog()" ng-show="isLogRowSelected"></i>
+                            </h3>
+                        </div>
+
+                        <div class="panel-body p0 rel flex" style="margin-top: 55px;">
+                             <div ui-grid="statusLogGrid" class="ui-grid-default ui-grid-small flex-absolute" ui-grid-auto-resize ui-grid-selection></div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+        </div>
+    </ion-content>
+</ion-view>

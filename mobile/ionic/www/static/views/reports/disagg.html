@@ -1,0 +1,92 @@
+<div class="flex bg-lighter-gray" walkthrough>
+
+<!--     <div class="heading flex-noresize" hide-xs hide-sm>
+        <h3>{{$state.current.data.title}}</h3>
+        <h5>{{$state.current.data.subtitle}}</h5>
+        <button class="btn btn-link" style="right: 150px; padding: 3px 10px;" ng-click="showWalkthrough()"><i class="icon-help lh0 fs34"></i></button>
+        <button class="btn btn-default btn-blue" ng-click="export()" walkthrough-step="{ templateId: 'disaggStep1' }"><i class="icon-download mr5"></i> 报告导出</button>
+    </div> -->
+
+
+    <div class="flex rel inner-padding" layout="row"  layout-xs="column"layout-sm="column" layout-gt-sm="row" export-pdf="{filePrefix: 'Report.Disagg'}">
+        <div busy="isBusy"></div>
+
+        <!-- CHART & DETAILS -->
+        <div class="flex flex-resize column rel outer-margin">
+            
+            <!-- OPTIONS -->
+            <div class="flex-noresize bg-white b1eee p10 layout-mb10 layout-lt-sm-mb5" style="min-height:35px" >
+                <select ng-model="year" ng-change="updateChart()" class="w100p h35 b0 on" >
+                    <option value="0">Past 30 days</option>
+                    <option value="1">Year to date</option>
+		    <option value="2">Past 12 months</option>
+		    <option value="3">Past 12~24 months</option>
+                </select>
+            </div> 
+
+            <!-- PIE & DETAILS -->
+            <div class="flex flex-resize bg-white b1eee rel" style="border-radius: 5px;" walkthrough-step="{ templateId: 'disaggStep2' }">
+                <div class="flex flex-resize rel" style="min-height: 200px">
+                    <highchart config="highchartsNG" class="flex-absolute" highcharts-redraw></highchart>
+                </div>
+                <div class="flex flex-noresize">
+                    <ion-list class="embedded">
+                        <ion-item ng-repeat="item in highchartsNG.series[0].data | orderBy:'-y'" ng-class="{'light': item.selected }" ng-style="{background: item.selected ? item.selectedColor : 'bg-white'}">
+                            {{item.name}}
+                            <span class="item-note">
+                                {{item.y | number : 2}}
+                            </span>
+                        </ion-item>
+                    </ion-list>
+                </div>
+
+            </div>
+            
+        </div>
+
+        <!-- INDICATORS -->
+        <div class="flex flex-resize rel outer-margin">
+            <div class="panel panel-embedded panel-light flex flex-resize m0" style="background: #fff; border: solid 1px #eee; box-shadow: none; border-radius: 5px;">
+                <div class="flex">
+                    <div class="panel-heading">单位平方米年用电量</div>
+                    <div class="panel-body panel-body-table flex plr15" walkthrough-step="{ templateId: 'disaggStep3' }">
+
+                        <div class="progress-container flex flex-row flex-noresize flex-center" ng-repeat="block in items">
+                            <div class="flex flex-resize pr10" ng-repeat="indicator in block">
+                                <h4 class="fwb"><span class="prefix"><b>{{indicator.min}}</b> kwh(m<sup>2</sup>a)</span>{{indicator.label}}<span class="suffix"><b>{{indicator.max}}</b> kwh(m<sup>2</sup>a)</span></h4>
+                                <uib-progressbar value="indicator.value">
+                                    <div ng-bind="(indicator.value | number : 0 )+ '%'" class="value"></div>
+                                </uib-progressbar>
+                            </div>
+                            
+                        </div>
+
+                        <div class="flex flex-resize">
+                            <p ng-bind="energysystemintro">
+                                浦东盛高假日酒店的能源消耗种类包括电、天然气、水三类。 其中电：主要用于空调、照明、动力、办公、客房设备等用电，空调用电主要包括冷水机组用电、冷热水泵用电、空调末端用电等。动力主要包括电梯、给排水设备、通风机等用电
+                                浦东盛高假日酒店冷源设备为4台约克冷水机组，位于地下室冷冻机房，单台制冷量约为1758 kW
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div id="walkthrough-content" style="display: none">
+    <!-- Export button -->
+    <div id="disaggStep1" position="left">
+        <p>点击这里将当页导出pdf文件。</p>
+    </div>
+    <!-- Left pie chart -->
+    <div id="disaggStep2" position="right">
+        <p>该楼宇的总用电量的分解图。所有楼宇按标准的六项进行分类。</p>
+    </div>
+    <!-- Right indicators -->
+    <div id="disaggStep3" position="left">
+        <p>这里是分项用电在同行业中的相对位置。所有数据已经对平方米进行修正。</p>
+    </div>
+</div>

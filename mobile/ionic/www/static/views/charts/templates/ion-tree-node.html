@@ -1,0 +1,40 @@
+<ion-list can-swipe="canSwipe()">
+    <ion-item ng-click="toggleSeries(node, this, $event)" ui-tree-handle data-nodrag ng-hide="$stateParams.uid == node.id">
+        <i class="toggle" ng-class="{ 'icon-plus-square-o': node.collapsed, 'icon-minus-square-o': !node.collapsed, o0: node.nodes.length == 0 }"></i>
+
+        <!-- node type -->        
+        <i ng-if="node.type == 1" class="icon icon-building fs14"></i>
+        <i ng-if="node.type == 2" class="icon icon-building-6 fs16"></i>
+        <i ng-if="node.type == 3" class="icon icon-gauge-4 " ng-style="{ 'color': node.color }"></i>
+        <i ng-if="node.type == 4" class="icon icon-schedule-2 "></i>
+        <i ng-if="node.type == 7" class="icon icon-temperature "></i>
+	<i ng-if="node.type == 10" class="icon icon-lightbulb"></i>
+	<i ng-if="node.type == 12" class="icon icon-asterisk"></i>
+	<i ng-if="node.type == 11 || node.type == 13 || node.type == 9" class="icon icon-gauge-4 "></i>
+
+        <span ng-bind="node.name" ng-style="{ 'color': node.color }"></span>
+        <a class="force-toggle" ng-show="node.type >= 3 && !$stateParams.uid" ng-style="{ 'color': node.color }">
+            <i class="icon-circle fr" ng-click="toggleSeries(node, null, $event);" ng-class="{active: node.color}" ng-style="{background: node.color }"></i>
+        </a>
+    
+
+        <ion-option-button class="button-info" ng-click="edit(node)">
+<!--             <i class="icon-pencil"></i>
+ -->
+                <svg style="width: 21px; height: 21px;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 56 56" xml:space="preserve">
+                    <g>
+                        <path d="M8,14c3.519,0,6.432-2.614,6.92-6H54c0.553,0,1-0.447,1-1s-0.447-1-1-1H14.92C14.432,2.614,11.519,0,8,0 C4.14,0,1,3.141,1,7S4.14,14,8,14z M8,2c2.757,0,5,2.243,5,5s-2.243,5-5,5S3,9.757,3,7S5.243,2,8,2z"/>
+                        <path d="M48,42c-3.519,0-6.432,2.614-6.92,6H2c-0.552,0-1,0.447-1,1s0.448,1,1,1h39.08c0.488,3.386,3.401,6,6.92,6 c3.859,0,7-3.141,7-7S51.859,42,48,42z M48,54c-2.757,0-5-2.243-5-5s2.243-5,5-5s5,2.243,5,5S50.757,54,48,54z"/>
+                        <path d="M54,27H35.368c-0.396-3.602-3.455-6.414-7.161-6.414c-3.706,0-6.765,2.813-7.161,6.414H2c-0.552,0-1,0.447-1,1s0.448,1,1,1 h19.109c0.577,3.4,3.536,6,7.098,6c3.562,0,6.52-2.6,7.097-6H54c0.553,0,1-0.447,1-1S54.553,27,54,27z M28.207,33 C25.336,33,23,30.664,23,27.793s2.336-5.207,5.207-5.207s5.207,2.336,5.207,5.207S31.078,33,28.207,33z"/>
+                    </g>
+                </svg>
+
+        </ion-option-button>
+    </ion-item>
+
+     <ion-item class="p0" ng-model="node.nodes" ui-tree-nodes="" ng-hide="node.collapsed" data-nodrag>
+         <div ng-repeat="node in node.nodes" ui-tree-node ng-include="'/static/views/charts/templates/ion-tree-node.html'">
+
+         </div>
+     </ion-item>
+</ion-list>

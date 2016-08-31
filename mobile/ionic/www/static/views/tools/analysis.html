@@ -1,0 +1,56 @@
+<div class="flex  bg-lighter-gray" id="export-container" walkthrough>
+    <!-- HEADER -->
+
+    <ion-header-bar align-title="center" class="bar-balanced flex-noresize">
+        <div class="buttons">
+            <button class="btn btn-link" ng-click="onCancelStrategy(); setActiveView('subnav')" hide-gt-sm>
+                <i class="svg-arrow-left"></i>
+            </button>
+        </div>
+        <div class="title">
+            <h3>{{$state.current.data.title}}</h3>
+            <h5>{{$state.current.data.subtitle}}</h5>
+        </div>
+        <div class="buttons">
+
+        </div>
+    </ion-header-bar>
+
+    <div class="flex rel">
+
+        <div class="flex flex-column flex-absolute plr15 pb15 pt15" walkthrough-step="{templateId: 'strategiesStep1', position: 'top'}">
+            <div ui-grid="gridOptions1" ui-grid-dynamic-pager class="ui-grid-default flex flex-resize" ui-grid-auto-resize ui-grid-pagination></div>
+
+            <div class="table-footer" style="flex: 0 0 32px">
+                <div class="pull-left pagination-info">Showing {{ gridApi1.pagination.getPage() }} to {{ gridApi1.pagination.getTotalPages() }} of {{gridApi1.grid.options.totalItems}} entries</div>
+                <div class="pull-right">
+                    <ul class="pagination">
+                        <li>
+                            <a href="#" aria-label="Previous" ng-click="gridApi1.pagination.previousPage()">
+                                <span aria-hidden="true"><i class="fa fa-chevron-left"></i></span>
+                            </a>
+                        </li>
+
+                        <li ng-repeat="i in getNumber(gridApi1.pagination.getTotalPages()) track by $index" ng-class="{active: gridApi1.pagination.getPage() == $index + 1}"><a ng-click="gridApi1.pagination.seek($index + 1)" ng-bind="$index + 1"></a></li>
+
+                        <li>
+                            <a href="#" aria-label="Next" ng-click="gridApi1.pagination.nextPage()">
+                                <span aria-hidden="true"><i class="fa fa-chevron-right"></i></span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<div id="walkthrough-content" style="display: none">
+    <!-- Recommendations Strategies content guide -->
+    <!-- Table -->
+    <div id="strategiesStep1" position="top">
+        <p>这里是所有策略分析工具。策略分析可以对您的楼宇用电进行更深入的分析。</p>
+    </div>
+</div>

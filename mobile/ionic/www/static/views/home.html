@@ -1,0 +1,80 @@
+<!-- Desktop content -->
+<!--
+    <ion-view view-title="Home" class="flex" hide-nav-bar="false">
+
+        <ion-nav-buttons side="right">
+            qwer
+        </ion-nav-buttons>
+        <ion-nav-title>
+            Home
+        </ion-nav-title>
+
+        <ion-content class="flex xcontent" scroll="false">
+
+            <div class="flex flex-row flex-spacing" walkthrough layout-xs="flex-spacing" layout-sm="flex-spacing">
+                 <div class="flex">
+
+
+
+                    <div class="flex panel panel-default panel-shadow" walkthrough-step="{ templateId: 'contentStep1' }">
+
+                        <div class="panel-heading" style="z-index:1" hide-xs hide-sm><i class="icon-compass-2" style="font-size: 24px;padding-right: 15px;"></i>企业地图</div>
+                        <div class="panel-body map-marker-details-container" style="padding: 56px 1px 1px">
+                           
+                            <ion-nav-view name="map" class="flex-absolute oh"></ion-nav-view>
+                        
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+ -->
+                <!-- <div class="flex flex-spacing" hide-xs hide-sm>
+
+                        <div class="flex panel panel-default panel-shadow bars" walkthrough-step="{ templateId: 'contentStep3' }">
+                            <div class="panel-body p10" style="overflow: hidden;" id="home-buildings-placeholder">
+
+                                <building-list config="buildingListConfig"></building-list>
+
+                            </div>
+                        </div>
+
+                        <div class="flex panel panel-default panel-shadow feed" walkthrough-step="{ templateId: 'contentStep2' }">
+                            <div class="panel-heading" style="z-index: 1;"><i class="icon-bar-chart" style="font-size: 24px;padding-right: 15px;"></i>楼宇信息</div>
+                            <div class="panel-body" style="padding: 56px 1px 1px;">
+
+                                    <ion-nav-view name="news" class="flex-absolute oh"></ion-nav-view>
+
+                            </div>
+                        </div>
+
+                </div>
+            
+
+            </div>
+
+
+            Mobile content
+
+        </ion-content>
+
+</ion-view>
+-->
+
+
+<div id="walkthrough-content" style="display: none">
+    <!-- Map -->
+    <div id="contentStep1" position="right">
+        <p>企业地图是您的管理平台总览。点击楼宇的图标可以进入楼宇的报告页。</p>
+    </div>
+    <!-- News feed -->
+    <div id="contentStep2" position="left">
+        <p>这里是所有与您有关的消息栏。包括业内新闻与报警。</p>
+    </div>
+    <!-- Table -->
+    <div id="contentStep3" position="left">
+        <p>这里是楼宇的列表，能效等级标明楼宇的总表现。点击楼宇名字可以进入报告页。</p>
+    </div>
+</div>

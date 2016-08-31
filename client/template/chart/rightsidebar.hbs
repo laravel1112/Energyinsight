@@ -1,0 +1,40 @@
+    
+    <div class="table-div">
+      <table class="display" cellspacing="0" width="100%" id="infoTableRightTop">
+        <thead>
+          <tr><th class="text-center">代号</th>
+            <th class="text-center">主要事件</th>
+          </tr>
+        </thead>
+        {{#if this}}
+        <tbody>
+          {{#each this}}
+          <tr {{#if color}}style="color:{{color}}"{{/if}}>
+            <td>{{event_tag}}</td>
+            <td>
+              {{event_msg}}
+            </td>
+          </tr>
+          {{/each}}
+       </tbody>
+   {{/if}}
+      </table>
+    </div>
+
+
+
+
+<!-- <div role="tabpanel" class="" style="background: #f0f0f0;">
+<ul class="nav nav-tabs nav-justified" role="tablist">
+<li role="presentation" class="active"><a href="#summary" aria-controls="summary" role="tab" data-toggle="tab">Summary</a></li>
+<li role="presentation"><a href="#notes" aria-controls="notes" role="tab" data-toggle="tab">Notes</a></li>
+</ul>
+<div class="tab-content full-height">
+<div role="tabpanel" class="full-height tab-pane active" id="summary" style="background: #eee;">
+
+</div>
+<div role="tabpanel" class="full-height tab-pane" id="notes" style="background: #eee;">
+  
+</div>
+</div>
+</div> -->

@@ -1,0 +1,115 @@
+﻿{
+  "overal": {
+    "enabled": true,
+    "properties": [
+      {
+        "name": "xkjd;lfjda",
+        "title": "title1",
+        "value": "1",
+        "required": true,
+        "regex": ""
+      },
+      {
+        "name": "system2",
+        "title": "title2",
+        "value": "2",
+        "required": true,
+        "regex": ""
+      },
+      {
+        "name": "system3",
+        "title": "title3",
+        "value": "3",
+        "required": true,
+        "regex": ""
+      }
+
+    ]
+  },
+
+  "demand": {
+    "enabled": true,
+    "properties": [
+      {
+        "name": "system1",
+        "title": "title1",
+        "value": "1",
+        "required": true,
+        "regex": ""
+      },
+      {
+        "name": "system2",
+        "title": "title2",
+        "value": "2",
+        "required": true,
+        "regex": ""
+      },
+      {
+        "name": "system3",
+        "title": "title3",
+        "value": "3",
+        "required": true,
+        "regex": ""
+      }
+
+    ]
+  },
+
+  "lighting": {
+    "enabled": false,
+    "properties": [
+      {
+        "name": "system1",
+        "title": "title1",
+        "value": "1",
+        "required": true,
+        "regex": "^[0-9]$"
+      },
+      {
+        "name": "system2",
+        "title": "title2",
+        "value": "2",
+        "required": true,
+        "regex": "^[0-9]$"
+      },
+      {
+        "name": "system3",
+        "title": "title3",
+        "value": "3",
+        "required": true,
+        "regex": "^\\d$"
+      }
+
+    ]
+  },
+
+  "cooling": {
+    "enabled": true,
+    "properties": [
+      {
+        "name": "system1",
+        "title": "title1",
+        "value": "1",
+        "required": true,
+        "regex": ""
+      },
+      {
+        "name": "system2",
+        "title": "title2",
+        "value": "2",
+        "required": true,
+        "regex": ""
+      },
+      {
+        "name": "system3",
+        "title": "title3",
+        "value": "3",
+        "required": true,
+        "regex": ""
+      }
+
+    ]
+  }
+
+
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<!--
+    Might need when pushing out to android
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
+-->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <style>#loading-container{text-align:center;padding-top:100px; position: fixed; top: 0; left: 0;width: 100%;height:100%; background: #fafafa; z-index: 10000}.loading-title{font-size:26px;letter-spacing:2px;font-weight:100;font-family:Helvetica Neue,Segoe UI,Arial,sans-serif;margin-bottom:20px}.loading-title{margin-top:10px;}.spinner{display:inline-block;margin:10px;width:30px;height:30px;border-radius:50%;border-right:solid 2px #f9f9f9;border-top:solid 3px rgb(145, 196, 107);background:#f9f9f9;box-shadow:0 0 0 5px #f9f9f9;-webkit-animation:spinoffPulse 1s linear infinite;-moz-animation:spinoffPulse 1s linear infinite;-ms-animation:spinoffPulse 1s linear infinite;animation:spinoffPulse 1s linear infinite;}@-webkit-keyframes spinoffPulse{0%{-webkit-transform:rotate(0deg);}100%{-webkit-transform:rotate(360deg);}}@-moz-keyframes spinoffPulse{0%{-moz-transform:rotate(0deg);}100%{-moz-transform:rotate(360deg);}}@-ms-keyframes spinoffPulse{0%{-ms-transform:rotate(0deg);}100%{-ms-transform:rotate(360deg);}}@keyframes spinoffPulse{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}</style>
+    <script type="text/javascript"> window.onerror = function(message, url, lineNumber) { alert("Error: "+message+" in "+url+" at line "+lineNumber); } </script>
+    <title>EnergyInsight</title>
+
+    <link rel="stylesheet" type="text/css" href="static/css/app.min.css" />
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script type="text/javascript" src="static/js/vendor.min.js"></script>
+    <script type="text/javascript" src="static/js/vendor.highcharts.min.js"></script>
+    <script type="text/javascript" src="static/js/app.min.js"></script>
+  </head>
+
+  <body ng-cloak style="min-height: 100%; height: 100%;">
+    <ion-nav-view class="flex" style="min-height:100%;"></ion-nav-view>
+  </body>
+</html>

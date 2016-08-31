@@ -1,0 +1,21 @@
+<ion-view view-title="楼宇信息">
+	<ion-header-bar align-title="center" class="bar-balanced flex-noresize">
+		<div class="buttons">
+		    <button class="btn btn-link" ng-click="go('root.home.unit.recommendations.alerts', {id: $stateParams.id})" ng-hide-gt-sm>
+		        <i class="svg-arrow-left"></i>
+		    </button>
+		</div>
+		<div class="title">
+		    <h3>{{$state.current.data.title}}</h3>
+		    <h5>{{$state.current.data.subtitle}}</h5>
+		</div>
+		<div class="buttons">
+		    <button class="btn btn-link" ng-click="getExporter().toPDF()"><i class="svg-arrow-down-circle"></i> <!-- 报告导出 --></button>
+		    <!-- ??? 添加节能方案 ??? -->
+		</div>
+	    </ion-header-bar>
+	<div busy="isBusy"></div>
+	<div class="layout layout-col p15" style="top: 70px;" export-pdf="{filePrefix: 'Recommendations.Summary'}">
+	<highchart config="chartOptions1" class="flex-absolute" highcharts-redraw highcharts-panning hm-pan="onPanning" hm-pinch="onPinching" hm-tap="onTap" hm-doubletap="onDoubletap"></highchart>
+	</div>
+</ion-view>

@@ -1,0 +1,25 @@
+<ion-view>
+
+    <ion-header-bar align-title="center" class="bar-balanced flex-noresize" hide-gt-sm>
+        <div class="buttons">
+            <button class="btn btn-link" ng-click="go('root.news', {}, 'back'); setActiveView('subnav')">
+                <i class="svg-arrow-left"></i>
+            </button>
+        </div>
+        <div class="title">
+            <h3>{{$state.current.data.title}}</h3>
+            <h5>{{$state.current.data.subtitle}}</h5>
+        </div>
+        <div class="buttons">
+        </div>
+    </ion-header-bar>
+
+	<ion-content class="news xcontent p0 bg-lighter-gray rel" ng-cloak scroll-event-interval="5">
+
+		<a class="p15">
+		    <h4><i class="fa fa-arrow-circle-o-left"></i> <span ng-bind="originalItems[$stateParams.id].title"></span></h4>
+		    <p ng-bind-html="originalItems[$stateParams.id].content | to_trusted"></p>
+		</a>
+
+	</ion-content>
+</ion-view>

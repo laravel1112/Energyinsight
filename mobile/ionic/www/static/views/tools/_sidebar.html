@@ -1,0 +1,57 @@
+<div class="panel panel-small" hide-xs hide-sm ng-cloak>
+    <div class="panel-heading"><i class="icon-building-filled"></i>选择您要查看楼宇</div>
+    <div class="panel-body">
+        <div uib-dropdown>
+            <button type="button" class="btn btn-default dropdown-toggle" uib-dropdown-toggle role="menu" aria-labelledby="single-button">
+                <span ng-bind="(items | filter: { id: $stateParams.id })[0].name">Select building</span> <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu uib-dropdown-menu">
+                <li ng-repeat="item in items | filter: { type: 1 }"><a ng-click="selectBuilding(item)" ng-bind="item.name">Loading...</a></li>
+            </ul>
+        </div>
+        <a ng-href="{{reportUrl}}" ng-show="reportUrl" class="btn btn-link w100p">节能报告下载</a>
+
+        <!--<select class="woBorderDropdown">
+            <option style="text-decoration:underline;">building 1</option>
+            <option>building 2</option>
+            <option>building 3</option>
+        </select>-->
+    </div>
+</div>
+
+<nav class="settings-menu" hide-xs hide-sm ng-cloak>
+    <ul class="list-group">
+        <!-- summary -->
+        <li class="list-group-item" ui-sref-active="active"><a ui-sref="root.reports.summary"><i class="icon-signal lh0"></i> 综述指标</a></li>
+        
+        <!-- disagg -->
+        <li class="list-group-item" ui-sref-active="active"><a ui-sref="root.reports.disagg"><i class="icon-pie-chart lh0"></i> 能耗构成</a></li>
+        <!-- consumptionTrends -->
+        <!--<li class="list-group-item" ui-sref-active="active"><a ui-sref="root.reports.consumptionTrends"><i class="fa fa-bar-chart"></i> 比例趋势</a></li>-->
+        <li class="list-group-item" ui-sref-active="active"><a ui-sref="root.tools.heatmap"><i class="icon-barcode lh0"></i> 能耗透视</a></li>
+        <!-- monthly -->
+        <li class="list-group-item" ui-sref-active="active"><a ui-sref="root.reports.monthly"><i class="icon-bar-chart lh0"></i> 历史比较</a></li>
+        <!-- regular -->
+        <li class="list-group-item" ui-sref-active="active"><a ui-sref="root.reports.regular"><i class="icon-line-chart lh0"></i> 能耗对比</a></li>
+        <!-- sankey -->
+        <li class="list-group-item" ui-sref-active="active"><a ui-sref="root.reports.sankey"><i class="icon-line-chart lh0"></i> SANKEY</a></li>
+    </ul>
+</nav>
+
+<div class="flex flex-noresize" hide-gt-sm ng-cloak style="border: solid 1px #eee; margin: 5px 5px 0 5px; background: #fafafa;">
+        
+    <div expandable-list items="links" style="background: #fff;"></div>
+
+<!--    
+        <ion-list>
+            <ion-item ng-click="showLinks()" style="border-top:0;">
+                {{$state.current.data.title}}
+            </ion-item>
+            <ion-item ng-repeat="link in links" ng-show="areLinksShown()" ng-click="onLinkClicked(link)">
+                {{link.name}}
+            </ion-item>
+
+        </ion-list>
+ -->
+
+</div>

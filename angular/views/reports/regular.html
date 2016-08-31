@@ -1,0 +1,130 @@
+﻿<div class="flex bg-lighter-gray" style="flex: 1 0 auto;" walkthrough>
+
+<!-- 	<div class="heading flex-noresize" hide-xs hide-sm>
+	    <h3>{{$state.current.data.title}}</h3>
+	    <h5>{{$state.current.data.subtitle}}</h5>
+        <button class="btn btn-link" style="right: 150px; padding: 3px 10px;" ng-click="showWalkthrough()"><i class="icon-help lh0 fs34"></i></button>
+        <button class="btn btn-default btn-blue" ng-click="export()" walkthrough-step="{ templateId: 'regularStep1' }"><i class="icon-download mr5"></i> 报告导出</button>
+	</div> -->
+
+	<div busy="isBusy"></div>
+	<div class="flex flex-row flex-resize rel layout-p15 layout-lt-sm-p5" export-pdf="{filePrefix: 'Report.Regular'}">
+        
+	    <div class="flex rel b1eee bg-white br5" style="width: 60%;">
+	        <highchart config="chartOptions1" class="flex-resize flex-absolute" highcharts-redraw highcharts-panning walkthrough-step="{ templateId: 'regularStep2' }"></highchart>
+	    </div>
+	    <div class="flex rel b1eee bg-white regular-table state">
+		<table style="display: flex; flex-flow: column;">
+		  <thead style="display: table;  width: 100%;">
+		    <tr>
+		      <th>性能指标</th>
+		    </tr>
+		  </thead>
+		  <tbody style="flex: 1 1 auto; overflow-y: auto;">
+		    <tr>
+		      <td>
+			<strong>增长率</strong>
+			<div class="r-value">10%</div>
+		      </td>
+		    </tr>
+		    <tr>
+		      <td>
+			<strong>目标值</strong>
+			<div class="r-value">10%</div>
+		      </td>
+		    </tr>
+		    <tr>
+		      <td>
+			<strong>能效最佳月</strong>
+			<div class="r-value">5月</div>
+		      </td>
+		    </tr>
+		    <tr>
+		      <td>
+			<strong>能效最差月</strong>
+			<div class="r-value">7月</div>
+		      </td>
+		    </tr>
+		  </tbody>
+		</table>
+	    </div>
+	</div>
+
+    	<div class="r-bottom">
+	    <div class="bg-white regular-table" style="width: 60%; float: left; margin-right: 10px;">
+		<table>
+		  <thead>
+		    <tr>
+		      <th></th>
+		      <th>今年消耗量</th>
+		      <th>去年消耗量</th>
+		      <th>目标消耗量</th>
+		      <th>基准值</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		    <tr>
+		      <td><strong>电力能耗</strong></td>
+		      <td></td>
+		      <td></td>
+		      <td></td>
+		      <td></td>
+		    </tr>
+		    <tr>
+		      <td><strong>碳排放量</strong></td>
+		      <td></td>
+		      <td></td>
+		      <td></td>
+		      <td></td>
+		    </tr>
+		  </tbody>
+		</table>
+	    </div>
+	    
+	    <div class="flex rel b1eee bg-white" style="height: 136px;">
+		<div class="flex flex-row flex-noresize flex-center progress-container">
+		    <div class="flex flex-resize pr10">
+		        <h4 class="fwb">当前状态<span class="prefix"><b class="ng-binding"></b> kwh(m<sup>2</sup>a)</span><span class="suffix"><b class="ng-binding"></b> kwh(m<sup>2</sup>a)</span></h4>
+		        <div class="progress">
+			<div class="progress-bar" style="min-width: 0px; width: 40%;">
+		            <div class="value ng-binding">40%</div>
+		        </div>
+			<div class="progress-bar" style="min-width: 0px; width: 30%;">
+		            <div class="value ng-binding">70%</div>
+		        </div>
+			</div>
+		    </div>
+		
+		</div>
+	    </div>
+    	</div>
+</div>
+
+<!-- <div class="flex bg-lighter-gray" id="export-container" hide-gt-xs>
+
+    <div class="flex flex-row flex-resize rel p15">
+        <div busy="isBusy"></div>
+        <div class="flex  rel bg-white b1eee br5">
+            <highchart config="chartOptions1" class="flex-resize flex-absolute" highcharts-redraw></highchart>
+        </div>
+    </div>
+
+</div> -->
+
+<div id="walkthrough-content" style="display: none">
+    <!-- Export button -->
+    <div id="regularStep1" position="left">
+        <p>点击这里将当页导出pdf文件。</p>
+    </div>
+    <!-- Chart -->
+    <div id="regularStep2" position="top">
+        <p>这里是该楼宇的能耗指数与行业同类的比较。</p>
+    </div>
+</div>
+
+<style>
+.state td{
+   background: white !important;
+   border-bottom: 0px;
+}
+</style>

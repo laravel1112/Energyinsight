@@ -1,0 +1,139 @@
+{% load crispy_forms_tags %}
+<!-- Modal for User editing-->
+<div class="modal fade" id="modalUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h3 class="modal-title" id="myModalLabel">Your profile editing</h3>
+      </div>
+      <div class="modal-body">
+
+          <div class="container-fluid">
+             <div class="row">
+
+                 <div class="col-lg-12 col-lg-offset-0">
+
+                     {% crispy userForm %}
+
+{#                    <form class="form-horizontal" role="form" method="Post" action=""> {% csrf_token %}#}
+{##}
+{#                        <div class="form-group">#}
+{#                            <label for="id_{{ userForm.first_name.name }}" class="col-lg-3 control-label">First name:</label>#}
+{#                            <div class="col-lg-8">#}
+{#                                <input type="text" class="form-control"#}
+{#                                   placeholder="Enter your first name here"#}
+{#                                   name="{{ userForm.first_name.html_name }}"#}
+{#                                   id="id_{{ userForm.first_name.name }}"#}
+{#                                   value="{{ userForm.first_name.value }}">#}
+{#                            </div>#}
+{#                        </div>#}
+{##}
+{#                        <div class="form-group">#}
+{#                            <label for="id_{{ userForm.last_name.name }}" class="col-lg-3 control-label">Last name:</label>#}
+{#                            <div class="col-lg-8">#}
+{#                                <input type="text" class="form-control"#}
+{#                                   placeholder="Enter your last name here"#}
+{#                                   name="{{ userForm.last_name.html_name }}"#}
+{#                                   id="id_{{ userForm.last_name.name }}"#}
+{#                                   value="{{ userForm.last_name.value }}">#}
+{#                            </div>#}
+{#                        </div>#}
+{##}
+{#                        <div class="form-group">#}
+{#                            <label for="id_{{ userForm.email.name }}" class="col-lg-3 control-label">Email:</label>#}
+{#                            <div class="col-lg-8">#}
+{#                                <input type="email" class="form-control"#}
+{#                                        placeholder="Enter your email here"#}
+{#                                        name="{{ userForm.email.html_name }}"#}
+{#                                        id="id_{{ userForm.email.name }}"#}
+{#                                        value="{{ userForm.email.value }}">#}
+{#                            </div>#}
+{#                        </div>#}
+{##}
+{#                        <div class="form-group">#}
+{#                            <label for="id_{{ userForm.password1.name }}" class="col-lg-3 control-label">New password:</label>#}
+{#                            <div class="col-lg-8">#}
+{#                                <input type="password" class="form-control"#}
+{#                                   name="{{ userForm.password1.html_name }}"#}
+{#                                   id="id_{{ userForm.password1.name }}">#}
+{#                            </div>#}
+{#                        </div>#}
+{##}
+{#                        <div class="form-group">#}
+{#                            <label for="id_{{ userForm.password2.name }}" class="col-lg-3 control-label">New password (again):</label>#}
+{#                            <div class="col-lg-8">#}
+{#                                <input type="password" class="form-control"#}
+{#                                   name="{{ userForm.password2.html_name }}"#}
+{#                                   id="id_{{ userForm.password2.name }}">#}
+{#                            </div>#}
+{#                        </div>#}
+{##}
+{#                        <div class="form-group right">#}
+{#                            <button type="button" class="btn btn-green-light" data-dismiss="modal">Close</button>#}
+{#                            <button type="submit" class="btn btn-green">Save</button>#}
+{#                        </div>#}
+{##}
+{#                    </form>#}
+
+                 </div>
+             </div>
+          </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal for FAQ-->
+<div class="modal fade" id="modalFAQ" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h3 class="modal-title" id="myModalLabel">FAQ</h3>
+      </div>
+      <div class="modal-body">
+
+          <div class="container-fluid">
+             <div class="row">
+
+                 <div class="col-lg-12" class="acc">
+
+                        <ul class="acc_item">
+                            {% for category in faq_categories %}
+                                <h4 class="faq_category">{{ category }}</h4>
+                                {% for question in faq_questions %}
+                                    {% if question.category == category %}
+                                        <li>
+                                            <input type="checkbox" checked>
+                                            <i></i>
+                                            <h5 class="acc_header">{{ question.question }}</h5>
+                                            <p>{{ question.answer }}</p>
+                                          </li>
+                                    {% endif %}
+                                {% endfor %}
+                            {% endfor %}
+                            <li>
+                                <input type="checkbox" checked>
+                                <i></i>
+                                <h5 class="acc_header">Question 3</h5>
+                                <p>Answer</p>
+                              </li>
+                        </ul>
+                     <div class="modal-footer">
+                        <button type="button" class="btn btn-green-light" data-dismiss="modal">Close</button>
+                     </div>
+
+                 </div>
+
+             </div>
+          </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>

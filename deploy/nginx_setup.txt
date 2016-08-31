@@ -1,0 +1,28 @@
+Nginx setup using lua script:
+
+It is recommended to use Openresty bundle of nginx instead of regular nginx. This version packages lua, luajit and some other useful modules. 
+
+
+1. Go to http://openresty.org/en/ and download the latest releas. Follow installation to install it on linux. Assume it is installed by default "user/local/openresty/"
+
+2. Follow the quick start tutorial to see if everything is installed correctly. 
+
+3. download jwt lua package from https://github.com/auth0/nginx-jwt, the unzip package include a nginx-jwt.lua file and a resty/ folder. Copy both of them into user/local/openresty/lualib/resty/ (Note the "resty" folder from the unziped package is copied inside the lualib/resty/ folder)
+
+4. inside the "work" folder (the work folder you created when following the quick start tutorial). run nginx -p `pwd`/ -s start|stop|restart|reload  (Note it's `pwd` not 'pwd')
+
+5. For the jwt to work, enviromental variable JWT_SECRET must be exposed. so :
+
+commandline: 
+env JWT_SECRET="XXXXXXX" run nginx -p `pwd`/ -s start 
+
+where "XXXXX" should be the JWT_SECRET should be the same as the one in energyinsight/settings.py or local_settings.py. 
+
+6. Test
+
+to test if it works.
+
+curl -i http://localhost:8080/ should get "hello world"
+
+curl -i http://localhost:8080/protected/ should get 401
+

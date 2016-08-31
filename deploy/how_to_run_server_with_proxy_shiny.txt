@@ -1,0 +1,73 @@
+To run the server with shiny behind a proxy, the Django server must be run behind nginx and use nginx to proxy request to the shiny address. 
+
+Note nginx is only available in linux machine. 
+
+=================== Step 1.  Install uwsgi. ==========================
+
+The uwsgi is a socket to connect nginx (the web server) to Django 
+
+pip install uwsgi
+
+To test if uwsgi is installed correctly, 
+
+cd into the energyinsight2.0 folder. Then run 
+
+uwsgi --http :8002 --module energyinsight.wsgi 
+
+Note the "energyinsight.wsgi" points to the energyinsight/wsgi.py file. Make sure the django project does have this file
+
+
+If this works, it means uwsgi is successfully installed. When combining with nginx, we will use socket to run the server, which is better performance
+
+uwsgi --socket :8002 --module energyinsight.wsgi 
+
+Note the --socket option create a file mysite.socket in the directory, it is accessed by nginx. If nginx cannot access it, it means the file permission is not set correctly. try:
+
+uwsgi --socket :8002 --module energyinsight.wsgi --chmod-socket=666
+
+=================== Step 2. Install nginx ===========================
+
+Now install and setup the web server
+
+sudo apt-get install nginx
+
+
+To start the server:
+
+sudo /etc/init.d/nginx start|restart|stop
+
+To link the web server to django, the configuration file for nginx is already in energyinsight2.0. It is called energyinsight_nginx.conf
+either copy this file to /etc/nginx/sites-enabled/ or make a sim link to it. 
+
+sudo ln -s energyinsight_nginx.conf /etc/nginx/sites-enabled/  
+
+This file needs to edited to make it work. I haven't figure out a way to use variable yet. 
+
+In line 4 and line 41, The location of "mysite.socket" and "uwsgi_params" path need to point to energyinsight2.0
+
+======================== Step 3. Test =========================
+
+Inside the energyinsight2.0 folder, run both 
+
+sudo /etc/init.d/nginx start
+
+and 
+
+uwsgi --socket :8002 --module energyinsight.wsgi 
+
+Then try to do 
+
+http://localhost:8001/protected/energyinsight/summary/
+
+If this works, it means the proxy to shiny server is working
+
+Then try 
+
+http://localhost:8001/proxy/energyinsight/summary/
+
+This is behind a django authentication service. 
+
+If this also works, uncomment the #internal. So that public link http://localhost:8001/protected/energyinsight/summary/ no longer work. 
+
+
+

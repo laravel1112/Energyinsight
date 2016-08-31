@@ -1,0 +1,28 @@
+{% extends 'common/base.html' %}
+{% load staticfiles %}
+<link href="{{ STATIC_URL }}css/jstree-themes/proton/style.min.css" rel="stylesheet">
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+<div class="wrapper">
+    
+</div>
+{% endblock content %}
+
+
+{% block extra_js %}
+
+<script type="application/javascript" src="{% static 'js/all.js' %}"></script>
+
+
+<!-- DataTables files -->
+<!-- <link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/1.10.7/css/jquery.dataTables.css">
+<script type="text/javascript" charset="utf8" src="http://cdn.datatables.net/1.10.7/js/jquery.dataTables.js"></script>
+ -->
+<!-- <link rel="stylesheet" href="https://cdn.datatables.net/responsive/1.0.6/css/dataTables.responsive.css">
+<script type="text/javascript" charset="utf8" src="http://cdn.datatables.net/responsive/1.0.6/js/dataTables.responsive.min.js"></script>
+ -->
+{#<script src="http://code.highcharts.com/highcharts-3d.js"></script>#}
+
+
+{% endblock extra_js %}

@@ -1,0 +1,69 @@
+# This document is to setup shiny server on docker image and run the docker engine on mac. So that developing shiny app would be much easier.
+
+
+
+1. Install docker for mac.
+
+https://docs.docker.com/engine/installation/mac/
+
+Click on Docker for Mac and download the dmg and install it.
+(Docker Toolbox is similar but they use different virtual enviroment, I only tried Docker for mac)
+
+
+2. Install the image
+After install, open terminal and check if docker is installed successfully by typing 
+
+docker run hello-world
+
+If you see output, then it's good
+
+Then type 
+
+docker pull shrektan/shiny
+
+This will pull the image. 
+
+Then you can run this by typing
+
+docker run -p 3838:3838 shrektan/shiny 
+
+This will map the localhost:3838 to the docker container port 3838.
+
+To map your shinyapp folder ("XXX/energyinsight2.0/shinyapp/") into a folder in the docker container, you can use the command
+
+
+docker run -dit -p 3838:3838 -v XXX/energyinsight2.0/shinyapp/:/shiny shrektan/shiny
+
+
+This will create a /shiny folder in the docker container. 
+
+
+Note. You will have to modify the /etc/shiny-server/shiny-server.conf -> site_dir to point to /shiny in order to use your mappedd code. This change on the system will be erased when you stop the container. If you want it to be permanant, use 
+
+docker commit [containerid] anyname
+
+This will create a new image. next time run with this image instead of shrektan/shiny
+
+======================how to access host ip from inside docker container
+If your host compuater is connected to a router, by default, the docker container will obtain another ip through DHCP in router. Appear as in the same local network as the host. Therefore it can access the host through LAN using ip such as 192.168.0.100, etc. 
+
+To access the ip of docker image, in host terminal, use 
+
+docker network list 
+to find the network id of the brdige, then 
+docker network inspect [id] 
+to find the container ipv4 address. 
+
+
+
+
+====================some helpful commands
+
+
+docker ps -a   # Show all running or created or stopped containers. 
+
+docker inspect [containerid] # The container id is a 12 digit code, inspecting a running container will give you information about the configuration, the exposed port and the ip address of this container. 
+
+docker exec -it [containerid] # This will get into the shell of the container, where you can change configuratin and stuff
+
+

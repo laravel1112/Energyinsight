@@ -1,0 +1,1364 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"app",
+				"app_api_ip"
+			],
+			[
+				"conte",
+				"contents〔variable〕"
+			],
+			[
+				"app_",
+				"app_api_ip"
+			],
+			[
+				"api_",
+				"app_api_port"
+			],
+			[
+				"plat",
+				"platformService"
+			],
+			[
+				"account",
+				"accountService"
+			],
+			[
+				"is",
+				"isAuthorized"
+			],
+			[
+				"$timeout",
+				"$timeout	AngularJS"
+			],
+			[
+				"set",
+				"setTimeout〔function〕"
+			],
+			[
+				"$root",
+				"$rootScope	AngularJS"
+			],
+			[
+				"auto",
+				"authorized"
+			],
+			[
+				"author",
+				"authorize"
+			],
+			[
+				"$roo",
+				"$rootScope	AngularJS"
+			],
+			[
+				"config",
+				"configure"
+			],
+			[
+				"choi",
+				"choices"
+			],
+			[
+				"API_",
+				"API_IP"
+			],
+			[
+				"ip",
+				"API_IP"
+			],
+			[
+				"json",
+				"jsonConfig"
+			],
+			[
+				"border-botto",
+				"border-bottom-color"
+			],
+			[
+				"new",
+				"newValue"
+			],
+			[
+				"show",
+				"showInLegend"
+			],
+			[
+				"col",
+				"column"
+			],
+			[
+				"ion",
+				"ion-list"
+			],
+			[
+				"con",
+				"config"
+			],
+			[
+				"root",
+				"rootScope"
+			],
+			[
+				"mar",
+				"margin-bottom"
+			],
+			[
+				"co",
+				"consumption"
+			],
+			[
+				"heat",
+				"heatmap"
+			],
+			[
+				"recomm",
+				"recommendations"
+			],
+			[
+				"count",
+				"countdown"
+			],
+			[
+				"x",
+				"xAxis"
+			],
+			[
+				"Comp",
+				"CompanyService"
+			],
+			[
+				"upload",
+				"uploadLogo"
+			],
+			[
+				"cou",
+				"cursor"
+			],
+			[
+				"font",
+				"font-family"
+			],
+			[
+				"text-",
+				"text-align"
+			],
+			[
+				"header",
+				"headerTemplate"
+			],
+			[
+				"company",
+				"company_logo"
+			],
+			[
+				"Re",
+				"Recommendation"
+			],
+			[
+				"of",
+				"offset"
+			],
+			[
+				"num",
+				"number"
+			],
+			[
+				"back",
+				"background"
+			],
+			[
+				"bac",
+				"background"
+			],
+			[
+				"selected",
+				"selectedRow"
+			],
+			[
+				"stop",
+				"stopPropagation"
+			],
+			[
+				"ng",
+				"ng-click"
+			],
+			[
+				"action",
+				"actionsTemplate"
+			],
+			[
+				"outer",
+				"outerWidth"
+			],
+			[
+				"spac",
+				"spacingRight"
+			],
+			[
+				"endO",
+				"endOnTick"
+			],
+			[
+				"bacgro",
+				"background-position"
+			],
+			[
+				"line",
+				"lineWidth"
+			],
+			[
+				"wrapper",
+				"wrapperWidth"
+			],
+			[
+				"st",
+				"style	Attr"
+			],
+			[
+				"ctrl",
+				"ctrloptions"
+			],
+			[
+				"pro",
+				"processRangeSelection"
+			],
+			[
+				"sub",
+				"subtract"
+			],
+			[
+				"z",
+				"zIndex"
+			],
+			[
+				"sys",
+				"sys_light_green"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "app.js",
+			"settings":
+			{
+				"buffer_size": 19558,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/Laboratory/Energy/angular/views/reports.html",
+			"settings":
+			{
+				"buffer_size": 530,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Laboratory/Energy/angular/views/_layout.html",
+			"settings":
+			{
+				"buffer_size": 7638,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "controllers/reports/reports.nav.js",
+			"settings":
+			{
+				"buffer_size": 3218,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "services/app.platform.js",
+			"settings":
+			{
+				"buffer_size": 5189,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Laboratory/2015/Planner/public/scripts/directives/directives.js",
+			"settings":
+			{
+				"buffer_size": 58112,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "controllers/reports/reports.summary.js",
+			"settings":
+			{
+				"buffer_size": 7603,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "services/app.services.js",
+			"settings":
+			{
+				"buffer_size": 40075,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "services/app.account.js",
+			"settings":
+			{
+				"buffer_size": 11619,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Laboratory/Energy/angular/css/src/site.scss",
+			"settings":
+			{
+				"buffer_size": 68939,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Laboratory/Energy/gulpfile.js",
+			"settings":
+			{
+				"buffer_size": 18302,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/Laboratory/Energy/package.json",
+			"settings":
+			{
+				"buffer_size": 1718,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 380.0,
+		"last_filter": "bookmark",
+		"selected_items":
+		[
+			[
+				"bookmark",
+				"SublimeBookmarks: Toggle Current Line"
+			],
+			[
+				"goto book",
+				"SublimeBookmarks: Goto Bookmark"
+			],
+			[
+				"add book",
+				"SublimeBookmarks: Add Bookmark"
+			],
+			[
+				"goto boo",
+				"SublimeBookmarks: Goto Next Bookmark"
+			],
+			[
+				"goto",
+				"Goto: Position"
+			],
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			],
+			[
+				"packa",
+				"Package Control: Remove Package"
+			],
+			[
+				"Package ",
+				"Package Control: Remove Package"
+			],
+			[
+				"BrowserBoo",
+				"BrowserBookmarks : Show bookmarks"
+			],
+			[
+				"bookmak",
+				"BrowserBookmarks : Show bookmarks"
+			],
+			[
+				"book",
+				"BrowserBookmarks : Show bookmarks"
+			],
+			[
+				"Package Control: Package ",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"package Control: ",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 528.0
+	},
+	"console":
+	{
+		"height": 428.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Laboratory/Energy",
+		"/C/Laboratory/Energy/angular",
+		"/C/Laboratory/Energy/angular/css",
+		"/C/Laboratory/Energy/angular/css/src",
+		"/C/Laboratory/Energy/angular/js",
+		"/C/Laboratory/Energy/angular/js/src",
+		"/C/Laboratory/Energy/angular/js/src/app",
+		"/C/Laboratory/Energy/angular/js/src/app/controllers",
+		"/C/Laboratory/Energy/angular/js/src/app/controllers/reports",
+		"/C/Laboratory/Energy/angular/js/src/app/services",
+		"/C/Laboratory/Energy/angular/js/src/app/templates",
+		"/C/Laboratory/Energy/angular/views/reports",
+		"/C/Laboratory/Energy/mobile2",
+		"/C/Laboratory/Energy/mobile2/myApp2",
+		"/C/Laboratory/Energy/node_modules/angular-material"
+	],
+	"file_history":
+	[
+		"/C/Laboratory/Energy/mobile2/myApp2/config.xml",
+		"/C/Laboratory/Energy/ionic.project",
+		"/C/Laboratory/GIT/Old/angular/js/src/app/app.js",
+		"/C/Laboratory/2015/Planner/public/scripts/directives/directives.js",
+		"/C/Laboratory/Energy/package.json",
+		"/C/Laboratory/Energy/angular/js/src/app/vendor.js",
+		"/C/Laboratory/Energy/angular/js/src/app/controllers/reports/reports.summary.js",
+		"/C/Laboratory/Energy/angular/js/src/app/controllers/reports/reports.nav.js",
+		"/C/Laboratory/Energy/angular/js/src/app/controllers/home/home.summary.js",
+		"/C/Laboratory/Energy/angular/js/src/app/controllers/account/account.login.js",
+		"/C/Laboratory/Energy/angular/js/src/app/directives/angular.walkthrough.js",
+		"/C/Laboratory/Energy/angular/js/src/app/controllers/account/account.profile.js",
+		"/C/Laboratory/Energy/angular/js/src/app/services/app.services.js",
+		"/C/Laboratory/Energy/angular/js/src/app/services/app.config.js",
+		"/C/Laboratory/Energy/angular/js/src/app/controllers/recommend/recommend.summary.js",
+		"/C/Laboratory/Energy/angular/views/recommendations/summary.html",
+		"/C/Laboratory/Energy/angular/js/src/app/services/app.io.js",
+		"/D/Downloads/VMware Workstation 12.1.0 build 3272444/embrace.nfo",
+		"/C/Users/Max/AppData/Roaming/Sublime Text 3/Packages/BetterBookmarks/BetterBookmarks.sublime-settings",
+		"/C/Users/Max/AppData/Roaming/Sublime Text 3/Packages/User/BetterBookmarks.sublime-settings",
+		"/C/Laboratory/Energy/angular/js/src/app/app.js",
+		"/C/Laboratory/Energy/angular/js/src/app/services/app.account.js",
+		"/C/Laboratory/Energy/angular/views/login.html",
+		"/C/Laboratory/Energy/angular/js/src/app/controllers/account/account.js",
+		"/C/Laboratory/Energy/angular/js/src/app/controllers/charts/charts.summary.js",
+		"/C/Laboratory/Energy/angular/css/src/site.scss",
+		"/C/Laboratory/Energy/angular/views/account/profile.html",
+		"/C/Laboratory/Energy/angular/views/account/_sidebar.html",
+		"/C/Laboratory/Energy/angular/js/src/app/directives/angular.idangero.us.js",
+		"/C/Laboratory/Energy/angular/js/src/app/services/app.platform.js",
+		"/C/Laboratory/Energy/angular/views/reports/trend.html",
+		"/C/Laboratory/Energy/angular/views/reports/disagg.html",
+		"/C/Laboratory/Energy/angular/views/reports/regular.html",
+		"/C/Laboratory/Energy/angular/views/reports/heatmap.html",
+		"/C/Laboratory/Energy/angular/views/reports/monthly.html",
+		"/C/Laboratory/Energy/angular/views/home.html",
+		"/C/Laboratory/Energy/angular/views/charts.html",
+		"/C/Laboratory/Energy/angular/js/src/app/external/ionic/js/ionic-angular.js",
+		"/C/Laboratory/Energy/angular/js/src/app/controllers/app.controllers.js",
+		"/C/Laboratory/Energy/angular/js/src/app/controllers/news/news.js",
+		"/C/Laboratory/Energy/angular/js/src/app/controllers/news/news.summary.js",
+		"/C/Laboratory/Energy/angular/js/src/app/directives/baidumap.js",
+		"/C/Laboratory/Energy/backend/urls.py",
+		"/C/Laboratory/Energy/backend/views.py",
+		"/C/Laboratory/Energy/utils/tools_v2/loadClient.py",
+		"/C/Laboratory/Energy/energyinsight/production_settings1.py",
+		"/C/Laboratory/Energy/energyinsight/settings.py",
+		"/C/Laboratory/Energy/gulpfile.js",
+		"/C/Laboratory/Energy/mobile2/myApp2/www/static/js/config.json",
+		"/C/Laboratory/Energy/angular/js/src/app/config.json",
+		"/C/Laboratory/Energy/angular/views/news.html",
+		"/C/Laboratory/Energy/angular/views/news/news.summary.html",
+		"/C/Laboratory/Energy/angular/views/news/news.details.html",
+		"/C/Laboratory/Energy/angular/js/src/app/directives/angular.highcharts.redraw.js",
+		"/C/Laboratory/Energy/angular/views/reports/summary.html",
+		"/C/Laboratory/Energy/angular/views/reports/_sidebar.html",
+		"/C/Laboratory/Energy/angular/js/src/app/controllers/reports/reports.trend.js",
+		"/C/Laboratory/Energy/angular/views/reports.html",
+		"/C/Laboratory/Energy/angular/views/charts/summary.html",
+		"/C/Laboratory/Energy/angular/views/account.html",
+		"/C/Laboratory/Energy/angular/views/_layout.html",
+		"/C/Laboratory/Energy/angular/views/recommendations.html",
+		"/C/Laboratory/Energy/angular/js/src/app/controllers/recommend/recommend.nav.js",
+		"/C/Laboratory/Energy/common/templates/angular/index.html",
+		"/C/Laboratory/Energy/mobile2/myApp2/www/index.html",
+		"/C/Laboratory/Energy/mobile2/myApp2/ionic.project",
+		"/C/Laboratory/Energy/angular/js/src/app/controllers/news/news.details.js",
+		"/C/Laboratory/Energy/angular/js/src/app/external/ionic/css/ionic.css",
+		"/C/Laboratory/Energy/backend/api.py",
+		"/C/Laboratory/Energy/angular/js/src/app/controllers/recommend/recommend.strategy5.js",
+		"/C/Laboratory/Energy/energyinsight/settings.py.mine",
+		"/C/Laboratory/Energy/optimizer/algorithm/optimizerbase.py",
+		"/C/Laboratory/Energy/energyinsight/local_settings.py",
+		"/C/Laboratory/Energy/_config/uwsgi/energyinsight.ini",
+		"/C/Laboratory/Energy/logfile.log",
+		"/C/Laboratory/Energy/common/templates/common/report.html",
+		"/C/Laboratory/Energy/common/views.py",
+		"/C/Laboratory/Energy/angular/data/api.tmp.getseries.json",
+		"/C/Laboratory/Energy/angular/js/src/app/external/ionic/js/ionic.bundle.js",
+		"/C/Laboratory/Energy/mobile/www/index.html",
+		"/C/Laboratory/Energy/node_modules/angular-loading-bar/src/loading-bar.css",
+		"/C/Laboratory/Energy/common/static/js/app.min.js",
+		"/C/Laboratory/Energy/angular/data/cache/api.energyunit.building.json",
+		"/C/Laboratory/Energy/mobile/config.xml",
+		"/C/Laboratory/Energy/energyinsight/urls.py",
+		"/C/Laboratory/Energy/client/Router.js",
+		"/C/Laboratory/Energy/common/templates/common/navbar.html",
+		"/C/Laboratory/Energy/angular/views/temp/login.html",
+		"/C/Laboratory/Energy/mobile/www/css/index.css",
+		"/C/Laboratory/Energy/angular/views/temp/index.html",
+		"/C/Laboratory/Energy/common/static/views/recommendations/strategies/strategy5.html",
+		"/C/Laboratory/Energy/angular/views/recommendations/strategies/strategy5.html",
+		"/C/Laboratory/Energy/mobile/www/static/views/reports/trend.html",
+		"/C/Laboratory/Energy/angular/js/src/app/directives/app.ui.js",
+		"/C/Laboratory/Energy/angular/js/src/app/templates/app.templates.js",
+		"/C/Laboratory/Energy/angular/js/src/app/controllers/recommend/recommend.config.js",
+		"/C/Laboratory/Energy/angular/views/charts/_sidebar.html",
+		"/C/Laboratory/Energy/angular/views/recommendations/configuration.html",
+		"/C/Laboratory/Energy/angular/views/recommendations/strategies.html",
+		"/C/Laboratory/Energy/angular/views/recommendations/strategies/strategy1.html",
+		"/C/Laboratory/Energy/angular/views/recommendations/strategies/strategy2.html",
+		"/C/Laboratory/Energy/angular/views/recommendations/strategies/strategy3.html",
+		"/C/Laboratory/Energy/angular/views/recommendations/strategies/strategy4.html",
+		"/C/Laboratory/Energy/angular/views/reports/consumptionTrends.html",
+		"/C/Laboratory/Energy/mobile/www/js/app.min.js",
+		"/C/Laboratory/Energy/mobile/www/static/js/app.min.js",
+		"/C/Laboratory/Energy/mobile/www/static/views/_layout.html",
+		"/C/Laboratory/Energy/mobile/www/static/views/charts.html",
+		"/C/Laboratory/Energy/mobile/www/static/views/account/profile.html",
+		"/C/Laboratory/Energy/mobile/www/static/views/charts/_sidebar.html",
+		"/C/Laboratory/Energy/mobile/www/static/views/charts/summary.html",
+		"/C/Laboratory/Energy/mobile/www/static/views/recommendations/configuration.html",
+		"/C/Laboratory/Energy/mobile/www/static/views/recommendations/strategies.html",
+		"/C/Laboratory/Energy/mobile/www/static/views/recommendations/summary.html",
+		"/C/Laboratory/Energy/mobile/www/static/views/recommendations/strategies/strategy1.html",
+		"/C/Laboratory/Energy/mobile/www/static/views/recommendations/strategies/strategy2.html",
+		"/C/Laboratory/Energy/mobile/www/static/views/recommendations/strategies/strategy3.html",
+		"/C/Laboratory/Energy/mobile/www/static/views/recommendations/strategies/strategy4.html",
+		"/C/Laboratory/Energy/mobile/www/static/views/recommendations/strategies/strategy5.html",
+		"/C/Laboratory/Energy/mobile/www/static/views/reports/consumptionTrends.html",
+		"/C/Laboratory/Energy/mobile/www/static/views/reports/regular.html",
+		"/C/Laboratory/Energy/mobile/www/static/views/reports/summary.html",
+		"/C/Laboratory/Energy/common/static/views/temp/css.css",
+		"/C/Laboratory/Energy/common/static/views/_layout.html",
+		"/C/Laboratory/Energy/common/static/views/charts.html",
+		"/C/Laboratory/Energy/common/static/views/account/profile.html",
+		"/C/Laboratory/Energy/common/static/views/charts/_sidebar.html",
+		"/C/Laboratory/Energy/common/static/views/charts/summary.html"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+			"",
+			"*.js",
+			"*.py",
+			"",
+			"*.py",
+			"",
+			"*.py",
+			"",
+			"C:\\Laboratory\\Energy\\angular\\image",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			".broadcast",
+			".$on",
+			"intercept",
+			"API_PORT",
+			"API_",
+			"loadConfig",
+			"@media",
+			"@media ",
+			"hidexs",
+			"main-container-wrapper",
+			"elemente",
+			"element",
+			"settings-sidebar",
+			".reports",
+			"root",
+			"reportsSummaryCtrl",
+			"switchSerie",
+			"seriesService",
+			"api/getseries/3",
+			"seriesService",
+			"$state",
+			"logout",
+			"cache",
+			"$cacheFactory",
+			"CacheFactory",
+			"offlineProvider",
+			"offlinecheck",
+			"seriesService",
+			"'AllMetersService",
+			"seriesService",
+			"getByID",
+			"EnergyUnitFactory",
+			"$rootScope.user",
+			"authService.reload",
+			"$rootScope.toState",
+			"$rootScope.token",
+			"accountService.signin",
+			"AuthService",
+			"$rootScope.appLoaded",
+			"appLoaded",
+			"walkthrough:show",
+			"skipAuthorization",
+			"skip",
+			"$rootScope.user",
+			"$rootScope.loadSettings",
+			"accountService",
+			"$rootScope.user",
+			"authorization",
+			"		",
+			"		);",
+			"angular.copy",
+			"AuthService",
+			"authService",
+			"toggleBuildings",
+			"$rootScope.toggleBuildings",
+			"http://192.168.1.34:8100",
+			"$rootScope.resize",
+			"$rootScope.auth",
+			"             ",
+			"getweather",
+			"window.location",
+			"localStorageService",
+			"localStorage.",
+			"q",
+			"login =",
+			"login",
+			"login =",
+			"login",
+			"loginCtrl",
+			"$q.defer",
+			"API_PORT",
+			"prompt",
+			"fs",
+			"loadcon",
+			"shell.task",
+			"ionic",
+			"gulp-shell",
+			"runSequence",
+			"runse",
+			"plugins1.shell",
+			"plugins1.",
+			"address",
+			"___PUBLIC___",
+			"config",
+			"gutil",
+			"gulp-util",
+			"starting",
+			"confg",
+			"prompt",
+			"3",
+			"require('gulp-prompt')",
+			"gp_prompt",
+			"config",
+			"prompt",
+			"config",
+			"___PUBLIC___",
+			"'config",
+			"dir",
+			"path.",
+			"path",
+			"plugins",
+			"run-sequence",
+			"ionicPlatform",
+			"$scope.swiper.destroy()",
+			"opts",
+			"onMarkerTap",
+			"onMarkerClick",
+			"item-avatar",
+			"dialogPrompt",
+			"has-header",
+			"has-hader",
+			"has-toolbar",
+			"walkthrough",
+			"walkth",
+			"walkth		",
+			"newsvisible",
+			"bar-balanced",
+			"transition:",
+			"transitions",
+			"goback",
+			".white",
+			"ion-nav-view",
+			"楼宇信息",
+			"arrow",
+			"transition",
+			"translate",
+			"has-header",
+			".swiper-wrapper"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"1==1",
+			" #authorization = ",
+			" #authentication = ",
+			"api",
+			"",
+			"\"",
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "app.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 19558,
+						"regions":
+						{
+							"bookmarks":
+							{
+								"flags": 144,
+								"icon": "bookmark",
+								"regions":
+								[
+									[
+										1096,
+										1096
+									]
+								],
+								"scope": "bookmarks"
+							}
+						},
+						"selection":
+						[
+							[
+								17950,
+								17950
+							]
+						],
+						"settings":
+						{
+							"WordCount":
+							{
+								"changes": -1,
+								"modified": true,
+								"selection": true,
+								"status": -1,
+								"syntax": "javascript"
+							},
+							"auto_complete": false,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 5286.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/C/Laboratory/Energy/angular/views/reports.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 530,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								233,
+								233
+							]
+						],
+						"settings":
+						{
+							"WordCount":
+							{
+								"changes": 0,
+								"count": 0,
+								"modified": false,
+								"selection": false,
+								"status": -1,
+								"syntax": "plain text"
+							},
+							"auto_complete": false,
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/C/Laboratory/Energy/angular/views/_layout.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7638,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5721,
+								5721
+							]
+						],
+						"settings":
+						{
+							"WordCount":
+							{
+								"changes": 49,
+								"count": 18,
+								"modified": false,
+								"selection": false,
+								"status": -1,
+								"syntax": "plain text"
+							},
+							"auto_complete": false,
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "controllers/reports/reports.nav.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3218,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1451,
+								1451
+							]
+						],
+						"settings":
+						{
+							"WordCount":
+							{
+								"changes": -1,
+								"modified": true,
+								"selection": true,
+								"status": -1,
+								"syntax": "javascript"
+							},
+							"auto_complete": false,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "services/app.platform.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5189,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2857,
+								2857
+							]
+						],
+						"settings":
+						{
+							"WordCount":
+							{
+								"changes": -1,
+								"modified": true,
+								"selection": true,
+								"status": -1,
+								"syntax": "javascript"
+							},
+							"auto_complete": false,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/C/Laboratory/2015/Planner/public/scripts/directives/directives.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 58112,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								18463,
+								18463
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 4891.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "controllers/reports/reports.summary.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7603,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3717,
+								2032
+							]
+						],
+						"settings":
+						{
+							"WordCount":
+							{
+								"changes": -1,
+								"modified": true,
+								"selection": true,
+								"status": -1,
+								"syntax": "javascript"
+							},
+							"auto_complete": false,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 481.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "services/app.services.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 40075,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								17663,
+								17663
+							]
+						],
+						"settings":
+						{
+							"WordCount":
+							{
+								"changes": -1,
+								"modified": true,
+								"selection": true,
+								"status": -1,
+								"syntax": "javascript"
+							},
+							"auto_complete": false,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 5918.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "services/app.account.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 11619,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5327,
+								5327
+							]
+						],
+						"settings":
+						{
+							"WordCount":
+							{
+								"changes": -1,
+								"modified": true,
+								"selection": true,
+								"status": -1,
+								"syntax": "javascript"
+							},
+							"auto_complete": false,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 445.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 9,
+					"file": "/C/Laboratory/Energy/angular/css/src/site.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 68939,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								38778,
+								38778
+							]
+						],
+						"settings":
+						{
+							"WordCount":
+							{
+								"changes": 22,
+								"count": 6186,
+								"modified": false,
+								"selection": false,
+								"status": -1,
+								"syntax": "sass"
+							},
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 10442.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "/C/Laboratory/Energy/gulpfile.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 18302,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								12142,
+								12142
+							]
+						],
+						"settings":
+						{
+							"WordCount":
+							{
+								"changes": -1,
+								"modified": true,
+								"selection": true,
+								"status": -1,
+								"syntax": "javascript"
+							},
+							"auto_complete": false,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3773.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "/C/Laboratory/Energy/package.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1718,
+						"regions":
+						{
+							"bookmarks":
+							{
+								"flags": 144,
+								"icon": "bookmark",
+								"regions":
+								[
+								],
+								"scope": "string"
+							}
+						},
+						"selection":
+						[
+							[
+								1184,
+								1184
+							]
+						],
+						"settings":
+						{
+							"WordCount":
+							{
+								"changes": -1,
+								"modified": true,
+								"selection": true,
+								"status": -1,
+								"syntax": "json"
+							},
+							"auto_complete": true,
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.450384653106,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "Equota.sublime-project",
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"site",
+				"angular\\css\\src\\site.scss"
+			],
+			[
+				"reports.nav",
+				"angular\\js\\src\\app\\controllers\\reports\\reports.nav.js"
+			],
+			[
+				"services/",
+				"angular\\js\\src\\app\\services\\app.account.js"
+			],
+			[
+				"home.summary",
+				"angular\\js\\src\\app\\controllers\\home\\home.summary.js"
+			],
+			[
+				"energyinsight.",
+				"_config\\uwsgi\\energyinsight.ini"
+			],
+			[
+				"site.scss",
+				"angular\\css\\src\\site.scss"
+			],
+			[
+				"profile",
+				"angular\\views\\account\\profile.html"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 58.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 696.0
+	},
+	"selected_group": 1,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 298.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

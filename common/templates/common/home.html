@@ -1,0 +1,352 @@
+{% extends 'common/base.html' %}
+{% load staticfiles %}
+
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+
+
+
+
+{#
+
+        <div class="row">
+
+            <div class="col-lg-7">
+                <div id="allmap"></div>
+            </div>
+
+            <div class="col-lg-5">
+
+                <div class="bg-primary bordered">
+                    <div id="carousel-example-vertical" class="carousel vertical slide"
+                         data-ride="carousel"
+                         data-interval="5000">
+                        <div class="carousel-inner" role="listbox">
+                            <div class="item active">
+                                <p class="ticker-headline">
+                                    <a href="＃">
+                                        <strong>2015（第十一届）中国分布式能源国际论坛</strong>&nbsp &nbsp &nbsp
+                                        2015年8月26-27日 北京
+                                        分布式能源新生态 深化电改 需求侧管理 节能服务
+                                    </a>
+                                </p>
+                            </div>
+                            <div class="item">
+                                <p class="ticker-headline">
+                                    <a href="#">
+                                        <strong>大数据让工业节能触手可及</strong>
+                                        &nbsp &nbsp &nbsp “大数据”支撑能源智库建设，通过对能耗使用轨迹的捕捉，大数据分析找出节能 潜力，提出解决方案，轻松解决工业高能耗问题。
+                                    </a>
+                                </p>
+                            </div>
+                            <div class="item">
+                                <p class="ticker-headline">
+                                    <a href="#">
+                                        <strong>我国钢铁等行业领域节能推广将常态化</strong>&nbsp &nbsp &nbsp
+                                        2015年7月7日，2015中国国际节能低碳创新技术与装备博览会新闻发布会在北京召开。
+                                    </a>
+                                </p>
+                            </div>
+                            <div class="item">
+                                <p class="ticker-headline">
+                                    <a href="#">
+                                        <strong>北京碳交易市场成交额超两亿元</strong>&nbsp &nbsp &nbsp
+                                        截至6月5日，北京市碳配额共成交1192笔，成交量超过430.04万吨，累计成交额约20078.71万元，突 破两亿元大关，位列7个试点省市前列。
+                                    </a>
+                                </p>
+                            </div>
+                            <div class="item">
+                                <p class="ticker-headline">
+                                    <a href="#">
+                                        <strong>福建将全面启动节能量交易在电力等行业试行</strong>&nbsp &nbsp &nbsp
+                                        7月14日，福建省政府网公开发布《关于推进节能量交易工作的意见（试行）》，将在省内全面启动节能量交易。
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="table-div indexPageLeftChart">
+                    <!-- <table id="gradient-style" class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>分类</th>
+                            <th>建筑名称</th>
+                            <th>节约潜力</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>工业</td>
+                            <td>A区一号楼</td>
+                            <td>RMB52,985</td>
+                        </tr>
+                        <tr>
+                            <td>工业</td>
+                            <td>A区二号楼</td>
+                            <td>RMB52,985</td>
+                        </tr>
+                        <tr>
+                            <td>工业</td>
+                            <td>A区三号楼</td>
+                            <td>RMB52,985</td>
+                        </tr>
+                        <tr>
+                            <td>工业</td>
+                            <td>B区四号楼</td>
+                            <td>RMB52,985</td>
+                        </tr>
+                        <tr>
+                            <td>工业</td>
+                            <td>B区五号楼</td>
+                            <td>RMB52,985</td>
+                        </tr>
+                        <tr>
+                            <td>商业</td>
+                            <td>C区六号楼</td>
+                            <td>RMB52,985</td>
+                        </tr>
+                        <tr>
+                            <td>商业</td>
+                            <td>C区七号楼</td>
+                            <td>RMB52,985</td>
+                        </tr>
+                        <tr>
+                            <td> 商业</td>
+                            <td>C区八号楼</td>
+                            <td>RMB52,985</td>
+                        </tr>
+                        <tr>
+                            <td>商业</td>
+                            <td>C区九号楼</td>
+                            <td>RMB52,985</td>
+                        </tr>
+                        <tr>
+                            <td>商业</td>
+                            <td>C区十号楼</td>
+                            <td>RMB52,985</td>
+                        </tr>
+                        <tr>
+                            <td>商业</td>
+                            <td>C区十一号楼</td>
+                            <td>RMB52,985</td>
+                        </tr>
+                        <tr>
+                            <td>民用</td>
+                            <td>D区一号楼</td>
+                            <td>RMB52,985</td>
+                        </tr>
+                        <tr>
+                            <td>民用</td>
+                            <td>D区二号楼</td>
+                            <td>RMB52,985</td>
+                        </tr>
+                        <tr>
+                            <td>民用</td>
+                            <td>D区三号楼</td>
+                            <td>RMB52,985</td>
+                        </tr>
+                        <tr>
+                            <td>民用</td>
+                            <td>D区四号楼</td>
+                            <td>RMB52,985</td>
+                        </tr>
+                        <tr>
+                            <td>民用</td>
+                            <td>D区五号楼</td>
+                            <td>RMB52,985</td>
+                        </tr>
+                        <tr>
+                            <td>民用</td>
+                            <td>D区六号楼</td>
+                            <td>RMB52,985</td>
+                        </tr>
+                        <tr>
+                            <td>民用</td>
+                            <td>D区七号楼</td>
+                            <td>RMB52,985</td>
+                        </tr>
+                        <tr>
+                            <td>民用</td>
+                            <td>D区八号楼</td>
+                            <td>RMB52,985</td>
+                        </tr>
+                        <tr>
+                            <td>其他</td>
+                            <td>其余建筑</td>
+                            <td>RMB52,985</td>
+                        </tr>
+                        </tbody>
+                    </table> -->
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row paddingTop10">
+
+            <div class="col-lg-7">
+                <div class="greyBorder">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <h3>节能信息</h3>
+                            <img src="https://images.mint.com/i/advice/large/investment2.png" alt="Advice Icon" id="yui_3_2_0pr1_1_14390866533802013">
+                        </div>
+                        <div class="col-lg-8">
+
+                            <h1>调整新风需量控制</h1>
+                            <div class="">
+                                在过渡季节及冬季，可以通过室外焓值比对送风设置点，当时外温湿度达到直接送风条件时，关闭汇丰闸门，全开新风阀门，形成新风模式。而开启全新风模式后，混风点温度将低于设定温度，因此将
+                                冷冻水二通阀门逐渐关小，冷冻水泵主机卸载，从而达到省能效果。
+                            </div>
+
+                            <div>
+                                <p id="advice-count">查看更多节能建议</p>
+                                <p class="nav">
+                                    <a class="previous" id="previousbutton" href="javascript://">上一个</a>
+                                    <a class="next" id="nextbutton" href="javascript://">下一个</a>
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-lg-5">
+                <div class="greyBorder">
+                    <div id="chart1" class="chartContainer" style="min-width: 310px; max-width: 800px; height: 286px; margin: 0 auto"></div>
+                </div>
+            </div>
+
+        </div>
+
+#}
+
+
+
+{% endblock content %}
+
+
+{% block extra_js %}
+    <!-- <script src="./static/js/jquery-1.11.3.min.js"></script> -->
+
+    <script type="application/javascript" src="{% static 'js/all.js' %}"></script>
+    <!-- Highcharts -->
+    <!-- <script src="http://code.highcharts.com/highcharts.js"></script> -->
+
+
+    <!-- DataTables files -->
+    <!-- <link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/1.10.7/css/jquery.dataTables.css"> -->
+    <!-- <script type="text/javascript" charset="utf8" src="http://cdn.datatables.net/1.10.7/js/jquery.dataTables.js"></script> -->
+
+
+    <!-- <script src="./static/js/bootstrap.min.js"></script> -->
+
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=KRNQDv3desnEOULRaeOsmyvI"></script>
+    <script type="text/javascript" src="http://developer.baidu.com/map/jsdemo/demo/convertor.js"></script>
+    <script type="text/javascript">
+	    // 百度地图API功能
+	    // //谷歌坐标
+	    // var x = 121.47537;
+	    // var y = 31.232844;
+	    // var ggPoint = new BMap.Point(x,y);
+
+	    // //地图初始化
+	    // var bm = new BMap.Map("allmap");
+	    // bm.centerAndZoom(ggPoint, 15);
+	    // bm.addControl(new BMap.NavigationControl());
+
+	    // //添加谷歌marker和label
+	    // var icon = new BMap.Icon("/static/img/building_icon.png", new BMap.Size(48, 48), {
+	    // 	anchor: new BMap.Size(10, 30),
+	    // 	infoWindowAnchor: new BMap.Size(10, 0)
+	    // });
+
+	    // var markergg = new BMap.Marker(ggPoint, {icon: icon});
+	    // bm.addOverlay(markergg); //添加谷歌marker
+	    // var labelgg = new BMap.Label("Building 1", {offset: new BMap.Size(0,-20)});
+	    // markergg.setLabel(labelgg); //添加谷歌label
+
+	    // //坐标转换完之后的回调函数
+	    // translateCallback = function (point){
+	    // 	var marker = new BMap.Marker(point, {icon: icon});
+	    // 	bm.addOverlay(marker);
+	    // 	var label = new BMap.Label("Building 2", {offset:new BMap.Size(0,-20)});
+	    // 	marker.setLabel(label); //添加百度label
+	    // 	bm.setCenter(point);
+	    // }
+
+	    // setTimeout(function(){
+	    // 	BMap.Convertor.translate(ggPoint,2,translateCallback);     //GCJ-02坐标转成百度坐标
+	    // 	//translateCallback(ggPoint);
+	    // }, 1000);
+
+	    // $(document).ready(function() {
+
+	    // 	$('#chart1').highcharts({
+	    // 		chart: {
+	    // 			type: 'bar',
+     //                style: {
+	    // 				fontFamily: 'Open Sans'
+	    // 			}
+	    // 		},
+	    // 		title: {
+	    // 			text: '主要楼宇能耗开销百分比',
+     //                style: {
+	    // 				color: '#13843C',
+	    // 				fontWeight: 'bold'
+	    // 			}
+	    // 		},
+
+	    // 		xAxis: {
+	    // 			categories: ['A区一号楼', 'A区二号楼', 'A区三号楼', 'A区四号楼','A区五号楼 '],
+	    // 			title: {
+	    // 				text: null
+	    // 			}
+	    // 		},
+	    // 		yAxis: {
+	    // 			min : 0,
+	    // 			max : 100,
+	    // 			title: {
+	    // 				text: 'Percentage',
+	    // 				align: 'high'
+	    // 			},
+	    // 			labels: {
+	    // 				overflow: 'justify'
+	    // 			}
+	    // 		},
+	    // 		colors: ['#f45b5b', '#434348', '#90ed7d', '#f7a35c', '#8085e9', 
+	    // 		'#f15c80', '#e4d354', '#2b908f', '#f45b5b', '#91e8e1'],
+	    // 		tooltip: {
+	    // 			valueSuffix: '%'
+	    // 		},
+	    // 		plotOptions: {
+	    // 			bar: {
+	    // 				dataLabels: {
+	    // 					enabled: true
+	    // 				}
+	    // 			}
+	    // 		},
+	    // 		legend : {
+	    // 			enabled : false
+	    // 		},
+	    // 		credits: {
+	    // 			enabled: false
+	    // 		},
+	    // 		series: [{
+	    // 			data: [40, 30, 34, 54, 36],
+     //                color: '#87C359'
+	    // 		}]
+	    // 	});
+	    // });
+
+
+
+
+	</script>
+{% endblock extra_js %}

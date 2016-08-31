@@ -1,0 +1,40 @@
+{
+  "name": "Equota",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Client side js for Equota",
+  "keywords": [],
+  "dependencies": {
+    "hbsfy": "2.1.0",
+    "bluebird": "*",
+    "handlebars": "*",
+    "underscore": "*",
+    "jquery": "*",
+    "backbone": "*",
+    "node-uuid": "*",
+    "csv-parse": "*",
+    "backbone.paginator": "*",
+    "jquery-ui": "*",
+    "moment": "*",
+    "jqwidgets-framework": "*",
+    "browserify-cryptojs": "*",
+    "jstree": "*",
+    "datatables": "*",
+    "md5": "*"
+  },
+  "scripts": {
+    "start": "node main.js",
+    "debug": "node debug main.js"
+  },
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/nickrechard/wholeren/archive/master.zip"
+  },
+  "author": "han",
+  "license": "",
+  "devDependencies": {
+    "gulp-livereload": "^3.8.1",
+    "jasmine": "^2.2.1"
+  }
+}

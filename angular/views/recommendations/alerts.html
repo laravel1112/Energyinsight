@@ -1,0 +1,71 @@
+<ion-view view-title="楼宇信息">
+<!-- 	<ion-list>
+		<ion-item ui-sref="root.home.unit.reports.alerts.details({id: $index})" nav-direction="forward" ng-repeat="item in alerts" >
+	            <h4 class="lh20 m0" ng-bind="item.title">节能信息早知道</h4>
+	            <span class="fs14 wsnw" ng-bind="item.created| date:'MMM dd, yyyy'"></span> &mdash; 
+	            <span class="fs14" ng-bind="item.category" ng-style="{color: getCategoryColor(item.category)}"></span>
+	            <p ng-bind-html="item.content | to_trusted">在过度季节及冬季，可以通过室外 含值比对送风设置点，当室外温度...</p>
+		</ion-item>
+	</ion-list>
+ -->	
+
+	<!-- HEADER -->
+    <ion-header-bar align-title="center" class="bar-balanced flex-noresize">
+        
+        <div class="title">
+            <h3>{{$state.current.data.title}}</h3>
+            <h5>{{$state.current.data.subtitle}}</h5>
+        </div>
+        <div class="buttons">
+            <button class="btn btn-link" ng-click="getExporter().toPDF()"><i class="svg-arrow-down-circle"></i> <!-- 报告导出 --></button>
+            <!-- ??? 添加节能方案 ??? -->
+        </div>
+    </ion-header-bar>
+	<div class="layout layout-col p15" style="top: 70px;" export-pdf="{filePrefix: 'Recommendations.Summary'}">
+	<ion-list class="w100p p15" style="margin-top: -1px; overflow:auto;">
+	<div ng-repeat="(key, value) in alerts">
+        <ion-item class="item-divider" ng-bind="key" ion-affix data-affix-within-parent-with-class="list"  ></ion-item>
+        <ion-item ng-repeat="item in value" ng-click="setActiveView('content'); go('root.home.unit.recommendations.alerts.details', {id: $stateParams.id, aid: item.id}, 'forward');" class="layout rel" md-ink-ripple class="md-clickable" nav-transition="ios" nav-direction="forward">
+            <!-- <span class="fs12 wsnw" ng-bind="item.created| date:'MMM dd, yyyy'"></span> &mdash;  -->
+
+            <div class="flex-noresize pr20">
+                <button class="btn btn-link" style="width: 50px; height: 50px; border-radius: 100%; text-align: center;" ng-style="{background: getCategoryColor(item.type)}">
+	                <i class="icon-lightbulb-2 cfff fs24" ng-show="item.type == 1"></i>
+	                <i class="icon-snowflake cfff fs24" ng-show="item.type == 2"></i>
+	            </button>
+            </div>
+
+			<div class="jcc">
+			    <h3 class="m0" ng-bind="item.title"></h3>
+			    <p ng-bind="item.description">...</p>
+			</div>
+			<div class="jcc">
+			    <h3 class="m0" ></h3>
+			    <p>{{ item.energy_saved }} KWh</p>
+			</div>
+			<div class="jcc">
+			    <h3 class="m0" ></h3>
+			    <p>${{ item.saving_potential }}</p>
+
+			</div>
+         </ion-item>
+
+     </ion-list> -->
+    
+    <div class="layout layout-col p15 bg-lighter-gray ov">
+			
+		<div class="flex-noresize h75 ov" uib-dropdown auto-close="disabled" is-open="isCompareOpen" datepicker-append-to-body>
+
+            <div class="flex flex-row flex-resize flex-absolute p2">
+                <div class="flex flex-row flex-resize rel flex-center jcfe" uib-dropdown-toggle >
+                    	<span class="fs24 dib pr15">{{dateConfig.getDateRange()}}</span>
+                        <i class="svg-calendar-2 svg-35"></i>
+                </div>
+            </div>
+			
+
+         </ion-item>
+	</div>
+     </ion-list>
+	</div>
+</ion-view>

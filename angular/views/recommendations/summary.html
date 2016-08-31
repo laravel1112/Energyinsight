@@ -1,0 +1,102 @@
+﻿<ion-view>
+
+    <!--<div class="flex bg-lighter-gray" id="export-container" ng-cloak>--> <!-- walkthrough -->
+    
+    <!-- HEADER -->
+    <ion-header-bar align-title="center" class="bar-balanced flex-noresize">
+        <div class="buttons">
+            <button class="btn btn-link" ng-click="setActiveView('subnav')" ng-hide-gt-sm>
+                <i class="svg-arrow-left"></i>
+            </button>
+        </div>
+        <div class="title">
+            <h3>{{$state.current.data.title}}</h3>
+            <h5>{{$state.current.data.subtitle}}</h5>
+        </div>
+        <div class="buttons">
+            <button class="btn btn-link" ng-click="getExporter().toPDF()"><i class="svg-arrow-down-circle"></i> <!-- 报告导出 --></button>
+            <!-- ??? 添加节能方案 ??? -->
+        </div>
+    </ion-header-bar>
+
+    <!-- CONTENT -->
+
+    <div class="layout layout-col bg-lighter-gray p15 ov" style="top: 70px;" export-pdf="{filePrefix: 'Recommendations.Summary'}">
+    
+        <div class="flex-noresize h75 ov" uib-dropdown auto-close="disabled" is-open="isCompareOpen" datepicker-append-to-body>
+
+            <div class="flex flex-row flex-resize flex-absolute p2">
+                <div class="flex flex-row flex-resize rel flex-center jcfe" uib-dropdown-toggle >
+                        <span class="fs24 dib pr15">{{dateConfig.getDateRange()}}</span>
+                        <i class="svg-calendar-2 svg-35"></i>
+                </div>
+            </div>
+
+            <div class="uib-dropdown-menu datepicker" style="position: absolute; right: 0; left: 0; bottom:auto;  border: solid 1px #ccc;">
+
+                <div class="flex ">
+
+                    <div class="flex flex-row flex-resize" style="padding: 7.5px; background: #efefef; box-shadow: 0 5px 10px rgba(0,0,0,.05) inset;">
+                        <div class="flex  flex-center" style="padding: 7.5px">
+
+                            <div daterange="dateConfig"></div>
+
+                        </div>
+                    </div>
+
+                    <div class="flex " style="padding: 7.5px">
+                        <button class="btn btn-default btn-blue" ng-click="applyDateRange()">Apply</button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div> <!-- walkthrough-step="{ templateId: 'contentStep2'}" -->
+<!--             <div class="completed-recommendations"> -- walkthrough-step="{ templateId: 'contentStep3' }" --
+                <label>
+                    <input type="checkbox" ng-model="completedRecommendationToggle" ng-change="toggleCompleted()"/> 
+                    显示结束的建议
+                </label>
+            </div> -->
+            <div ui-grid="gridOptions1" class="ui-grid-custom flex-resize bg-white" ui-grid-auto-resize ui-grid-selection></div>
+        </div>
+
+    </div>
+</ion-view>
+
+<div id="walkthrough-content" style="display: none">
+    <!-- Recommendations Summary content guide -->
+    <!-- Export button -->
+    <div id="contentStep1" position="left">
+        <p>点击这里将当页导出pdf文件。</p>
+    </div>
+    <!-- Table -->
+    <div id="contentStep2" position="top">
+        <p>这里显示所有与该楼宇相关的建议。点击可以进入详情。</p>
+    </div>
+    <!-- Checkbox to show completed only -->
+    <div id="contentStep3" position="bottom">
+        <p>选择该项可以显示所有完成的建议。</p>
+    </div>
+    
+    <!-- Details -->
+
+    <!-- Selected row -->
+    <div id="contentStep4" position="bottom">
+        <p>TODO: Describe this section</p>
+    </div>
+    <!-- LEFT: Main indicators -->
+    <div id="contentStep5" position="right">
+        <p>TODO: Describe this section</p>
+    </div>
+    <!-- MIDDLE: Details text -->
+    <div id="contentStep6" position="top">
+        <p>TODO: Describe this section</p>
+    </div>
+    <!-- RIGHT: history records -->
+    <div id="contentStep7" position="left">
+        <p>TODO: Describe this section</p>
+    </div>
+</div>

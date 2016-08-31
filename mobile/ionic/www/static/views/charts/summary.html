@@ -1,0 +1,96 @@
+    <!-- Edit entity -->
+
+<ion-view title="Data" style="z-index: 2">
+
+    <div class="flex bg-white" style="flex: 1 0 auto;">
+
+        <!-- HEADER -->
+
+        <!--
+        <div class="heading flex-noresize" style="border-bottom: solid 1px #ccc;" hide-xs hide-sm>
+            <h3><i class="icon-bar-chart pr10"></i> {{$state.current.data.title}}</h3>
+            <h5 class="subHeader">{{$state.current.data.subtitle}}</h5>
+
+
+            <button type="button" class="btn btn-toggle" ng-model="toggleRefresh" ng-click="autoRefresh()" uib-btn-checkbox btn-checkbox-true="true" btn-checkbox-false="false" style="margin: 0; padding-left: 30px; padding-right: 30px;"> -- walkthrough-step="{ templateId: 'contentStep1' }" --
+                <i class="icon-refresh"></i>
+            </button>
+        </div> 
+        -->
+
+        <ion-header-bar align-title="center" class="bar-balanced flex-noresize" ng-show="false">
+            <div class="buttons">
+                <button class="btn btn-link" ng-click="setActiveView('subnav')" hide-gt-sm>
+                    <i class="svg-arrow-left"></i>
+                </button>
+            </div>
+            <div class="title">
+                <h3>{{$state.current.data.title}}</h3>
+                <h5>{{$state.current.data.subtitle}}</h5>
+            </div>
+            <div class="buttons">
+                <button type="button" class="btn btn-toggle" ng-model="toggleRefresh" ng-click="autoRefresh()" uib-btn-checkbox btn-checkbox-true="true" btn-checkbox-false="false" style="margin: 0; padding-left: 30px; padding-right: 30px;"> <!-- walkthrough-step="{ templateId: 'contentStep1' }" -->
+                    <i class="icon-refresh"></i>
+                </button>
+            </div>
+        </ion-header-bar>
+
+        <div class="flex flex-resize" ng-class="{ 'blur flex-absolute': $state.includes('root.charts.summary.edit')  || $state.includes('root.charts.summary.import')}">
+
+            <!-- FILTER -->
+
+            <div class="rel filter-bar" style="background: #eee; padding: 10px 10px 0px;">
+                <button class="btn btn-default" ng-click="showMeterDetails()" ng-style="{ 'width': (meterDetails ? '250px' : 'auto'), 'text-align': (meterDetails ? 'left' : 'center') }"> <!-- walkthrough-step="{ templateId: 'contentStep2'}" -->
+                    <i class="icon-menu"></i>
+                    <span ng-show="meterDetails"> Close details</span>
+                </button>
+                
+                <div class="btn-group" ng-repeat="meter in chartOptions1.series | filter: { influxKey: '' } " ng-style="{background: meter.color, color: 'white'}" ng-mouseenter="highlightSeries(meter, true)" ng-mouseleave="highlightSeries(meter, false)">
+                    <button type="button" class="btn btn-transparent" ng-bind="meter.name" ng-click="showMeterDetails()" title="{{meter.name}}">---</button>
+                    <button type="button" class="btn btn-transparent dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-click="removeMeter($event, meter)">
+                        <i class="icon-close"></i> 
+                    </button> 
+                </div>
+
+                <button class="btn btn-link fr p0" ng-click="go('root.charts.summary'); setActiveView('subnav')" ng-click="" hide-gt-sm>
+                    <!-- plus icon --> 
+                    <svg style="width: 30px; height: 30px;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 455 455" xml:space="preserve">
+                        <polygon fill="#555" points="455,212.5 242.5,212.5 242.5,0 212.5,0 212.5,212.5 0,212.5 0,242.5 212.5,242.5 212.5,455 242.5,455 242.5,242.5 455,242.5 "/>
+                    </svg>
+                </button>     
+
+                <button hide-xs hide-sm class="btn btn-danger fr" ng-click="resetMeters()" ng-disabled="chartOptions1.series.length == 0">清除全部</button> <!-- walkthrough-step="{ templateId: 'contentStep3' }" -->
+            </div>
+
+
+            <div class="flex rel p10" style="flex: 1 1 335px;background: #eee;">
+        
+                <!-- CHART -->
+
+                <div class="flex rel"> <!-- walkthrough-step="{ templateId: 'contentStep4' }" -->
+                    <highchart config="chartOptions1" highcharts-panning highcharts-redraw class="flex-absolute" style="background: #fff; border: solid 1px #ccc;"></highchart>
+                </div>
+                
+                <!-- GRID -->
+
+                <div class="flex flex-absolute p10" style="background: #eee;" ng-show="meterDetails">
+                    <div ui-grid="gridOptions1" class="ui-grid-small flex-resize" ui-grid-auto-resize style="background: #fff; border: solid 1px #ccc;"></div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- improved edit/add/import -->
+        <div class="transition slide-in-rtl flex-absolute" ng-class="{'slide-in': $state.includes('root.charts.summary.edit') || $state.includes('root.charts.summary.import')}">
+             <ion-nav-view name=""></ion-nav-view>
+        </div>
+
+    </div>
+</ion-view>
+
+
+    <!-- Backdroup -->
+    <div style="position: absolute; left: 0px; top: 0; right: 0; bottom: 0; z-index: 1; background: rgba(0,0,0, 0.1); transition: all 1s ease;" ng-click="formData = null" ng-style="{display: formData ? 'block' : 'none'}"></div>
+
+    <!-- Backdroup -->
+

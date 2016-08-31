@@ -1,0 +1,224 @@
+<!-- DESKTOP VERSION -->
+
+<ion-view class="flex" hide-nav-bar="true" walkthrough>
+
+
+    <div class="flex flex-resize bg-lighter-gray" export-pdf="{filePrefix: 'Report.Summary'}" hide-xs hide-sm>
+
+
+        <div class="flex flex-row flex-wrap" style="flex: 1 0 210px; max-height: 210px; padding: 15px 7.5px 7.5px;">
+            <!-- INDICATORS -->
+            <div class="flex-resize plr15" style="margin: 0 -7.5px;" >
+                <div class="panel panel-indicator panel-blue boxesTop" ng-click="isFirstVisible = !isFirstVisible" walkthrough-step="{ templateId: 'summaryStep2' }">
+                    <div class="panel-heading text-right">
+                        <i class="icon-plug lh0 fa-3vmax pa pa-left"></i>
+                        <div class="huge" id="monthly-total" ng-bind="(stats.thisMonthSamePeriod | number : 0) || '---'"></div>
+                        <div class="desc">当月总用电量 (kWh)</div>
+                    </div>
+                    <a href="javascript:void(0)">
+                        <div class="panel-footer">
+                            <span class="pull-left">查看详情</span>
+                            <span class="pull-right"><i class="icon-arrow-circle-right lh0"></i></span>
+                            <div class="clearfix"></div>
+                            <div class="popup-details" ng-show="isFirstVisible">
+                                从本月一号到当前为止的用电总量
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="flex-resize plr15" style="margin: 0 -7.5px;">
+                <div class="panel panel-indicator panel-light-blue boxesTop" ng-click="isSecondVisible = !isSecondVisible" walkthrough-step="{ templateId: 'summaryStep3' }">
+                    <div class="panel-heading text-right">
+                        <i class="icon-random lh0 fa-3vmax pa pa-left"></i>
+                        <div class="huge" id="compare-last-month" ng-bind="(stats.lastMonthCompare | number : 0)+'%' || '---'"></div>
+                        <div class="desc">去年同期比较</div>
+                    </div>
+                    <a href="javascript:void(0)">
+                        <div class="panel-footer">
+                            <span class="pull-left">查看详情</span>
+                            <span class="pull-right"><i class="icon-arrow-circle-right lh0"></i></span>
+                            <div class="clearfix"></div>
+                            <div class="popup-details" ng-show="isSecondVisible">
+                                与上月同期相比的用电量差值
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="flex-resize plr15" style="margin: 0 -7.5px;">
+                <div class="panel panel-indicator panel-light-orange boxesTop" ng-click="isThirdVisible = !isThirdVisible" walkthrough-step="{ templateId: 'summaryStep4' }">
+                    <div class="panel-heading text-right">
+                        <i class="icon-line-chart lh0 fa-3vmax pa pa-left"></i>
+                        <div class="huge" id="last-month-per-m" ng-bind="(stats.lastMonthEnergyPerSqr | number : 0) || '---'"></div>
+                        <div class="desc">综合能耗指标</div>
+                    </div>
+                    <a href="javascript:void(0)">
+                        <div class="panel-footer">
+                            <span class="pull-left">查看详情</span>
+                            <span class="pull-right"><i class="icon-arrow-circle-right lh0"></i></span>
+                            <div class="clearfix"></div>
+                            <div class="popup-details" ng-show="isThirdVisible">
+                                综合能耗指标时单位面积的年用电量
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="flex-resize plr15" style="margin: 0 -7.5px;">
+                <div class="panel panel-indicator panel-red boxesTop" ng-click="isForthVisible = !isForthVisible" walkthrough-step="{ templateId: 'summaryStep5' }">
+                    <div class="panel-heading text-right">
+                        <i class="icon-credit-card lh0 fa-3vmax pa pa-left"></i>
+                        <div class="huge" id="last-month-peak" ng-bind="(stats.lastMonthPeak/stats.lastMonthEnergy*100 | number : 0) +'%'|| '---'"></div>
+                        <div class="desc">高峰用电百分比(上个月)</div>
+                    </div>
+                    <a href="javascript:void(0)">
+                        <div class="panel-footer">
+                            <span class="pull-left">查看详情</span>
+                            <span class="pull-right"><i class="icon-arrow-circle-right lh0"></i></span>
+                            <div class="clearfix"></div>
+                            <div class="popup-details" ng-show="isForthVisible">
+                                高峰期用电的百分比
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex flex-row flex-resize plr15 pb15 rel" style="height: 490px;">
+            <div busy="isBusy"></div>
+
+            <!-- CHART -->
+            <div class="flex flex-resize-3 rel">
+		
+                <div class="panel-body tac flex flex-absolute plr15" style="background: #fff; border: solid 1px #eee; border-radius: 5px;"  walkthrough-step="{ templateId: 'trendStep4' }">
+		    <div>
+			<select style="float: right; width: 150px; margin-right: 15%; height: 25px" class="b0 on" ng-model="serieType" ng-change="switchSerie()">
+				<option value="0">Past 7 days</option>
+				<option value="1" selected>Past 30 days</option>
+				<option value="2">Past 12 months</option>
+			</select>
+		    </div>
+                    <highchart config="chartOptions1" class="flex-absolute ng-cloak" highcharts-redraw style="margin-top: 40px;"></highchart>
+                </div>
+            </div>
+            <!-- Building properties -->
+            <div class="flex flex-resize rel">
+                <div class="flex-resize rel bg-white" style="height: 140px; border: solid 1px #eee; width: 250px; padding-top: 10px; margin-left:12px;">
+                    <div>
+                        <font size="2" style="margin-left: 20px;">当日总能耗指示</font>
+                        <font size="2" style="margin-left: 20px;">当日高峰能耗指示</font>
+                    </div>
+                    <div>
+                        <highchart config="chartGaugeOptions1alt" highcharts-redraw class="flex-absoulte flex-resize" style="width: 100px; height: 120px; float:left; margin-left: 15px;"></highchart>
+                        <highchart config="chartGaugeOptions2alt" highcharts-redraw class="flex-resize" style="width: 100px; height: 120px; float:left; margin-left: 15px;"></highchart>
+                    </div>
+                </div>
+		        <!-- <highchart config="chartGaugeOptions1" class="flex-center flex-resize" highcharts-redraw></highchart> -->
+		    
+
+
+                <div class="panel panel-embedded panel-properties panel-properties-icons panel-light flex-resize" style="margin: 0 0 0 12px; border: solid 1px #eee;"  walkthrough-step="{ templateId: 'summaryStep7' }">
+
+                    <div class="panel-heading">楼宇概况</div>
+                    <div class="panel-body panel-body-table">
+
+                        <table class="table table-bordered">
+                            <tbody>
+                                <tr ng-repeat="item in properties" ng-show="properties.length > 0">
+                                    <!-- Interpolation is fine, however its better to use ng-bind to avoid flickering -->
+                                    <td class="pl0 tac"><i ng-class="getPropertyIcon(item.name)"></i></td>
+                                    <td class="pl0" width="75" ng-bind="item.alias"></td>
+                                    <td ng-bind="item.value"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MOBILE VERSION -->
+
+    <div hide-gt-sm class="flex bg-lighter-gray" style="min-height: 100%; flex: 1 0 auto;">
+
+
+
+        <div busy="isBusy"></div>
+
+
+        <div class="p5">
+            <div class="flex flex-row">
+                <div class="flex-resize p15" style="background: #fff; border:solid 1px #eee; font-size: 12px; white-space: nowrap; ">
+                    当月总用电量 (kWh)
+                    <h3 ng-bind="(stats.thisMonthSamePeriod | number : 0) || '---'"></h1>
+                </div>
+                <div class="flex-resize p15" style="background: #fff; border:solid 1px #eee; border-left:0; font-size: 12px;white-space: nowrap; ">
+                    上月同期比较
+                    <h3 ng-bind="(stats.lastMonthCompare | number : 0)+'%' || '---'"></h1>
+                </div>
+            </div>
+
+            <div class="flex flex-row">
+                <div class="flex-resize p15" style="background: #fff; border:solid 1px #eee; border-top:0; font-size: 12px; white-space: nowrap; ">
+                    综合能耗指标
+                    <h3 ng-bind="(stats.lastMonthEnergyPerSqr | number : 0) || '---'"></h1>
+                </div>
+                <div class="flex-resize p15" style="background: #fff; border:solid 1px #eee; border-top:0; border-left:0; font-size: 12px; white-space: nowrap; ">
+                    高峰用电百分比(上个月)
+                    <h3 ng-bind="(stats.lastMonthPeak/stats.lastMonthEnergy*100 | number : 0) +'%'|| '---'"></h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex flex-resize tac rel p5" style="padding-top: 0!important;">
+
+            <div class="flex rel" style="background: #fff; border:solid 1px #eee;">
+    <!--             <div ng-show="false" class="btn-group btn-group-colored" role="group" aria-label="..." style="padding: 5px; margin: 0 auto; display:inline-block;">
+                    <button type="button" class="btn btn-default" ng-class="{active: serieType == 0}" ng-click="switchSerie(0)">小时</button>
+                    <button type="button" class="btn btn-default" ng-class="{active: serieType == 1}" ng-click="switchSerie(1)">单日</button>
+                    <button type="button" class="btn btn-default" ng-class="{active: serieType == 2}" ng-click="switchSerie(2)">每月</button>
+                </div>
+     -->
+                 <highchart config="chartOptionsMobile" class="flex-absolute" highcharts-redraw highcharts-panning hm-pan="onPanning" hm-pinch="onPinching" hm-doubletap="onDoubletap"></highchart>
+            </div>
+        </div>
+
+
+    </div>
+
+
+</ion-view>
+
+<div id="walkthrough-content" style="display: none">
+    <!-- Export button -->
+    <div id="summaryStep1" position="left">
+        <p>点击这里将当页导出pdf文件。</p>
+    </div>
+    <!-- Indicator 1: Electricity consumption month total -->
+    <div id="summaryStep2" position="bottom">
+        <p>这里显示当月总用电量。</p>
+    </div>
+    <!-- Indicator 2: Compare last month over the same period indicator -->
+    <div id="summaryStep3" position="bottom">
+        <p>这里是与去年同期的比较。</p>
+    </div>
+    <!-- Indicator 3: Comprehensive energy consumption index -->
+    <div id="summaryStep4" position="bottom">
+        <p>综合能耗是单位平方米的年用电量。</p>
+    </div>
+    <!-- Indicator 4: Percentage of peak electricity -->
+    <div id="summaryStep5" position="bottom">
+        <p>这里显示高峰用电占所有用电的百分比。</p>
+    </div>
+    <!-- Chart -->
+    <div id="summaryStep6" position="top">
+        <p>该楼宇的总用电的曲线图，可以按小时，日和月显示。</p>
+    </div>
+    <!-- Properties -->
+    <div id="summaryStep7" position="left">
+        <p>这里是楼宇的基本信息。</p>
+    </div>
+</div>

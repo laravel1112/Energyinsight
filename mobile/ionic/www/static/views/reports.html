@@ -1,0 +1,26 @@
+<ion-view title="能源报告" view-title="能源报告" class="flex" ng-class="{'flex-row': !platform().isMobile()}">
+    <ion-header-bar align-title="center" class="bar-balanced">
+
+        <!-- TODO: enhanced navbar -->
+
+        <div class="buttons">
+            <button ng-hide="$state.includes('root.home.unit.reports.alerts.details')" class="btn btn-link" ng-click="setActiveView('subnav')" hide-gt-sm><i class="svg-arrow-left"></i></button>
+            <button ng-show="$state.includes('root.home.unit.reports.alerts.details')" class="btn btn-link" ng-click="go('root.home.unit.reports.alerts', {id: $stateParams.id}, 'back')"><i class="svg-arrow-left"></i></button>
+        </div>
+        <div class="title">
+            <h3>{{$state.current.data.title}}</h3>
+            <h5>{{$state.current.data.subtitle}}</h5>
+        </div>
+        <div class="buttons">
+            <button ng-hide="$state.includes('root.home.unit.reports.alerts.details')" class="btn btn-link" ng-click="showWalkthrough()" hide-xs hide-sm><i class="svg-help-circle"></i></button>
+            <button ng-hide="$state.includes('root.home.unit.reports.alerts.details')" class="btn btn-link" ng-click="getExporter().toPDF()"><i class="svg-arrow-down-circle"></i> <!-- 报告导出 --></button>
+
+            <button ng-show="$state.includes('root.home.unit.reports.alerts.details')" class="btn btn-link" ng-click="setAlertStatus(2)"><i class="svg-checked"></i></button>
+
+
+        </div>
+    </ion-header-bar>
+	<ion-content class="flex has-header xcontent" style="margin-top: 70px;">
+		<ion-nav-view class="flex flex-resize"></ion-nav-view>
+	</ion-content>
+</ion-view>

@@ -1,0 +1,63 @@
+env JWT_SECRET;
+worker_processes 1;
+error_log logs/error.log;
+
+events {
+    worker_connections 1024;
+}
+
+http {
+    lua_package_path "/webapp/jwt/?.lua;;";
+
+    upstream twisted {
+        server localhost:8000;
+    }
+
+    upstream django {
+        server localhost:8000;
+    }
+
+    upstream shiny {
+        server 52.87.232.48;
+    }
+
+    server {
+        listen 80;
+        server_name app.equotaenergy.com;
+        charset utf-8;
+        client_max_body_size 5M;
+
+        location ~ ^\/api\/(put|get)series {
+            uwsgi_pass twisted;
+            include /webapp/uwsgi_params;
+        }
+
+        location /static {
+            root /webapp/energyinsight2.0/static;
+        }
+
+        location / {
+            uwsgi_pass django;
+            include /webapp/uwsgi_params;
+        }
+    }
+
+    server {
+        listen 80;
+        server_name shiny.equotaenergy.com;
+        charset utf-8;
+        client_max_body_size 5M;
+
+        location / {
+            proxy_set_header Host $host;
+            proxy_http_version 1.1;
+            proxy_redirect off;
+            access_by_lua '
+                          local jwt =require("nginx-jwt")
+                          jwt.auth()
+                          '
+;
+            proxy_pass http://shiny/;
+        }
+    }
+}

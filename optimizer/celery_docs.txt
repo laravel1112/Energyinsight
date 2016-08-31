@@ -1,0 +1,94 @@
+Preparation:
+
+    pip install celery
+    pip install djcelery
+
+    python manage.by syncdb
+
+    Download and install Rabbitmq
+    http://www.rabbitmq.com/install-homebrew.html
+
+    Follow the instructions to some additional setup:
+    http://www.rabbitmq.com/download.html
+
+    Run manually rabbitmq-server.bat file to start rabbitmq server.
+    $ rabbitmq-server -detached
+
+Start Worker and Scheduler:
+
+1. Start celery worker with monitor option:
+    python manage.py celery worker -E --loglevel=info -Q low
+
+    for logging:
+    -f celery_log
+
+2. Send all the tasks for celery:
+    python manage.py celery -A energyinsight beat -l info
+
+3.  To delete tasks from scheduled list
+    go to Django admin panel, than Home › Djcelery › Periodic tasks.
+    Delete all the instances from there.
+    Resend tasks to Celery (python manage.py celery -A energyinsight beat -l info)
+
+
+4. If you update the existing task you should stop worker (from point 1 here) + restart Django server
+    + make instructions from point 3 here.
+
+
+Additional info:
+
+1. Start celery cam to view tasks at Django admin page in djCelery app (it is not needed with Flower app.
+    python manage.py celerycam
+
+2. Delete an old queue of tasks:
+    python manage.py celery purge -f
+
+3. To add external tool to monitor workers not with Django admin:
+    Flower - external package to monitor celery workers.
+
+    $ pip install flower
+    Running the flower command will start a web-server that you can visit:
+
+    $ python manage.py  celery -A energyinsight flower
+    The default port is http://localhost:5555, but you can change this using the –port argument:
+
+    $ celery -A proj flower --port=5555
+    Broker URL can also be passed through the –broker argument if needed:
+
+    $ celery flower --broker=amqp://guest:guest@localhost:5672//
+    or
+    $ celery flower --broker=redis://guest:guest@localhost:6379/0
+    Then, you can visit flower in your web browser :
+
+    go to  http://localhost:5555
+
+
+4. If the command
+        python manage.py celery -A energyinsight beat -l info
+    was launched, but worker was not started
+        python manage.py celery worker -E --loglevel=info
+    when it is launched it will receive and execute all overdue tasks at one moment.
+
+
+
+Making queue:
+    python manage.py celery worker -n anyWorkerName -f anyNameForLogFile -Q nameOfTheQueue
+    Example: python manage.py celery worker -n worker2 -f celery_log --loglevel=info -Q low
+
+
+Testing:
+    run in different terminals:
+
+    python manage.py celery worker -n worker1 -f celery_log --loglevel=info -Q low
+    python manage.py celery worker -n worker2 -f celery_log --loglevel=info -Q high
+    python manage.py celery worker -n worker4 -f celery_log --loglevel=info -Q scheduler
+
+   Look at celery+log file, you should see there "task test1"
+   Press Ctrl+c at first terminal, you should see that there is no more "task test1" in the log
+
+   python manage.py celery -A energyinsight beat -l info
+
+
+Last:
+    python manage.py celery -A energyinsight beat -l info
+    python manage.py celery worker -n worker1 -f celery_log --loglevel=info -Q low

@@ -1,0 +1,154 @@
+<ion-side-menus enable-menu-with-back-views="true">
+    <ion-side-menu-content drag-content="false" class="flex" ng-class="{'state-login': $state.current.name == 'root.login', 'state-home': $state.current.name == 'root.home'}">
+
+
+
+        <!-- MOBILE NAV BAR -->
+
+
+
+<!--         <ion-nav-bar hide-gt-sm ng-show="isAuthorized()" class="bar-balanced has-statusbar" align-title="center">
+            <ion-nav-back-button class="m0 bs0" class="button-icon button-clear">
+                <i class="icon-angle-left fs21"></i>
+            </ion-nav-back-button>
+            <ion-nav-buttons side="left">
+                <a ng-click="onBackClicked()" nav-direction="back" class="md-icon-button md-button" md-ink-ripple type="button" aria-label="Settings" style="line-height: 0; height: auto;z-index:100">
+                    <i class="icon-angle-left cfff" style="font-size:21px"></i>
+                </a>
+            </ion-nav-buttons>
+            <ion-nav-title>
+                H
+            </ion-nav-title>
+
+            <ion-nav-buttons side="right">
+                <button class="md-icon-button md-button" md-ink-ripple type="button" aria-label="Settings" style="line-height: 0; height: auto;" menu-toggle="right">
+                    <i class="icon-menu cfff" style="font-size:21px"></i>
+                </button>
+            </ion-nav-buttons>
+        </ion-nav-bar>
+ -->
+
+        <!-- LAYOUT -->
+
+        <div inspector stencil="layout" class="layout layout-main" ng-class="{ active: $state.current.name == 'root.home' }"> <!-- walkthrough -->
+
+            <!-- SIDEBAR 1 -->
+
+            <div id="nav" class="transition slide-in-ltr" ng-class="{'slide-in': isAuthorized() && $state.current.name != 'root.login'}">
+                
+                <!-- LOGO -->
+                <a class="logo" ui-sref="root.home" ng-click="setActiveView('content');" ng-style="{ 'background-image': 'url(' + account.company_logo + ')' }" style="background-size:contain;background-repeat:no-repeat;">
+                </a>
+
+                <!-- BROWSE -->
+                <a ui-sref="root.home" nav-direction="forward" ui-sref-active="selected" ng-click="setActiveView('subnav');">
+
+                    <i class="svg-report"></i>
+
+                    <span>Browse</span>
+                </a>
+
+                <!-- NEWS -->
+<!--                 <a ui-sref="root.news" nav-direction="forward" ui-sref-active="selected" ng-click="setActiveView('subnav');">
+                    <i class="svg-news"></i>
+                    <span>News</span>
+                </a>
+ -->
+                <!-- DATA -->
+                <a ui-sref="root.charts.summary" nav-direction="forward" ui-sref-active="selected" ng-click="setActiveView('subnav');">
+                    <i class="svg-charts"></i>
+                    <span>Compare</span>
+                </a>
+
+                <a class="divider" hide-xs hide-sm></a>
+
+                <!-- ACCOUNT -->
+                <a ng-style="{selected: $state.includes('root.account')}" style="overflow:hidden; max-height: 100px;">
+                    <!-- <i class="svg-user"></i> -->
+                        
+                        <div class="toggle-slider">
+                            <div ng-click="go('root.account.user'); setActiveView('subnav');" nav-direction="forward" class="profile-picture small-profile-picture clear transition slide-out-up" ng-class="{'slide-out': $state.includes('root.account')}">
+                                <div class="img-container" ng-style="{ 'background-image': 'url(' + account.avatar + ')' }"></div>
+                            </div>
+
+                            <i ng-click="logout();" class="svg-power transition slide-in-up" ng-class="{'slide-in': $state.includes('root.account')}"></i>
+                        </div>
+
+                    <span>Profile</span>
+                </a>
+            </div>
+
+            <!-- SIDEBAR 2 -->
+
+            <div id="subnav" resizable="{min: 70, max: 700, current: 365}" ng-show="isAuthorized()" ng-class="{active: activeView == 'subnav'}">
+
+                    <!-- SUBNAV VIEW -->
+
+                    <ion-nav-view name="subnav"></ion-nav-view>
+
+
+            </div>
+
+            <!-- CONTENT -->
+
+             <div id="content" ng-class="{active: activeView == 'content'}">
+
+                <!-- MAP -->
+                <!-- 企业地图 -->
+                
+                <ion-nav-view name="map" class="map" ng-class="{far: $state.current.name == 'root.login'}"></ion-nav-view>
+
+                <!-- CONTENT -->
+                
+                <div class="content">
+                    <ion-nav-view class="flex"></ion-nav-view>
+                </div>                            
+
+            </div>
+            
+        </div>
+
+    </ion-side-menu-content>
+
+    <!-- MOBILE NAV BAR -->
+
+    <ion-side-menu side="left" ng-show="isAuthorized()" hide-gt-sm>
+        <!--     <ion-header-bar class="bar-stable">
+          <h1 class="title">Left</h1>
+        </ion-header-bar> -->
+        <ion-content class="green" style="padding-top:22px">
+          <ion-list class="green">
+            <ion-item class="item-avatar" ui-sref="root.account.user" nav-direction="forward" menu-close nav-direction="forward">
+                <img src="static/image/default.avatar.png" style="box-shadow: 0 0 0 3px rgba(255,255,255,0.7)">
+                <h2>Demouser</h2>
+                <p>HollidayIn</p>
+            </ion-item>
+            <ion-item>
+                <ion-list class="select">
+                    <ion-item ng-click="toggleBuildings()" ng-bind="(buildings | filter: { id: $stateParams.id })[0].name">Select building...</ion-item>
+                    <ion-item class="item-stable" ng-show="buildingsExpanded()" ng-repeat="building in buildings | filter: { type: 1 }" ng-click="selectBuilding(building)" menu-close>
+                        {{building.name}}
+                    </ion-item>                
+                </ion-list>
+            </ion-item>
+            <ion-item menu-close ui-sref="root.home" nav-direction="exit">
+                首页
+            </ion-item>
+            <ion-item menu-close ui-sref="root.reports.summary({ id: 0 })" nav-direction="forward">
+                能源报告
+            </ion-item>
+            <ion-item menu-close ui-sref="root.recommendations.summary({ id: 0 })" nav-direction="forward">
+                优化方案
+            </ion-item>
+            <ion-item menu-close ui-sref="root.charts.summary({ id: 0 })" nav-direction="forward">
+                能源数据
+            </ion-item>
+            <ion-item menu-close ng-click="logout()">
+                退出
+            </ion-item>
+          </ion-list>
+        </ion-content>
+    </ion-side-menu>
+
+</ion-side-menus>
+

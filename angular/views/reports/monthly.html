@@ -1,0 +1,107 @@
+﻿<div class="flex bg-lighter-gray" style="flex: 1 0 auto;" walkthrough>
+
+<!-- 	<div class="heading flex-noresize" hide-xs hide-sm>
+	    <h3>{{$state.current.data.title}}</h3>
+	    <h5>{{$state.current.data.subtitle}}</h5>
+        <button class="btn btn-link" style="right: 150px; padding: 3px 10px;" ng-click="showWalkthrough()"><i class="icon-help lh0 fs34"></i></button>
+        <button class="btn btn-default btn-blue" ng-click="export()" walkthrough-step="{ templateId: 'monthlyStep1' }"><i class="icon-download mr5"></i> 报告导出</button>
+	</div> -->
+	<div busy="isBusy"></div>
+	<div class="flex flex-row flex-resize rel layout-p15 layout-lt-sm-p5" export-pdf="{filePrefix: 'Report.Monthly'}" >
+        
+	    <div class="flex rel b1eee bg-white" style="width: 70%;">
+	        <highchart config="chartOptions1" class="flex-resize flex-absolute" highcharts-redraw highcharts-panning walkthrough-step="{ templateId: 'monthlyStep2' }"></highchart>
+	    </div>
+
+	    <div class="flex rel b1eee bg-white flex-resize flex-absolute">
+	        <highchart config="chartOptions2" highcharts-redraw highcharts-panning style="width: 100%; height: 100%"></highchart>
+	    </div>
+	    
+	</div>
+	<div>
+	    <div class="bg-white bottom">
+		<div class="slide-container">
+			<div class="b-row">
+				<img src="static/image/piechart.png" height="40px" class="row-item row-icon">
+				<div class="row-item" style="width:70%">
+					<div class="b-title">年用电量:</div>
+					<div class="b-content">
+						<span class="b-number">{{ totalKWh | number:0 }}</span>
+						<span class="b-unit">KWh</span>
+					</div>
+				</div>
+			</div>
+			<div class="b-row">
+				<img src="static/image/yen-circle-blue-128.png" height="40px" class="row-item row-icon">
+				<div class="row-item" style="width:70%">
+					<div class="b-title">年电费:</div>
+					<div class="b-content">
+						<span class="b-number">{{ totalCost | number:0}}</span>
+						<span class="b-unit">元</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="v-separator"></div>
+		<div class="slide-container" style="margin-left: 15px;">
+			<div class="b-row">
+				<img src="static/image/1_128x128_poll_icon.png" height="40px" class="row-item row-icon">
+				<div class="row-item" style="width:70%">
+					<div class="b-title">单位面积年用电量<font size="2"></font>:</div>
+					<div class="b-content">
+						<span class="b-number">{{ totalKWh_m2 | number:2 }}</span>
+						<span class="b-unit">KWh/m<sup>2</sup></span>
+					</div>
+				</div>
+			</div>
+			<div class="b-row">
+				<img src="static/image/yen-circle-blue-128.png" height="40px" class="row-item row-icon">
+				<div class="row-item" style="width:70%">
+					<div class="b-title">单位面积年电费:<font size="2"></font></div>
+					<div class="b-content">
+						<span class="b-number">{{ totalCost_m2 | number:2}}</span>
+						<span class="b-unit">元/m<sup>2</sup></span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="v-separator"></div>
+		<div class="slide-container" style="width: 38%; height: 95%;">
+				<div class="row-item" id="oval">
+					<div style="color: white; font-size: 25px; margin-top: 30px;" class="compare-number">{{ last_30_days | number:0 }}</div>
+					<div style="color: white; font-size: 12px;">KWh</div>
+				</div>
+				<div class="row-item" style="margin-top: 10px;">
+					<div class="b-title">能耗对比<br/>相比去年同期:</div>
+					<div style="margin: 5px 0px 0px 0px;">
+						<img src="static/image/{{ promote_icon }}.png" width="25px"/>
+						<span class="b-number" style="color: black; font-size: 18px;">{{ promote | number:2 }} %</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+        </div>
+        
+</div>
+<!-- <div class="flex bg-lighter-gray" id="export-container" hide-gt-xs>
+
+    <div class="flex flex-row rel p15">
+        <div busy="isBusy"></div>
+        <div class="flex rel b1eee bg-white" style="border-radius: 5px;">
+            <highchart config="chartOptions1" class="flex-absolute p15" highcharts-redraw></highchart>
+        </div>
+    </div>
+
+</div> -->
+
+<div id="walkthrough-content" style="display: none">
+    <!-- Export button -->
+    <div id="monthlyStep1" position="left">
+        <p>点击这里将当页导出pdf文件。</p>
+    </div>
+    <!-- Chart -->
+    <div id="monthlyStep2" position="top">
+        <p>这里是楼宇的总用电量，每一条形棒是一个月的总量。当月的平均温度也在同时显示。</p>
+    </div>
+</div>

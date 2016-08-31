@@ -1,0 +1,66 @@
+<!-- DESKTOP VERSION -->
+<style>
+  .full button span {
+    background-color: limegreen;
+    border-radius: 32px;
+    color: black;
+  }
+  .partially button span {
+    background-color: orange;
+    border-radius: 32px;
+    color: black;
+  }
+  .custom_date_picker th {
+      vertical-align:middle;
+  }
+</style>
+<ion-view class="flex" hide-nav-bar="true" walkthrough>
+
+
+    <div class="flex flex-row flex-resize bg-lighter-gray" export-pdf="{filePrefix: 'Report.Daily'}" hide-xs hide-sm>
+
+
+        <div class="flex flex-resize" style="min-width: 325px; max-width: 325px; padding: 15px 7.5px 7.5px;" style="height:100%;">
+            <!-- INDICATORS -->
+            <div style="display:inline-block; min-height:290px;">
+              <uib-datepicker ng-model="dt" min-date="minDate" show-weeks="true" starting-day="1" class="custom_date_picker well well-sm" custom-class="getDayClass(date, mode)" ng-change="dateChanged()"></uib-datepicker>
+            </div>
+
+            <!-- Building properties -->
+
+
+            <div class="flex rel b1eee bg-white regular-table state" style="height:100%;">
+                <table style="display: flex; flex-flow: column;" style="height:100%;">
+                  <thead style="display:table; width: 100%;">
+                    <tr>
+                      <th>Performance Metrics</th>
+                    </tr>
+                  </thead>
+                  <tbody style="overflow-y: auto;">
+                            <tr ng-repeat="item in properties" ng-show="properties.length > 0" style="display: table;  width: 100%;">
+                                <!-- Interpolation is fine, however its better to use ng-bind to avoid flickering -->
+                              <td>
+                            <strong ng-bind="item.alias"></strong>
+                            <div class="r-value" ng-bind="item.value"></div>
+                              </td>
+                            </tr>
+                  </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="flex flex-resize-3 plr15 pb15 rel" style="padding: 15px 7.5px 7.5px;">
+    	    <div class="flex flex-row rel b1eee bg-white br5 flex-resize">
+	            <highchart config="chartOptions1" highcharts-redraw highcharts-panning style="width: 100%; height: 100%"></highchart>
+	        </div>
+            <div class="flex flex-row rel b1eee flex-resize" style=" min-height:150px; margin-top: 15px;">
+                <div class="flex rel flex-resize-3 bg-white br5">
+                    <highchart config="chartOptions2" class="flex-resize flex-absolute" highcharts-redraw highcharts-panning></highchart>
+                </div>
+                <div class="flex rel flex-resize-2 bg-white br5">
+                    <highchart config="chartOptions3" class="flex-resize flex-absolute" highcharts-redraw highcharts-panning></highchart>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</ion-view>

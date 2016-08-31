@@ -1,0 +1,25 @@
+<!-- TODO: Refactor this mess -->
+<div ui-tree-handle data-nodrag ng-style="{opacity: node.nodes.length == 0 && (node.type == 2 || node.type == 1) ? '0.4' : '1' }">
+    <a class="expander" data-nodrag style="position: absolute; left: -21px; top: 0; line-height: 22px;"" ng-show="node.type == 3 && node.nodes.length > 0">
+        <i ng-click="toggle(this)" style="font-size:11px;" ng-class="{ 'icon-plus-square-o': this.collapsed, 'icon-minus-square-o': !this.collapsed }"></i>
+    </a>
+
+    <a class="icon lh20" data-nodrag>
+        <i ng-click="toggle(this)" class="lh24" ng-class="{ 'icon-building fs14': node.type == 1, 'icon-building-6 fs16': node.type == 2, 'icon-gauge-4 lh24': node.type == 3, 'icon-schedule-2 lh24': node.type == 4, 'icon-temperature lh24': node.type == 7 }" ng-style="{ 'color': node.color }"></i>
+    </a>
+    <!-- groups & buildings -->
+    <a class="text editable" ng-show="node.nodes.length > 0 && node.type != 3" ng-click="toggle(this);" ng-class="{selected: isSelected(node.id)}">
+        <i class="fa icon-pencil" ng-click="edit(node, $event);" ng-style="{color: node.color}"></i>
+        <span ng-bind="node.name"></span>
+    </a>
+    <!-- meters -->
+    <a class="text pl25 editable" ng-hide="node.nodes.length > 0 && node.type != 3" ng-click="toggleSeries(node, this)" ng-style="{ 'color': node.color }">
+        <i class="fa icon-pencil offset" ng-click="edit(node, $event);" ng-style="{color: node.color}"></i>
+        <i class="fa icon-circle" ng-click="toggleSeries(node, null, $event);" ng-show="node.color" ng-class="{active: node.color}" ng-style="{background: node.color }"></i>
+        <span ng-bind="node.name"></span>
+    </a>
+</div>
+<ol ui-tree-nodes="" ng-model="node.nodes" ng-class="{hidden: collapsed}">
+    <li ng-repeat="node in node.nodes" ui-tree-size ui-tree-node ng-include="'/static/views/charts/templates/tree-node.html'" data-collapsed="true">
+    </li>
+</ol>

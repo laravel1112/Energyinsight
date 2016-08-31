@@ -1,0 +1,46 @@
+ <div class="flex flex-column" style="overflow: hidden; border-bottom: solid 1px #dfdfdf">
+                            
+    <ion-header-bar align-title="center" class="bar-balanced flex-noresize" hide-gt-sm>
+        <div class="buttons">
+            <button class="btn btn-link" ng-click="go('root.home', {}, 'back'); setActiveView('content')">
+                <i class="svg-arrow-left"></i>
+            </button>
+        </div>
+        <div class="title">
+            <h3>{{$state.current.data.title}}</h3>
+            <h5>{{$state.current.data.subtitle}}</h5>
+        </div>
+        <div class="buttons">
+            <button class="btn btn-link" ng-click="go('root.home', {}, 'back'); setActiveView('content')">
+                <svg style="width: 25px; height: 25px;" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 466.583 466.582" style="enable-background:new 0 0 466.583 466.582;" xml:space="preserve">
+                    <path fill="#FFFFFF" d="M233.292,0c-85.1,0-154.334,69.234-154.334,154.333c0,34.275,21.887,90.155,66.908,170.834 c31.846,57.063,63.168,104.643,64.484,106.64l22.942,34.775l22.941-34.774c1.317-1.998,32.641-49.577,64.483-106.64 c45.023-80.68,66.908-136.559,66.908-170.834C387.625,69.234,318.391,0,233.292,0z M233.292,233.291c-44.182,0-80-35.817-80-80 s35.818-80,80-80c44.182,0,80,35.817,80,80S277.473,233.291,233.292,233.291z"/>
+                </svg>
+            </button>
+        </div>
+    </ion-header-bar>
+
+    <div class="has-header-fix bar-search flex-noresize">
+        <!-- SEARCH -->
+
+
+        <form class="navbar-form navbar-left" role="search">
+            <div class="form-group">
+                <div class="fake-input">
+                    <i class="icon-search lh0"></i>
+                    <input type="text" placeholder="Search" ng-model="search.term">
+                </div>
+            </div>
+        </form>
+
+    </div>
+
+    <!-- UNITS LIST -->
+
+    <ion-view class="has-search-fix flex-resize rel"> <!-- class="has-header" -->
+        <ion-content class="list-group" class="navswitcher">
+            <building-list config="buildingListConfig"></building-list>
+        </ion-content>
+    </ion-view>
+
+
+</div>

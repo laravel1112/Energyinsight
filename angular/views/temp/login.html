@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <title>Hello World</title>
+        <link rel="stylesheet" href="/static/css/app.min.css" />
+        <link rel="stylesheet" type="text/css" href="css.css" />
+    </head>
+    <body ng-cloak style="min-height:100%;">
+
+        <div layout="column" layout-xs="row" layout-align="center center" layout-align-xs="center stretch" flex style="min-height: 100%">
+            <form method="post" action="" layout-align="center center" layout-align-xs="center stretch" layout="column" flex>
+
+                <md-card style="min-width:400px;" layout="column" layout-align-xs="center stretch" layout-align-xs="center stretch" flex-xs>
+
+                    <md-card-header flex layout="row" layout-align="center center">
+                        <div style="width:199px">
+                            <img src="/static/image/EQuota(project-edition).gif">
+                        </div>
+                    </md-card-header>
+                    
+                    <md-card-content flex>
+                        <md-input-container class="md-block">
+                            <label>Username</label>
+                            <input required name="username" ng-model="project.description">
+                            <!-- <div ng-messages="projectForm.description.$error">
+                                <div ng-message="required">This is required.</div>
+                                <div ng-message="md-maxlength">The name has to be less than 30 characters long.</div>
+                            </div> -->
+                        </md-input-container>
+            
+                        <md-input-container class="md-block">
+                            <label>Password</label>
+                            <input type="password" autocomplete="new-password" required name="password" ng-model="project.clientName">
+                            <!-- <div ng-messages="projectForm.clientName.$error">
+                              <div ng-message="required">This is required.</div>
+                            </div> -->
+                        </md-input-container>
+                        <md-input-container class="tac" layout="row" layout-align="center center">
+                            <a href="#">Forgot password?</a>
+                        </md-input-container>
+                    </md-card-content>
+                    
+                    <md-card-footer layout-align="end stretch" layout="row" flex>
+                      <md-button class="md-raised md-primary">Sign in</md-button>
+                    </md-card-footer>
+                </md-card>
+               
+            </form>
+          </div>
+
+
+        <!-- Compiled script -->
+        <script src="/static/js/vendor.min.js" type="text/javascript"></script>
+        <script src="/static/js/vendor.highcharts.min.js" type="text/javascript"></script>
+        <script src="/static/js/app.min.js" type="text/javascript"></script>
+    </body>
+</html>

@@ -1,0 +1,73 @@
+<div class="bbm-modal__topbar">
+    <h3 class="bbm-modal__title">New Service</h3>
+</div>
+<div class="bbm-modal__section">
+<form>
+<!-- Should contain ContractCategory, Country, Degree, Lead, LeadLevel, PaymentOption, Status as select input. Service, and User as multiple selection. contract is main. -->
+ <fieldset>
+
+        <div class="form-group">
+            <label >First Name</label>
+            <input value="{{service/contract/client/firstName}}" disabled/>
+            <p></p>
+        </div>
+        <div class="form-group">
+            <label >Last Name</label>
+            <input value="{{service/contract/client/lastName}}" disabled/>
+            <label >{{service/contract/client/lastName}}</label>
+            <p></p>
+        </div>
+        <div class="form-group">
+            <label >Chinese Name</label>
+            <input value="{{service/contract/client/chineseName}}" disabled/>
+            <p></p>
+        </div>
+        <div class="form-group">
+            <label >Email</label>
+            <input value="{{service/contract/client/primaryEmail}}" disabled/>
+            <p></p>
+        </div>
+</fieldset>
+ <fieldset>
+        <div class="form-group">
+            <label >录取</label>
+            <select id="succeed" >
+                <option value="false">NO</option>
+                <option value="true" {{#if succeed }}selected{{/if}}>YES</option>
+        </select>
+        <p></p>
+        </div>
+        <div class="form-group">
+            <label >新开发？</label>
+            <select id="newDev"   >
+                <option value="false" {{#ifCond newDev false}}selected{{/ifCond}}>NO</option>
+                <option value="true" {{#ifCond newDev true}}selected{{/ifCond}}>YES</option>
+        </select>
+        <p></p>
+        </div>
+        <div class="form-group">
+            <label >所申学校</label>
+            <input id="collageName"  type="text" value="{{collageName}}" />
+            <p></p>
+        </div>
+         <div class="form-group">
+            <label >申请入读学期</label>
+            <input id="appliedSemester"  type="text" value="{{appliedSemester}}" />
+            <p></p>
+        </div>        
+</fieldset>
+<fieldset>
+    <div class="form-group">
+        <label>writer</label>
+        <select id="writer">
+            <option></option>
+        </select>
+    </div>
+</fieldset>
+
+</form>
+</div>
+<div class="bbm-modal__bottombar">
+    <a href="#" class="bbm-button cancel">Close</a>
+    <a href="#" class="bbm-button ok">OK</a>
+</div>

@@ -1,0 +1,45 @@
+<ion-view class="flex-column">
+
+    <ion-header-bar align-title="center" class="bar-balanced flex-noresize" hide-gt-sm>
+        <div class="buttons">
+            <button class="btn btn-link" ng-click="setActiveView('content'); go('root.home', {}, 'back');">
+                <i class="svg-arrow-left"></i>
+            </button>
+        </div>
+        <div class="title">
+            <h3>{{$state.current.data.title}}</h3>
+            <h5>{{$state.current.data.subtitle}}</h5>
+        </div>
+        <div class="buttons">
+        </div>
+    </ion-header-bar>
+
+	<ion-content class="news xcontent p0 rel" scroll-event-interval="5">
+
+	
+
+		<!--<ion-list>
+				<ion-item ui-sref="root.news.details({id: $index})" nav-direction="forward" ng-repeat="item in newsItems" >
+			            <h4 class="lh20 m0" ng-bind="item.title">节能信息早知道</h4>
+			            <span class="fs14 wsnw" ng-bind="item.created| date:'MMM dd, yyyy'"></span> &mdash; 
+			            <span class="fs14" ng-bind="item.category" ng-style="{color: getCategoryColor(item.category)}"></span>
+			            <p ng-bind-html="item.content | to_trusted">在过度季节及冬季，可以通过室外 含值比对送风设置点，当室外温度...</p>
+				</ion-item>
+			</ion-list> -->
+			<ion-list class="w100p flex-absolute" ng-repeat="(key, value) in newsItems" style="margin-top: -1px;">
+		        <ion-item class="item-divider" ng-bind="key" ion-affix data-affix-within-parent-with-class="list"></ion-item>
+		        <ion-item ng-repeat="item in value" ng-click="setActiveView('content'); go('root.news.details', {id: $index}, 'forward');" md-ink-ripple class="md-clickable" nav-transition="ios" nav-direction="forward">
+		            <!-- <span class="fs12 wsnw" ng-bind="item.created| date:'MMM dd, yyyy'"></span> &mdash;  -->
+					<div ng-style="{background: getCategoryColor(item.category)}" style="position:absolute; left: 0; top: -1px; bottom: -1px; width: 5px; "></div>
+
+					<div class="flex flex-row flex-center" ng-style="{color: getCategoryColor(item.category)}" style="position:absolute; left: 0; top: 0; bottom: 0; width: 95px;">
+						<span class="flex tac" ng-bind="item.category"></span>
+					</div>
+
+		            <h4 class="m0" ng-bind="item.title" style="padding-left: 100px"></h4>
+		            <p ng-bind-html="item.content | to_trusted" style="padding-left: 100px">...</p>
+		         </ion-item>
+		     </ion-list>
+
+	</ion-content>
+</ion-view>

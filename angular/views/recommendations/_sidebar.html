@@ -1,0 +1,48 @@
+﻿<div class="panel panel-small" hide-xs hide-sm ng-cloak>
+    <div class="panel-heading"><i class="icon-building-filled"></i>选择您要查看楼宇</div>
+    <div class="panel-body">
+        <div uib-dropdown>
+            <button type="button" class="btn btn-default dropdown-toggle" uib-dropdown-toggle role="menu" aria-labelledby="single-button">
+                <span ng-bind="(items | filter: { id: $stateParams.id })[0].name">Select building</span> <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu uib-dropdown-menu">
+                <li ng-repeat="item in items | filter: { type: 1 }"><a ng-click="selectBuilding(item)" ng-bind="item.name">Loading...</a></li>
+            </ul>
+        </div>
+        <!--<select class="woBorderDropdown">
+            <option style="text-decoration:underline;">building 1</option>
+            <option>building 2</option>
+            <option>building 3</option>
+        </select>-->
+    </div>
+</div>
+
+<nav class="settings-menu" hide-xs hide-sm ng-cloak>
+    <ul class="list-group">
+        <!-- summary -->
+        <li class="list-group-item" ui-sref-active="active"><a ui-sref="root.recommendations.summary"><i class="icon-pagelines lh20"></i> 节能方案</a></li>
+        <!-- strategies -->
+        <li class="list-group-item" ui-sref-active="active"><a ui-sref="root.recommendations.strategies"><i class="icon-flask lh20"></i> 策略分析</a></li>
+        <!-- configuration -->
+        <li class="list-group-item" ui-sref-active="active"><a ui-sref="root.recommendations.configuration"><i class="icon-cog lh20"></i> 实时监测</a></li>
+    </ul>
+</nav>
+
+
+<div class="flex flex-noresize" hide-gt-sm ng-cloak style="border: solid 1px #eee; margin: 5px 5px 0 5px; background: #fafafa;" ng-show="false">
+        
+    <div expandable-list items="links" style="background: #fff;"></div>
+
+<!--    
+        <ion-list>
+            <ion-item ng-click="showLinks()" style="border-top:0;">
+                {{$state.current.data.title}}
+            </ion-item>
+            <ion-item ng-repeat="link in links" ng-show="areLinksShown()" ng-click="onLinkClicked(link)">
+                {{link.name}}
+            </ion-item>
+
+        </ion-list>
+ -->
+
+</div>

@@ -1,0 +1,1 @@
+browserify -t hbsfy app.js --full-paths | discify --open

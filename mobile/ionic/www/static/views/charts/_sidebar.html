@@ -1,0 +1,37 @@
+<!--  <div class="nav-header centered">
+
+    <a class="selectedUnit" md-ink-ripple>
+        <div class="title  flex flex-column">
+            <h3>选择能源表比较</h3>
+        </div>
+    </a>
+
+</div>
+ -->
+<ion-view>
+    <ion-header-bar align-title="center" class="bar-balanced flex-noresize">
+        <div class="buttons">
+            <button class="btn btn-link" ng-click="go('root.charts.summary', {}, 'back'); setActiveView('subnav')" ng-show="false">
+                <i class="svg-arrow-left"></i>
+            </button>
+        </div>
+        <div class="title">
+            <h3 ng-show="$state.current.data.title.length > 0">{{$state.current.data.title}}</h3>
+            <h5 ng-show="$state.current.data.subtitle.length > 0">{{$state.current.data.subtitle}}</h5>
+        </div>
+        <div class="buttons">
+        </div>
+    </ion-header-bar>
+
+    <ion-content class="xcontent p0 pt15 rel">
+
+        <!-- SUBNAV CONTENT -->
+
+        <div class="ion-tree-list" ui-tree data-drag-delay="500" data-nodrag>
+            <div ui-tree-nodes="" ng-model="nodes" id="tree-root">
+                <div ng-repeat="node in nodes" ui-tree-node ng-include="'/static/views/charts/templates/ion-tree-node.html'"></div>
+            </div>
+        </div>
+
+    </ion-content>
+</ion-view>

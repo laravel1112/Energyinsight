@@ -1,0 +1,14 @@
+<div class="carousel-inner" role="listbox">
+	{{#if this}}
+	   {{#each this}}
+		<div class="item {{#if active}}active{{/if}}">
+			<p class="ticker-headline">
+				<a href="＃">
+					<strong>{{event_msg}}</strong>&nbsp &nbsp &nbsp
+					{{date}}
+				</a>
+			</p>
+		</div>
+		{{/each}}
+	{{/if}}
+</div>

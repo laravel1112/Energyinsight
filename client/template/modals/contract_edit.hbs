@@ -1,0 +1,211 @@
+<div class="bbm-modal__topbar">
+    <h3 class="bbm-modal__title">New Contract</h3>
+</div>
+<div class="bbm-modal__section">
+<form>
+<!-- Should contain ContractCategory, Country, Degree, Lead, LeadLevel, PaymentOption, Status as select input. Service, and User as multiple selection. contract is main. -->
+ <fieldset>
+
+        <div class="form-group">
+            <label >First Name</label>
+            <input id="client.firstName" name="general[client.firstName]" type="text" value="{{client.firstName}}" data-rValid="isNotNull"/>
+            <p></p>
+        </div>
+        <div class="form-group">
+            <label >Last Name</label>
+            <input id="client.lastName" name="general[client.lastName]" type="text" value="{{client.lastName}}" data-rValid="isNotNull"/>
+            <p></p>
+        </div>
+        <div class="form-group">
+            <label >Chinese Name</label>
+            <input id="client.chineseName" name="general[client.chineseName]" type="text" value="{{client.chineseName}}" data-rValid="isNotNull"/>
+            <p></p>
+        </div>
+        <div class="form-group">
+            <label >Client ID</label>
+            <select id="client.id" name="general[client]" >
+                <option value="{{client.id}}">{{client.primaryEmail}}</option>
+
+            </select>
+            <p></p>
+        </div>
+        <div class="form-group">
+            <label >Email</label>
+            <input id="client.primaryEmail" name="general[client.primaryEmail]" type="text" value="{{client.primaryEmail}}" data-oValid="isEmail"/>
+            <p></p>
+        </div>
+        <div class="form-group">
+            <label >Email2</label>
+            <input id="client.secondaryEmail" name="general[client.secondaryEmail]" type="text" value="{{client.secondaryEmail}}" data-oValid="isEmail"/>
+            <p></p>
+        </div>
+        <div class="form-group">
+            <label >Phone Number</label>
+            <input id="client.primaryPhone" name="general[client.primaryPhone]" type="text" value="{{client.primaryPhone}}" data-oValid="isInt"/>
+            <p></p>
+        </div>
+        <div class="form-group">
+            <label >Phone Number2</label>
+            <input id="client.secondaryPhone" name="general[client.secondaryPhone]" type="text" value="{{client.secondaryPhone}}" data-oValid="isInt"/>
+            <p></p>
+        </div>
+        <div class="form-group">
+            <label >其它联系方式</label>
+            <input id="client.otherInfo" name="general[client.otherInfo]" type="text" value="{{client.otherInfo}}" />
+            <p></p>
+        </div>
+</fieldset>
+ <fieldset>
+        <div class="form-group">
+            <label >销售组</label>
+            <select id="salesGroup" name="general[salesGroup]"  >
+            <option></option>
+            </select>
+            <p></p>
+        </div>
+        <div class="form-group">
+            <label >咨询服务类别</label>
+            <select id="contractCategory" name="general[contractCategory]"  >
+            <option></option>
+            </select>
+            <p></p>
+        </div>
+         <div class="form-group">
+            <label >首次咨询日期</label>
+            <input id="createTime" name="general[createTime]" type="text" value="{{createTime}}" disabled/>
+            <p></p>
+        </div>
+        
+</fieldset>
+
+ <fieldset>
+        <div class="form-group">
+            <label >Lead种类</label>
+            <select id="lead" name="general[lead]"  >
+            <option></option>
+        </select>
+        <p></p>
+        </div>
+        <div class="form-group">
+            <label >Lead Level</label>
+            <select id="leadLevel" name="general[leadLevel]"  >
+            <option></option>
+        </select>
+        <p></p>
+        </div>
+         <div class="form-group">
+            <label >Lead介绍人</label>
+            <input id="leadName" name="general[leadName]" type="text" value="{{leadName}}" />
+            <p></p>
+        </div>
+        <div class="form-group">
+            <label >签约状态</label>
+            <select id="status" name="general[status]"  >
+            <option></option>
+        </select>
+        <p></p>
+        </div>
+</fieldset>
+
+<fieldset>
+        <div class="form-group">
+            <label >当前所在地</label>
+            <select id="country" name="general[country]"  >
+            <option></option>
+        </select>
+        <p></p>
+        </div>
+        <div class="form-group">
+            <label >I-20是否有效</label>
+            <select id="validI20" name="general[validI20]"  >
+            <option value="true" {{#if validI20 }} selected {{/if}}>有效</option>
+            <option value="false" {{#if validI20}} {{else}}selected {{/if}}>无效</option>
+        </select>
+        <p></p>
+        </div>
+         <div class="form-group">
+            <label >原学校</label>
+            <input id="previousSchool" name="general[previousSchool]" type="text" value="{{previousSchool}}" />
+            <p></p>
+        </div>
+        <div class="form-group">
+            <label >目标学校</label>
+            <input id="targetSchool" name="general[targetSchool]" type="text" value="{{targetSchool}}" />
+            <p></p>
+        </div>
+        <div class="form-group">
+            <label >GPA</label>
+            <input id="gpa" name="general[gpa]" type="text" value="{{gpa}}" />
+            <p></p>
+        </div>
+        <div class="form-group">
+            <label >TOEFL</label>
+            <input id="toefl" name="general[toefl]" type="text" value="{{toefl}}" />
+            <p></p>
+        </div>
+        <div class="form-group">
+            <label >咨询时年龄</label>
+            <input id="age" name="general[age]" type="text" value="{{age}}" />
+            <p></p>
+        </div>
+        <div class="form-group">
+            <label >就读学位</label>
+            <select id="degree" name="general[degree]"  >
+            <option></option>
+        </select>
+        <p></p>
+        </div>
+ </fieldset>  
+  <fieldset> 
+        <div class="form-group">
+            <label >何弃疗</label>
+            <input id="diagnose" name="general[diagnose]" type="text" value="{{diagnose}}" />
+            <p></p>
+        </div>
+        <div class="form-group">
+            <label >签约日</label>
+            <input id="contractSigned" name="general[contractSigned]" type="text" value="{{contractSigned}}" />
+            <p></p>
+        </div>
+        <div class="form-group">
+            <label >签约价</label>
+            <input id="contractPrice" name="general[contractPrice]" type="text" value="{{contractPrice}}" disabled/>
+            <p></p>
+        </div>
+         <div class="form-group">
+            <label >$150 学校申请费</label>
+            <select id="applicationFeePaid" name="general[applicationFeePaid]"  >
+            <option value="false" {{#if applicationFeePaid}} {{else}}selected{{/if}}>未交</option>
+            <option value="true" {{#if applicationFeePaid }} selected {{/if}}>已交</option>
+        </select>
+        <p></p>
+        </div>
+
+
+     </fieldset> 
+
+      <fieldset> 
+
+        <div class="form-group">
+            <label >付款方式</label>
+            <select id="paymentOption" name="general[paymentOption]"  >
+            <option></option>
+        </select>
+        <p></p>
+        </div>
+        <div class="form-group">
+            <label >是否收尾款</label>
+            <select id="endFee" name="general[endFee]"  >
+            <option value="false" {{#if endFee}}{{else}} selected {{/if}}>否</option>
+            <option value="true" {{#if endFee}} selected {{/if}}>是</option>
+            
+        </select>
+        <p></p>
+        </div>
+        </fieldset> 
+</form>
+</div>
+<div class="bbm-modal__bottombar">
+    <a href="#" class="bbm-button cancel">Close</a>
+    <a href="#" class="bbm-button ok">OK</a>
+</div>

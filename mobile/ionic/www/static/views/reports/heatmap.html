@@ -1,0 +1,70 @@
+<div class="flex bg-lighter-gray" style="flex: 1 0 auto;" walkthrough>
+
+<!-- <div class="heading flex-noresize" hide-xs hide-sm>
+	    <h3>{{$state.current.data.title}}</h3>
+	    <h5>{{$state.current.data.subtitle}}</h5>
+        <button class="btn btn-link" style="right: 150px; padding: 3px 10px;" ng-click="showWalkthrough()"><i class="icon-help lh0 fs34"></i></button>
+        <button class="btn btn-default btn-blue" ng-click="export()" walkthrough-step="{templateId: 'heatmapStep1'}"><i class="icon-download mr5"></i> 报告导出</button>
+	</div> -->
+
+	<ion-header-bar align-title="center" class="bar-balanced flex-noresize">
+        <div class="buttons">
+            <button class="btn btn-link" ng-click="go('root.home.unit.tools.analysis', {id: $stateParams.id})">
+                <i class="svg-arrow-left"></i>
+            </button>
+        </div>
+        <div class="title">
+            <h3>{{$state.current.data.title}}</h3>
+            <h5>{{$state.current.data.subtitle}}</h5>
+        </div>
+        <div class="buttons">
+
+        </div>
+    </ion-header-bar>
+
+	<div class="flex rel layout-p15 layout-lt-sm-p5" export-pdf="{filePrefix: 'Report.Heatmap'}">
+		<div busy="isBusy"></div>
+	    <div class="flex-noresize rel bg-white b1eee p10 mb7h" style="border-radius: 5px;min-height:35px" walkthrough-step="{ templateId: 'heatmapStep2' }">
+	       	<select ng-model="year" ng-change="updateChart()" class="w100p h35 b0 on" walkthrough-step="{ templateId: 'heatmapStep3' }">
+	       		<option value="1">去年</option>
+	       		<option value="2">前年</option>
+	       	</select>
+	    </div>
+	    <div class="flex rel" style="background: #fff; border: solid 1px #eee; border-radius: 5px;" walkthrough-step="{ templateId: 'heatmapStep2' }">
+        	<highchart config="highchartsNG" class="flex-absolute " highcharts-redraw highcharts-panning hm-pan="onPanning" hm-pinch="onPinching" hm-doubletap="onDoubletap"></highchart>
+	    </div>
+	</div>
+
+</div>
+
+<!-- <div class="flex bg-lighter-gray" id="export-container" hide-gt-xs>
+
+	<div class="flex rel p15">
+		<div busy="isBusy"></div>
+	    <div class="flex-noresize rel bg-white b1eee p10 mb7h" style="border-radius: 5px;min-height:35px">
+	       	<select ng-model="year" ng-change="updateChart()" class="w100p h35 b0 on">
+	       		<option value="1">去年</option>
+	       		<option value="2">前年</option>
+	       	</select>
+	    </div>
+	    <div class="flex rel" style="background: #fff; border: solid 1px #eee; border-radius: 5px;">
+        	<highchart config="highchartsNG" class="flex-absolute  p15"></highchart>
+	    </div>
+	</div>
+
+</div> -->
+
+<div id="walkthrough-content" style="display: none">
+    <!-- Export button -->
+    <div id="heatmapStep1" position="left">
+        <p>点击这里将当页导出pdf文件。</p>
+    </div>
+    <!-- Dropdown -->
+    <div id="heatmapStep2" position="top">
+        <p>用电量在一年中纵向总览。用电高峰为暖色显示，用电低谷为冷色。每一竖行表示一天，当天的温度转化为HDD和CDD。</p>
+    </div>
+    <!-- Heatmap -->
+	<div id="heatmapStep3" position="bottom">
+        <p>在这里可以选择时去年或者前一年。</p>
+    </div>
+</div>

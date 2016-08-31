@@ -1,0 +1,1 @@
+watchify -t hbsfy app.js --full-paths -o ../common/static/js/all.js -v

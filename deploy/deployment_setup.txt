@@ -1,0 +1,37 @@
+sudo apt-get install -y git python-virtualenv python-pip fabric libreadline-dev libncurses5-dev libpcre3-dev libssl-dev perl make build-essential
+
+# wget and unzip and install openresty
+export PATH=/usr/local/openresty/bin:/usr/local/openresty/nginx/sbin:$PATH
+#Also need to add to .bashrc
+
+mkdir webapp
+cd webapp
+# activate virtual enviroment
+virtualenv venv
+source venv/bin/activate
+
+# now install uwsgi
+pip install uwsgi
+
+
+#git checkout energyinsight2.0
+cd energyinsight2.0
+#uwsgi --socket :8002 --module energyinsight.wsgi --chmod-socket=666
+cd ..
+
+#now nginx server
+mkdir server
+cd server
+mkdir log/ conf/
+
+cp ../energyinsight2.0/energyinsight_nginx.conf ./conf/
+
+#download the lua jwt from 
+#https://github.com/auth0/nginx-jwt/releases/download/v1.0.1/nginx-jwt.tar.gz
+
+env JWT_SECRET="XXXXXXX" run nginx -p `pwd`/ -s start 
+
+
+
+
+

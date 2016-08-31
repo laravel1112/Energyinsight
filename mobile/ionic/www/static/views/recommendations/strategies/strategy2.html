@@ -1,0 +1,177 @@
+<div class="flex bg-lighter-gray" id="export-container">
+    <!-- HEADER -->
+    <ion-header-bar align-title="center" class="bar-balanced flex-noresize">
+        <div class="buttons">
+            <button class="btn btn-link" ng-click="go('root.home.unit.tools.strategies', {id: $stateParams.id})">
+                <i class="svg-arrow-left"></i>
+            </button>
+        </div>
+        <div class="title">
+            <h3>{{$state.current.data.title}}</h3>
+            <h5>{{$state.current.data.subtitle}}</h5>
+        </div>
+        <div class="buttons">
+            <button class="btn btn-link" ng-click="getExporter().toPDF()"><i class="svg-arrow-down-circle"></i> <!-- 报告导出 --></button>
+            <!-- ??? 添加节能方案 ??? -->
+        </div>
+    </ion-header-bar>
+
+    <div class="flex bg-lighter-gray rel p15" style="flex: 1 1 335px; height: 100%; width: 100%;">
+        <div busy="loading" on-cancel="onCancelStrategy"></div>
+
+        <div class="flex flex-row flex-noresize">
+            <div class="flex-resize">
+
+                <table class="table table-bordered table-colored table-nowrap" style="background: #fff; margin-bottom: 15px;">
+                    <thead>
+                        <tr>
+                            <th colspan="1" class="text-center">分析时间段</th>
+                            <th colspan="4" class="text-center">July 1, 2015 - Nov 30, 2015</th>
+                            
+                            <th colspan="1" class="text-center">分析结果</th>
+                            <th colspan="3" class="text-center">
+                                <rzslider rz-slider-model="time" ng-class="'zoom2'" rz-slider-options="sliderConfig"></rzslider>
+                            </th>
+                        </tr>
+                        <tr class="gray"> 
+                            <th colspan="1" class="text-center">时段</th>                        
+                            
+                            <th>当前用电量</th>
+                            <th>当前电费</th>
+                            <th>调整份额</th>
+                            <th>调整后电费差值</th>
+                            <th colspan="2" class="text-center">非夏时</th>
+                            <th colspan="2" class="text-center">夏时</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="title gray fwn tac">峰值</td>
+                            
+                            <td><div  ng-bind="((stats.usage.h | number : 1) || '---')+'kWh'"></div></td>
+                            <td><div  ng-bind="'￥'+((stats.charge.h | number : 1) || '---')"></td>
+                            <td><div  ng-bind="((stats.change.h | number : 1) || '---')+'kWh'"></td>
+                            <td><div  ng-bind="'￥'+((stats.priceDiff.h | number : 1) || '---')"></td>
+                            <td>8-11, 18-21</td>
+                            <td>¥1.196/kWh</td>
+                            <td>8-11, 13-15, 18-21</td>
+                            <td>¥1.231kWh</td>
+
+                        </tr>
+                        <tr>
+                            <td class="title gray fwn tac">平值</td>
+                            
+                            <td><div  ng-bind="((stats.usage.m | number : 1) || '---')+'kWh'"></div></td>
+                            <td><div  ng-bind="'￥'+((stats.charge.m | number : 1) || '---')"></td>
+                            <td><div  ng-bind="((stats.change.m | number : 1) || '---')+'kWh'"></td>
+                            <td><div  ng-bind="'￥'+((stats.priceDiff.m | number : 1) || '---')"></td>
+                            <td>6-8, 11-18, 21－22</td>
+                            <td>¥0.734/kWh</td>
+                            <td>6-8, 15-18, 21-22</td>
+                            <td>¥0.769kWh</td>
+
+                            
+                        </tr>
+                        <tr>
+                            <td class="title gray fwn tac">谷值</td>
+                            
+                            <td><div  ng-bind="((stats.usage.l | number : 1) || '---')+'kWh'"/></td>
+                            <td><div  ng-bind="'￥'+((stats.charge.l | number : 1) || '---')"></td>
+                            <td><div  ng-bind="((stats.change.l | number : 1) || '---')+'kWh'"/></td>
+                            <td><div  ng-bind="'￥'+((stats.priceDiff.l | number : 1) || '---')"></td>
+                            <td>22-6</td>
+                            <td>¥0.357/kWh</td>
+                            <td>22-6</td>
+                            <td>¥0.292kWh</td>
+
+                            
+                        </tr>
+                        <tr>
+                            <td class="title gray fwn tac">总计</td>
+                            
+
+                            <td><div ng-bind="((stats.usage.h+stats.usage.m+stats.usage.l | number:1)||'---')+'kWh'"/></td>
+                            <td><div ng-bind="'￥'+((stats.charge.h+stats.charge.m+stats.charge.l|number:1)||'---')"/></td>
+                            <td><div ng-bind="((stats.change.h+stats.change.m+stats.change.l|number:1)||'---')+'kWh'"/></td>
+                            <td><div ng-bind="'￥'+((stats.priceDiff.h+stats.priceDiff.l|number:1)||'---')"/></td>
+                            <td colspan="4"></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+            <!--<div class="flex-resize">
+
+                <table class="table table-bordered table-nowrap" style="background: #fff; margin-left: -1px;">
+                    <thead>
+                        <tr>
+                            <th colspan="1" class="text-center">分析结果</th>
+                            <th colspan="3" class="text-center">
+                                <rzslider rz-slider-model="time" rz-slider-options="{floor: 0, ceil: 4, onChange: change}">
+                                </rzslider>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>当前用电量</th>
+                            <th>当前电费</th>
+                            <th>调整份额</th>
+                            <th>调整后电费差值</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>265.8 kWh</td>
+                            <td>¥2,924</td>
+                            <td>－124kWh</td>
+                            <td>－$1230</td>
+                        </tr>
+                        <tr>
+                            <td>262.5 kWh</td>
+                            <td>¥2,888</td>
+                            <td>0</td>
+                            <td>$36</td>
+                        </tr>
+                        <tr>
+                            <td>206.6 kWh</td>
+                            <td>¥2,273</td>
+                            <td>－124kWh</td>
+                            <td>¥651</td>
+                        </tr>
+                        <tr>
+                            <td>812.9 kWh</td>
+                            <td>¥12341</td>
+                            <td>0</td>
+                            <td>－¥1651</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>-->
+        </div>
+
+        <div class="flex flex-row flex-resize rel">
+            
+
+            <div class="flex -2 rel m0">
+                <div class="flex  " style="background: #fff; border: solid 1px #eee; border-radius: 5px;">
+
+                    <highchart config="highchartNG" class="flex-absolute p15" highcharts-redraw></highchart>
+
+                </div>
+            </div>
+            <div class="flex ">
+                <div class="flex  p15" style="background: #fff; border: solid 1px #eee; border-radius: 5px;">
+                    <div class="flex flex-resize rel">
+                        <highchart config="chartGaugeOptions1" class="flex-absolute flex-resize" highcharts-redraw></highchart>
+                    </div>
+                    <div class="flex flex-resize rel">
+                        <highchart config="chartGaugeOptions2" class="flex-absolute flex-resize" highcharts-redraw></highchart>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>

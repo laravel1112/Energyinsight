@@ -1,0 +1,131 @@
+<ion-view dialog-prompt="newImportEntryConfig" class="layout layout-col">
+
+	<div class="header">
+	    <ion-header-bar align-title="center" class="bar-balanced">
+	        <div class="buttons">
+	            <button hide-gt-sm class="btn btn-link" ng-click="go('root.charts.summary.edit', { uid: $stateParams.uid }, 'back'); setActiveView('subnav');">
+	                <svg style="width: 30px; height: 30px;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 197.402 197.402" xml:space="preserve" width="512px" height="512px">
+	                    <g>
+	                        <polygon points="146.883,197.402 45.255,98.698 146.883,0 152.148,5.418 56.109,98.698 152.148,191.98" fill="#FFFFFF"/>
+	                    </g>
+	                </svg>
+	            </button>
+	        </div>
+	        <div class="title">
+	            <h3 ng-bind="formData.name"></h3>
+	            <h5>IMPORT</h5>
+	        </div>
+	        <div class="buttons">
+	<!--             <button class="btn btn-link" ng-click="resetProperties()">
+	                <svg style="width: 30px; height: 30px;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 367.136 367.136" style="enable-background:new 0 0 367.136 367.136;" xml:space="preserve">
+	                    <path d="M336.554,86.871c-11.975-18.584-27.145-34.707-44.706-47.731L330.801,0H217.436v113.91L270.4,60.691  c40.142,28.131,65.042,74.724,65.042,124.571c0,83.744-68.13,151.874-151.874,151.874S31.694,269.005,31.694,185.262  c0-58.641,32.781-111.009,85.551-136.669l-13.119-26.979C73.885,36.318,48.315,59.1,30.182,87.494  c-18.637,29.184-28.488,62.991-28.488,97.768c0,100.286,81.588,181.874,181.874,181.874s181.874-81.588,181.874-181.874  C365.442,150.223,355.453,116.201,336.554,86.871z" fill="#FFFFFF"/>
+	                </svg>
+	            </button>
+	            <button class="btn btn-link" ng-disabled="editForm.$invalid" ng-click="saveProperties()">
+	                <svg style="width: 30px; height: 30px;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 333.488 333.488" style="enable-background:new 0 0 333.488 333.488;" xml:space="preserve">
+	                    <g>
+	                        <path d="M268.796,0.003H38.561C17.295,0.003,0,17.298,0,38.564v256.36c0,21.266,17.295,38.561,38.561,38.561h21.523h213.692h21.151   c21.266,0,38.561-17.295,38.561-38.561V64.689L268.796,0.003z M77.591,19.284h28.085v66.511c0,2.269,0.463,4.409,1.183,6.427   H84.018c-3.548,0-6.427-2.886-6.427-6.427C77.591,85.795,77.591,19.284,77.591,19.284z M241.996,29.412v52.674   c0,4.351-3.515,7.879-7.873,7.879h-18.702c-4.357,0-7.886-3.528-7.886-7.879V29.412c0-4.351,3.528-7.879,7.886-7.879h18.702   C238.481,21.533,241.996,25.061,241.996,29.412z M72.938,320.625V187.069c0-7.095,5.765-12.854,12.854-12.854h162.278   c7.082,0,12.854,5.758,12.854,12.854v133.556H72.938z M320.635,294.918c0,14.184-11.536,25.707-25.707,25.707h-21.151V187.069   c0-14.184-11.536-25.707-25.707-25.707H85.792c-14.178,0-25.707,11.523-25.707,25.707v133.556H38.561   c-14.178,0-25.707-11.523-25.707-25.707V38.564c0-14.178,11.53-25.707,25.707-25.707h26.176v72.938   c0,10.643,8.638,19.281,19.281,19.281h40.939h121.306c10.643,0,19.28-8.638,19.28-19.281V14.926l55.091,55.084   C320.635,70.011,320.635,294.918,320.635,294.918z M94.764,198.265h143.942v17.558H94.764V198.265z M94.764,238.644h143.942v17.545   H94.764V238.644z M94.764,279.018h106.499v17.558H94.764V279.018z" fill="#FFFFFF"/>
+	                    </g>
+	                </svg>
+	            </button>
+	 -->
+	<!-- 			<button class="btn btn-link" ng-click="addImportEntry()">
+	                -- <i class="icon-plus"></i> --
+	                <svg style="width: 30px; height: 30px;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+						<g>
+							<path d="M40,50c0,2.762-2.238,5-5,5H5c-2.762,0-5-2.238-5-5s2.238-5,5-5h30C37.762,45,40,47.238,40,50z    M35,65H5c-2.762,0-5,2.238-5,5s2.238,5,5,5h30c2.762,0,5-2.238,5-5S37.762,65,35,65z M97,45H80V28c0-2.762-2.238-3-5-3   s-5,0.238-5,3v17H53.5c-2.762,0-3,2.238-3,5s0.238,5,3,5H70v17c0,2.762,2.238,3,5,3s5-0.238,5-3V55h17c2.762,0,3-2.238,3-5   S99.762,45,97,45z M35,25H5c-2.762,0-5,2.238-5,5s2.238,5,5,5h30c2.762,0,5-2.238,5-5S37.762,25,35,25z" fill="#FFFFFF"/>
+						</g>
+					</svg>
+	            </button> -->
+
+	            <div class="fileUpload btn btn-link flex-center" style="height: auto;" ng-hide="importGridOptions.data.length > 0">
+					<!-- <span>导入csv文件</span> -->
+					<svg style="width: 30px; height: 30px;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 64 64" xml:space="preserve">
+						<g>
+							<path id="Folder-open" d="M63.3723412,25.6000996c-0.6543007-0.9403992-1.7304001-1.5028992-2.877903-1.5028992h-6.2128983  v-2.7520008c0-2.5429993-2.0693016-4.6112995-4.6133003-4.6112995H26.5403404v-2.1787004  c0-1.6728992-0.6787014-3.3114996-1.8623009-4.4960995c-1.1835995-1.1826-2.8223-1.8613005-4.4951-1.8613005H4.2366395  c-2.336,0-4.2364001,1.9003-4.2364001,4.2363005v38.5878983c0,2.2423019,1.6084,4.1114998,3.7309,4.5242004  c0.4443998,0.1665993,0.9203,0.2560005,1.4077997,0.2560005H48.089138c0.5276031,0,1.0423012-0.0681,1.5486031-0.1669006h0.0304985  c0.1590996,0,0.3040009-0.0449982,0.4375-0.1109009c2.5597992-0.6592979,4.7182007-2.5197983,5.6621017-5.0668983  l8.0136986-21.6366997C64.1799393,27.7446003,64.0266418,26.5405006,63.3723412,25.6000996z M4.2366395,10.1977997h15.9463005  c1.1464996,0,2.2695007,0.4647999,3.0809994,1.2753c0.8106003,0.8116007,1.2764015,1.9356003,1.2764015,3.0820999v3.1787004  c0,0.5527,0.4473,1,1,1h24.1278992c1.4413986,0,2.6133003,1.1718998,2.6133003,2.6112995v2.7520008H13.5676394  c-1.4667997,0-2.7938995,0.9237995-3.3007002,2.2978001L2.0002396,48.7131996V12.4341002  C2.0002396,11.2006998,3.0032396,10.1977997,4.2366395,10.1977997z M61.9065399,28.1254997l-8.0136986,21.6366997  c-0.7358017,1.9860001-2.4468002,3.4191017-4.4609032,3.8731003H4.6116395c-0.1128001,0-0.2202997-0.0194016-0.3294001-0.0334015  c-0.3133998-0.148098-0.5909998-0.3694-0.7945998-0.6619987c-0.3760002-0.5410004-0.4639001-1.2313995-0.2364001-1.847599  l8.8915997-24.0029011c0.2188005-0.5937996,0.7910004-0.9921989,1.4247999-0.9921989h46.9267998  c0.4932022,0,0.955101,0.2411995,1.2363014,0.6455002C62.0120392,27.1469994,62.0774384,27.6636009,61.9065399,28.1254997z" fill="#FFFFFF"/>
+						</g>
+					</svg>
+	                <input type="file" class="upload" file-handler on-selected="onFileSelected($fileContent)"/>
+	            </div>
+	            <button class="btn btn-link" ng-click="onSaveImport($event)" ng-show="importGridOptions.data.length > 0" style="height: auto; line-height: 100%;">
+	            	<!-- 上传 -->
+
+	            </button>
+	            <button class="btn btn-link" ng-click="cancelImport()" ng-show="importGridOptions.data.length > 0" style="height: auto; line-height: 100%;">
+	            	<!-- 取消 -->
+					<svg style="width: 30px; height: 30px;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"  x="0px" y="0px" viewBox="0 0 31.112 31.112" xml:space="preserve">
+						<polygon fill="#FFFFFF" points="31.112,1.414 29.698,0 15.556,14.142 1.414,0 0,1.414 14.142,15.556 0,29.698 1.414,31.112 15.556,16.97 29.698,31.112 31.112,29.698 16.97,15.556 "/>
+					</svg>
+	            </button>
+
+
+	            <button class="btn btn-link" ng-click="onSaveImport(); popover.show($event)" ng-show="importGridOptions.data.length > 0" style="height: auto; line-height: 100%;">
+					<svg style="width: 30px; height: 30px;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 49 49" xml:space="preserve">
+						<g>
+							<path d="M39.914,0H37.5h-28h-9v49h7h33h8V8.586L39.914,0z M35.5,2v14h-24V2H35.5z M9.5,47V28h29v19H9.5z M46.5,47h-6V26h-33v21h-5   V2h7v16h28V2h1.586L46.5,9.414V47z" fill="#FFFFFF"/>
+							<path d="M13.5,33h7c0.553,0,1-0.447,1-1s-0.447-1-1-1h-7c-0.553,0-1,0.447-1,1S12.947,33,13.5,33z" fill="#FFFFFF"/>
+							<path d="M23.5,35h-10c-0.553,0-1,0.447-1,1s0.447,1,1,1h10c0.553,0,1-0.447,1-1S24.053,35,23.5,35z" fill="#FFFFFF"/>
+							<path d="M25.79,35.29c-0.181,0.189-0.29,0.45-0.29,0.71s0.109,0.52,0.29,0.71C25.979,36.89,26.229,37,26.5,37   c0.26,0,0.52-0.11,0.71-0.29c0.18-0.19,0.29-0.45,0.29-0.71s-0.11-0.521-0.29-0.71C26.84,34.92,26.16,34.92,25.79,35.29z" fill="#FFFFFF"/>
+							<path d="M33.5,4h-6v10h6V4z M31.5,12h-2V6h2V12z" fill="#FFFFFF"/>
+						</g>
+					</svg>
+	            </button>
+
+
+	        </div>
+	    </ion-header-bar>
+
+	</div>
+
+	<!-- Import meter data -->
+
+    <div class="panel">
+        <div busy="isBusy"></div>
+      	<div class="buttons rel">
+            <button class="btn btn-link rel" ng-click="addImportEntry()" md-ink-ripple>
+                <!-- 保存 -->
+                <svg style="width: 30px; height: 30px;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 455 455" xml:space="preserve">
+                    <polygon points="455,212.5 242.5,212.5 242.5,0 212.5,0 212.5,212.5 0,212.5 0,242.5 212.5,242.5 212.5,455 242.5,455 242.5,242.5 455,242.5 "/>
+                </svg>
+
+            </button>           
+
+            <button class="btn btn-link rel" ng-click="deleteSelected()" md-ink-ripple ng-show="selectedRows.length > 0">
+				<svg style="width: 30px; height: 30px;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"  x="0px" y="0px" viewBox="0 0 31.112 31.112" xml:space="preserve">
+					<polygon points="31.112,1.414 29.698,0 15.556,14.142 1.414,0 0,1.414 14.142,15.556 0,29.698 1.414,31.112 15.556,16.97 29.698,31.112 31.112,29.698 16.97,15.556 "/>
+				</svg>
+            </button>           
+
+        </div>
+
+		<!--
+	         <div class="panel-heading">
+	            <h3 class="panel-title">数据添加
+	                <button class="btn btn-default btn-green fr ml5" style="margin: 0;height: auto; line-height: 100%" ng-click="addImportEntry()">
+	                    <i class="icon-plus"></i>
+	                </button>
+	                <div class="fileUpload btn btn-default btn-blue fr" style="height: auto; line-height: 100%;" ng-hide="importGridOptions.data.length > 0">
+	                    <span>导入csv文件</span>
+	                    <input type="file" class="upload" file-handler on-selected="onFileSelected($fileContent)" >
+	                </div>
+	                <button class="btn btn-default btn-blue fr" ng-click="onSaveImport()" ng-show="importGridOptions.data.length > 0" dialog-prompt="importConfig" style="height: auto; line-height: 100%;">上传</button>
+	                <button class="btn btn-link fr" ng-click="cancelImport()" ng-show="importGridOptions.data.length > 0" style="height: auto; line-height: 100%;">取消</button>
+	            </h3>
+	        </div> 
+        -->
+
+<!-- 		<ion-content class="flex flex-column flex-resize" style="top: 50px!important">
+ --> 	        
+ 		<!-- <div ui-grid="importGridOptions" class="ui-grid-bordered flex flex-resize" ui-grid-selection ui-grid-auto-resize ui-grid-edit ui-grid-cellNav ng-style="getTableHeight()">
+	    </div> -->
+
+		<div class="flex-resize rel">
+ 			<div ag-grid="gridOptions" class="ag-fresh flex-absolute"></div>
+    	</div>
+
+<!--  		</ion-content>
+ -->
+
+    </div>
+
+</ion-view>

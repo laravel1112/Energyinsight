@@ -1,0 +1,33 @@
+
+
+<div class="table-div">
+  <table class="table" cellspacing="0" width="100%" id="infoTableRightTop">
+	<thead>
+		<tr>
+			<th><label>分类</label></th>
+			<th><label>建筑名称</label></th>
+			<th><label>能效等级</label></th>
+		</tr>
+	</thead>
+	<tbody>
+	  {{#each this}}
+	  <tr>
+		<td>
+		  {{category}}
+		</td>
+		<td>
+		  {{name}}
+		</td>
+		<td>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+		</td>
+	  </tr>
+	  {{/each}}
+   </tbody>
+
+  </table>
+</div>

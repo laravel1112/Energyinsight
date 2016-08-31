@@ -1,0 +1,33 @@
+<ion-view>
+    <ion-content class="flex-column">
+        <div class="profile" style="background: #fafafa;">
+            <!-- PROFILE (MIDDLE-CONTAINER) -->
+            <!-- <a class="add-button" href="#28"><span class="icon entypo-plus scnd-font-color"></span></a> -->
+            <div class="profile-picture big-profile-picture clear">
+                <div class="img-container" ng-style="{ 'background-image': 'url(' + account.avatar + ')' }"></div>
+            </div>
+            <h1 class="user-name" ng-bind="account.userProfile.username"></h1>
+            <h5 class="tac" ng-bind="account.companyProfile.name"></h3>
+            <div class="profile-description">
+                <!--<p class="scnd-font-color">Lorem ipsum dolor sit amet consectetuer adipiscing</p> -->
+            </div>
+        </div>
+        <nav class="settings-menu">
+            <ion-list>
+                <ion-item ui-sref-active="active">
+                    <a ui-sref="root.account.user" nav-direction="forward" ng-click="setActiveView('content');" class="flex flex-row flex-center">
+                        <i class="svg-user-profile mr15 pr15" style="display: block;width: 30px;height: 30px;"></i> 
+                        <h3 class="flex-resize">用户设置</h3>
+                    </a>
+                </ion-item>
+                <ion-item ui-sref-active="active">
+                    <a ui-sref="root.account.company" nav-direction="forward" ng-click="setActiveView('content');" class="flex flex-row flex-center">
+                        <i class="svg-building-2 mr15 pr15" style="display: block;width: 30px;height: 30px;"></i> 
+                        <h3 class="flex-resize">企业设置</h3>
+                    </a>
+                </ion-item>
+            </ion-list>
+        </nav>
+
+    </ion-content>
+</ion-view>

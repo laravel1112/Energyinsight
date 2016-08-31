@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2014 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <title>Hello World</title>
+        <link rel="stylesheet" href="/static/css/app.min.css" />
+        <link rel="stylesheet" type="text/css" href="css.css" />
+    </head>
+    <body layout="column">
+    <!-- Container #1 (see wireframe) -->
+        <md-toolbar layout="row" >
+          <h1>Angular Material - Starter App</h1>
+        </md-toolbar>
+
+        <!-- Container #2 -->
+        <div flex layout="row">
+
+            <!-- Container #3 -->
+            <md-sidenav md-is-locked-open="true" class="md-whiteframe-z2"></md-sidenav>
+
+            <!-- Container #4 -->
+            <md-content flex layout="column" layout-xs id="content">
+
+<!--                     <p class="center">登陆 EQuota Energy 账号</p>
+ -->
+                    <form flex method="post" action="">
+
+                        <md-card flex layout-fill>
+
+                            <md-card-header>
+                                <md-card-avatar class="md-user-avatar">
+                                    <img layout-align="center" src="/static/image/EQuota(project-edition).gif">
+                                </md-card-avatar>
+                            </md-card-header>
+
+                            <md-input-container class="md-block">
+                                <label>Username</label>
+                                <input md-maxlength="30" required name="description" ng-model="project.description">
+                                <div ng-messages="projectForm.description.$error">
+                                  <div ng-message="required">This is required.</div>
+                                  <div ng-message="md-maxlength">The name has to be less than 30 characters long.</div>
+                                </div>
+                            </md-input-container>
+
+                            <md-input-container class="md-block">
+                                <label>Password</label>
+                                <input type="password" autocomplete="new-password" required name="clientName" ng-model="project.clientName">
+                                <div ng-messages="projectForm.clientName.$error">
+                                  <div ng-message="required">This is required.</div>
+                                </div>
+                            </md-input-container>
+                            
+                            <md-button class="md-raised md-primary">Primary</md-button>
+
+                        </md-card>
+                       
+                    </form>
+<!-- 
+                    <div class="center">
+                        <span class="loginFormFooterText">
+                            &copy; 2015 Equota Energy Technology (China) Co., Ltd. <br>
+                            All Rights Reserved.
+                        </span>
+                    </div> -->
+
+            </md-content>
+
+        </div>
+
+        <!-- Compiled script -->
+        <script src="/static/js/vendor.min.js" type="text/javascript"></script>
+
+        <script src="/static/js/vendor.highcharts.min.js" type="text/javascript"></script>
+
+        <script src="/static/js/app.min.js" type="text/javascript"></script>
+    </body>
+</html>

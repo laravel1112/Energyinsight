@@ -1,0 +1,839 @@
+{% extends 'common/base.html' %}
+{% load staticfiles %}
+
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+<div class="wrapper">
+    <div class="row col-lg-12">
+        <select>
+            <option>building 1</option>
+        </select>
+    </div>
+	<div class="row full-height">
+		<div class="col-lg-2 settings-sidebar">
+		</div>
+
+
+		<div class="col-lg-10 full-height content" style="border-left: solid 1px #cccccc">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header" style="color:#3A8848">主要能耗指标</h1>
+                </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-primary boxesTop">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-flash fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge">679867</div>
+                                        <div>当月总用电量 (kWh)</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <div class="panel-footer">
+                                    <span class="pull-left">View Details</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-green">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-arrow-circle-down fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge">4%</div>
+                                        <div>能耗预期比较</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <div class="panel-footer">
+                                    <span class="pull-left">View Details</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-yellow">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-line-chart fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge">45</div>
+                                        <div>综合能耗指标</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <div class="panel-footer">
+                                    <span class="pull-left">View Details</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-red">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-cny fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge">13024</div>
+                                        <div>可节省能耗（每月）</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <div class="panel-footer">
+                                    <span class="pull-left">View Details</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                <div class="col-lg-12">
+                    <div id="chart6" class="chartContainer"></div>
+                </div>
+            </div>
+
+    			<!-- Distribution -->
+			<div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header" style="color:#3A8848">能耗构成与每月各项能耗分析</h1>
+                </div>
+
+                <div class="col-lg-5">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">能耗分解</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div id="chart1" class="chartContainer"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-7">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">每月能耗趋势图</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div id="chart2" class="chartContainer"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end of Distribution -->
+
+
+            <!-- Correlation -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header" style="color:#3A8848">能耗趋势与外部因素分析</h1>
+                </div>
+
+                <div class="col-lg-10">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">能耗趋势分解</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div id="chart5" class="chartContainer"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end of Correlation -->
+
+
+
+            <!-- Benchmark -->
+			<div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header" style="color:#3A8848">常轨能耗指标分析</h1>
+                </div>
+                <div class="col-lg-8">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">能耗效率</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div id="chart3" class="chartContainer"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                     <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">节能指标发展进度</h3>
+                        </div>
+
+                        <div class="panel-body timeLineContainer" style="overflow-y: auto; height: 430px;">
+                            <div class="dark">
+                                <div class="timeline">
+
+                                    <div class="timeslot">
+
+                                        <div class="task">
+                                            <span>
+                                                <span class="details">
+                                                    Action 1
+                                                </span>
+                                                <span>
+                                                    control in
+                                                    <span class="remaining">
+                                                        14 days
+                                                    </span>
+                                                </span>
+                                            </span>
+                                            <div class="arrow"></div>
+                                        </div>
+
+                                        <div class="icon" style="color: white">
+                                            <i class="fa fa-map-marker"></i>
+                                        </div>
+
+                                        <div class="time">
+                                            20.05.2015
+                                        </div>
+                                    </div>
+
+                                    <div class="clearfix"></div>
+
+                                    <div class="timeslot alt">
+
+                                        <div class="task">
+                                            <span>
+                                                <span class="details">
+                                                    Action 2
+                                                </span>
+                                                <span>
+                                                    control checkpoint in
+                                                    <span class="remaining">
+                                                        5 days
+                                                    </span>
+                                                </span>
+                                            </span>
+                                            <div class="arrow"></div>
+                                        </div>
+                                        <div class="icon">
+                                            <i class="fa fa-map-marker"></i>
+                                        </div>
+                                        <div class="time">
+                                            25.05.2015
+                                        </div>
+
+                                    </div>
+
+                                    <div class="timeslot">
+
+                                        <div class="task">
+                                            <span>
+                                                <span class="details">
+                                                    Control checkpoint
+                                                </span>
+                                            </span>
+                                            <div class="arrow"></div>
+                                        </div>
+                                        <div class="icon">
+                                            <i class="fa fa-map-marker"></i>
+                                        </div>
+                                        <div class="time">
+                                            05.06.2015
+                                        </div>
+                                    </div>
+
+
+                                    <div class="timeslot">
+
+                                        <div class="task">
+                                            <span>
+                                                <span class="details">
+                                                    Action 3
+                                                </span>
+                                                <span>
+                                                    control in
+                                                    <span class="remaining">
+                                                        30 days
+                                                    </span>
+                                                </span>
+                                            </span>
+                                            <div class="arrow"></div>
+                                        </div>
+                                        <div class="icon" style="color: white">
+                                            <i class="fa fa-map-marker"></i>
+                                        </div>
+                                        <div class="time">
+                                            05.06.2015
+                                        </div>
+                                    </div>
+
+                                    <div class="clearfix"></div>
+
+                                    <div class="timeslot alt">
+
+                                        <div class="task">
+                                            <span>
+                                                <span class="details">
+                                                    Action 4
+                                                </span>
+                                                <span>
+                                                    control checkpoint in
+                                                    <span class="remaining">
+                                                        5 days
+                                                    </span>
+                                                </span>
+                                            </span>
+                                            <div class="arrow"></div>
+                                        </div>
+                                        <div class="icon">
+                                            <i class="fa fa-map-marker"></i>
+                                        </div>
+                                        <div class="time">
+                                            15.06.2015
+                                        </div>
+                                    </div>
+
+                                    <div class="timeslot">
+
+                                        <div class="task">
+                                            <span>
+                                                <span class="details">
+                                                    Control checkpoint
+                                                </span>
+                                            </span>
+                                            <div class="arrow"></div>
+                                        </div>
+                                        <div class="icon">
+                                            <i class="fa fa-map-marker"></i>
+                                        </div>
+                                        <div class="time">
+                                            12.07.2015
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- end of Benchmarks -->
+
+                <!-- Recommendations -->
+
+                <div class="col-lg-12">
+                    <h1 class="page-header" style="color:#3A8848">管理改进意见与节能建议</h1>
+                </div>
+
+                <div class="col-lg-12">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">
+                                节能方案
+                            </h3>
+                        </div>
+                        <div class="panel-body" id="info_panel">
+                            <div id="tableContainer">
+                                <table class="display" cellspacing="0" width="100%" id="table1">
+                                    <thead>
+                                        <tr>
+                                            <th>Description</th>
+                                            <th>Potential Savings</th>
+                                            <th>Category</th>
+                                            <th>Complexity</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="wrappable">安装冷机群控系统 器检测温度分层线位置，以调整，供同冷时主需机在开温启度台梯数度及垂水直泵等频距率离。上布置温度传
+其水次机组蓄与冷，冰均用蓄可水冷直系池接统往用相于比可水以，蓄水和冷蓄消，冷防因系水而统池即一等使般共在投用蓄资，冷因较阶而低段可，也首以可先节以因省保为水持一池较般结高用构的于部制空分冷调及效的占率冷地； 道的单即可独。投资。如下图，按照酒店现有冷机配置，只需新增左侧蓄冷水池和相应</td>
+                                            <td> $1213</td>
+                                            <td><img src="{% static 'img/logo1.png' %}" class="img-responsive logo-table"></td>
+                                            <td class="center">
+                                                <span class="label label-success">E</span>
+                                                <span class="label label-primary">M</span>
+                                                <span class="label label-warning">H</span>
+                                            </td>
+                                            <td><span class="label label-success">Completed</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>过渡季节冷却塔直接供冷 回风、酒前混店厅合的及，商冬经业季空及花气运园处动设理吧置机、设组一全处层空理大气后堂系送、统入一，室层新内全风日由制室餐外厅引、入二空十调四机层房健，身在房回、风箱宴
+模直接式后送在风，过混条渡风件季点时节温及，度关冬将闭季低回，可于风以设阀通定门过温，室全度外开，因新焓此风值冷比阀冻，对形水送成二风全通设新阀置</td>
+                                            <td> $245</td>
+                                            <td><img src="{% static 'img/logo2.png' %}" class="img-responsive logo-table"></td>
+                                            <td class="center">
+                                                <span class="label label-success">E</span>
+                                                <span class="label label-primary">M</span>
+                                                <span class="label label-warning">H</span>
+                                            </td>
+                                            <td><span class="label label-danger">Uncompleted</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>二次水泵变频调试  回风、酒前混店厅合的及，商冬经业季空及花气运园处动设理吧置机、设组一全处层空理大气后堂系送、统入一，室层新内全风日由制室餐外厅引、入二空十调四机层房健，身在房回、风箱宴
+模直接式后送在风，过混条渡风件季点时节温及，度关冬将闭季低回，可于风以设阀通定门过温，室全度外开，因新焓此风值冷比阀冻，对形水送成二风全通设新阀置</td>
+                                            <td> $2131</td>
+                                            <td><img src="{% static 'img/logo3.png' %}" class="img-responsive logo-table"></td>
+                                            <td class="center">
+                                                <span class="label label-success">E</span>
+                                                <span class="label label-primary">M</span>
+                                                <span class="label label-warning">H</span>
+                                            </td>
+                                            <td><span class="label label-success">Completed</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+                    </div><!--end of pannel primary-->
+                </div>
+                <!-- end of Recommendations -->
+		    </div>
+
+        </div><!--end of row-->
+
+	</div>
+</div>
+{% endblock content %}
+
+
+{% block extra_js %}
+
+<!-- Highcharts -->
+{#external link was replaced with internal one#}
+<script type="application/javascript" src="{% static 'js/all.js' %}"></script>
+
+
+<!-- DataTables files -->
+<link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/1.10.7/css/jquery.dataTables.css">
+<script type="text/javascript" charset="utf8" src="http://cdn.datatables.net/1.10.7/js/jquery.dataTables.js"></script>
+
+<link rel="stylesheet" href="https://cdn.datatables.net/responsive/1.0.6/css/dataTables.responsive.css">
+<script type="text/javascript" charset="utf8" src="http://cdn.datatables.net/responsive/1.0.6/js/dataTables.responsive.min.js"></script>
+
+<script src="http://code.highcharts.com/highcharts-3d.js"></script>
+
+<script>
+
+    $(document).ready(function() {
+
+        var table1 = $('#table1').dataTable( {
+            responsive: true,
+            paging: true,
+            searching: true,
+            bInfo: true,
+            bSort : true,
+            orderMulti: true
+        });
+
+        $('#chart2').highcharts({
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: ''
+            },
+            xAxis: {
+                categories: ['Aug 2014', 'Sep 2014', 'Oct 2014', 'Nov 2014', 'Dec 2014',
+                    'Jan 2015', 'Feb 2015', 'Mar 2015', 'Apr 2015', 'May 2015', 'June 2015', 'July 2015']
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: '能耗 （kWh）'
+                }
+            },
+            tooltip: {
+                pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b> ({point.percentage:.0f}%)<br/>',
+                shared: true
+            },
+            plotOptions: {
+                column: {
+                    stacking: 'normal'
+                }
+            },
+            credits: {
+                enabled: false
+            },
+            series: [{
+                name: '照明',
+                data: [70, 110, 95, 90, 80, 100, 120, 90, 95, 90, 120, 110]
+            }, {
+                name: '取暖',
+                data: [110, 100, 70, 110, 140, 200, 190, 125, 90, 120, 115, 105]
+            }, {
+                name: '制冷',
+                data: [300, 290, 210, 120, 94, 10, 20, 30, 95, 120, 220, 245]
+            }, {
+                name: '设备',
+                data: [130, 90, 90, 95, 90, 80, 95, 90, 120, 110, 105, 90]
+            }, {
+                name: '动力',
+                data: [90, 80, 95, 90, 120, 100, 120, 90, 95, 90, 120, 110]
+            }, {
+                name: '其他',
+                data: [115, 100, 90, 105, 120, 110, 110, 90, 80, 95, 90, 120]
+            }, 
+            ]
+        });
+
+        $('#chart1').highcharts({
+            chart: {
+                type: 'pie',
+                options3d: {
+                    enabled: true,
+                    alpha: 45
+                },
+                plotShadow: true
+            },
+
+            title: {
+                text: ''
+            },
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            plotOptions: {
+                pie: {
+                    innerSize: 0,
+                    depth: 45,
+                    allowPointSelect: false,
+                    cursor: 'pointer',
+                    showInLegend: true,
+                    dataLabels: {
+                        enabled: true,
+                        format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                        style: {
+                            color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                        }
+                    }
+                },
+                series: {
+                    dataLabels: {
+                        enabled: true,
+                        formatter: function() {
+                            return Math.round(this.percentage*100)/100 + ' %';
+                        },
+                        distance: -30,
+                        color:'white'
+                    }
+                }
+            },
+            credits: {
+                enabled: false
+            },
+            series: [{
+                name: "Source",
+                colorByPoint: true,
+                data: [{
+                    name: "照明",
+                    y: 15
+                }, {
+                    name: "取暖",
+                    y: 13
+                }, {
+                    name: "制冷",
+                    y: 45
+                }, {
+                    name: "设备",
+                    y: 24
+                }, {
+                    name: "动力",
+                    y: 20
+                },{
+                    name: "其他",
+                    y: 30
+                }
+                ]
+            }]
+        });
+
+
+        $('#chart3').highcharts({
+            chart: {
+                type: 'spline'
+            },
+            title: {
+                text: '单位面积综合能耗'
+            },
+            xAxis: {
+                type: 'datetime',
+                dateTimeLabelFormats: {
+                // don't display the dummy year
+                    year: '%b'
+                },
+                title: {
+                    text: 'Date'
+                }
+            },
+            yAxis: {
+                title: {
+                    text: '千克标准煤／平方米／年'
+                },
+                min: 0
+            },
+            tooltip: {
+                headerFormat: '<b>{series.name}</b><br>',
+                pointFormat: '{point.x:%e. %b}: {point.y:.2f} m'
+            },
+
+            plotOptions: {
+                spline: {
+                    marker: {
+                        enabled: true
+                    }
+                }
+            },
+            credits: {
+                enabled: false
+            },
+            series: [{
+                name: "预期",
+                data: [
+                    [Date.UTC(2014, 7, 1), 200],
+                    [Date.UTC(2014, 8, 1), 120],
+                    [Date.UTC(2014, 9, 1), 140],
+                    [Date.UTC(2014, 10, 1), 160],
+                    [Date.UTC(2014, 11, 1), 170],
+                    [Date.UTC(2015, 0, 1), 110],
+                    [Date.UTC(2015, 1, 1), 130],
+                    [Date.UTC(2015, 2, 1), 120],
+                    [Date.UTC(2015, 3, 1), 95],
+                    [Date.UTC(2015, 4, 1), 100],
+                    [Date.UTC(2015, 5, 1), 110],
+                    [Date.UTC(2015, 6, 1), 115]
+                ]
+            }, {
+                name: "实际",
+                data: [
+                    [Date.UTC(2014, 7, 1), 190],
+                    [Date.UTC(2014, 8, 1), 130],
+                    [Date.UTC(2014, 9, 1), 130],
+                    [Date.UTC(2014, 10, 1), 140],
+                    [Date.UTC(2014, 11, 1), 180],
+                    [Date.UTC(2015, 0, 1), 120],
+                    [Date.UTC(2015, 1, 1), 130],
+                    [Date.UTC(2015, 2, 1), 120],
+                    [Date.UTC(2015, 3, 1), 105],
+                    [Date.UTC(2015, 4, 1), 150],
+                    [Date.UTC(2015, 5, 1), 110],
+                    [Date.UTC(2015, 6, 1), 125]
+                ]
+            }, {
+                name: "基准线",
+                data: [
+                    [Date.UTC(2014, 7, 1), 220],
+                    [Date.UTC(2014, 8, 1), 130],
+                    [Date.UTC(2014, 9, 1), 150],
+                    [Date.UTC(2014, 10, 1), 130],
+                    [Date.UTC(2014, 11, 1), 120],
+                    [Date.UTC(2015, 0, 1), 120],
+                    [Date.UTC(2015, 1, 1), 130],
+                    [Date.UTC(2015, 2, 1), 110],
+                    [Date.UTC(2015, 3, 1), 95],
+                    [Date.UTC(2015, 4, 1), 120],
+                    [Date.UTC(2015, 5, 1), 120],
+                    [Date.UTC(2015, 6, 1), 125]
+                ]
+            }]
+        });
+
+
+    $('#chart5').highcharts({
+        chart: {
+            zoomType: 'xy'
+        },
+        title: {
+            text: ''
+        },
+        subtitle: {
+            text: ''
+        },
+        xAxis: [{
+            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+            'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+            crosshair: true
+        }],
+        yAxis: [{ // Primary yAxis
+            labels: {
+                format: '{value}°C',
+                style: {
+                    color: Highcharts.getOptions().colors[2]
+                }
+            },
+            title: {
+                text: 'Temperature',
+                style: {
+                    color: Highcharts.getOptions().colors[2]
+                }
+            },
+            opposite: true
+
+        }, { // Secondary yAxis
+            gridLineWidth: 0,
+            title: {
+                text: 'Rainfall',
+                style: {
+                    color: Highcharts.getOptions().colors[0]
+                }
+            },
+            labels: {
+                format: '{value} mm',
+                style: {
+                    color: Highcharts.getOptions().colors[0]
+                }
+            }
+
+        }, { // Tertiary yAxis
+            gridLineWidth: 0,
+            title: {
+                text: 'Sea-Level Pressure',
+                style: {
+                    color: Highcharts.getOptions().colors[1]
+                }
+            },
+            labels: {
+                format: '{value} mb',
+                style: {
+                    color: Highcharts.getOptions().colors[1]
+                }
+            },
+            opposite: true
+        }],
+        tooltip: {
+            shared: true
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'left',
+            x: 80,
+            verticalAlign: 'top',
+            y: 55,
+            floating: true,
+            backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
+        },
+        series: [{
+            name: 'Energy Use',
+            type: 'column',
+            yAxis: 1,
+            data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4],
+            tooltip: {
+                valueSuffix: ' mm'
+            }
+
+        }, {
+            name: 'Rainfall',
+            type: 'spline',
+            yAxis: 2,
+            data: [1016, 1016, 1015.9, 1015.5, 1012.3, 1009.5, 1009.6, 1010.2, 1013.1, 1016.9, 1018.2, 1016.7],
+            marker: {
+                enabled: false
+            },
+            dashStyle: 'shortdot',
+            tooltip: {
+                valueSuffix: ' mb'
+            }
+
+        }, {
+            name: 'Temperature',
+            type: 'spline',
+            data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6],
+            tooltip: {
+                valueSuffix: ' °C'
+            }
+        }]
+    });
+
+
+    $('#chart6').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: '能源效率历史表现'
+        },
+        subtitle: {
+            text: ''
+        },
+        xAxis: {
+            categories: [
+                'Jan',
+                'Feb',
+                'Mar',
+                'Apr',
+                'May',
+                'Jun',
+                'Jul',
+                'Aug',
+                'Sep',
+                'Oct',
+                'Nov',
+                'Dec'
+            ],
+            crosshair: true
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: '能源效率'
+            }
+        },
+        tooltip: {
+            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true
+        },
+        plotOptions: {
+            column: {
+                pointPadding: 0.2,
+                borderWidth: 0
+            }
+        },
+        series: [{
+            name: '我的企业',
+            data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]
+
+        }, {
+            name: '行业同等',
+            data: [83.6, 78.8, 98.5, 93.4, 106.0, 84.5, 105.0, 104.3, 91.2, 83.5, 106.6, 92.3]
+
+        }, {
+            name: '优质企业',
+            data: [48.9, 38.8, 39.3, 41.4, 47.0, 48.3, 59.0, 59.6, 52.4, 65.2, 59.3, 51.2]
+
+        }]
+    });
+
+
+
+
+    })
+
+</script>
+{% endblock extra_js %}

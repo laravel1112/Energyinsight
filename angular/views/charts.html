@@ -1,0 +1,66 @@
+﻿<!-- <div class="reports flex flex-row flex-resize" walkthrough>
+    <div class="settings-sidebar flex flex-column flex-noresize oh" style="min-width: 250px; transition: all ease 1s;" ui-tree-wrapper ng-style="wrapperStyle" ng-mouseover="onMouseOver()" ng-mouseleave="onMouseLeave()">
+    	<ui-view name="nav" class="flex  oh flex-absolute"></ui-view>
+    </div>
+
+    <ui-view class="flex bg-white rel oh"></ui-view>
+</div>
+ -->
+<!-- <ion-view view-title="能源报告" class="flex" ng-class="{'flex-row': !platform().isMobile()}" walkthrough>
+
+    <ion-nav-buttons side="right"> -- right --
+        test
+    </ion-nav-buttons>
+    <ion-nav-title>
+        test
+    </ion-nav-title>
+
+    <ion-content class="flex has-header xcontent">
+--         <div class="settings-sidebar flex flex-column flex-noresize oh" style="min-width: 250px; transition: all ease 1s;" ui-tree-wrapper ng-style="wrapperStyle" ng-mouseover="onMouseOver()" ng-mouseleave="onMouseLeave()">
+            <ui-view name="nav" class="flex  oh flex-absolute"></ui-view>
+        </div>
+        <ui-view class="flex flex-resize"></ui-view>
+--    
+
+        <div class="settings-sidebar flex flex-column flex-noresize oh" style="min-width: 250px; transition: all ease 1s;" ui-tree-wrapper ng-style="wrapperStyle" ng-mouseover="onMouseOver()" ng-mouseleave="onMouseLeave()">
+            <ui-view name="nav" class="flex  oh flex-absolute"></ui-view>
+        </div>
+
+        <ui-view class="flex bg-white rel oh"></ui-view>
+
+    </ion-content>
+</ion-view>
+ -->
+
+<ion-view view-title="选择能源表比较" class="flex" ng-class="{'flex-row': !platform().isMobile()}">
+<!--     <ion-content class="flex has-header xcontent"> -->
+<!--         <ion-nav-view name="nav" class="settings-sidebar"></ion-nav-view> -->
+        <ion-nav-view class="flex flex-resize"></ion-nav-view>
+<!--     </ion-content> -->
+</ion-view>
+
+
+
+
+<div id="walkthrough-content" style="display: none">
+    <!-- Sidebar treeview -->
+    <div id="sidebarStep1" position="right">
+        <p>这个区是所有节点的树形结构，包括楼宇，电表以及其他商业数据。点击节点可以显示实时波形。在节点上停留2秒钟可以进入控制界面。</p>
+    </div>
+    <!-- Auto-refresh button -->
+    <div id="contentStep1" position="left">
+        <p>开启实时模式，节点数据将被实时更新。</p>
+    </div>
+    <!-- Selected meters details toggle button -->
+    <div id="contentStep2" position="right">
+        <p>点击此处可以显示数据参数。</p>
+    </div>
+    <!-- Clear all meters button -->
+    <div id="contentStep3" position="left">
+        <p>清除所有选项。</p>
+    </div>
+    <!-- Chart -->
+    <div id="contentStep4" position="top">
+        <p>数据显示空间。</p>
+    </div>
+</div>

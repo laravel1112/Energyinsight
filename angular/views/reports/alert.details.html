@@ -1,0 +1,69 @@
+<ion-view view-title="楼宇信息">
+	<div busy="isBusy"></div>
+
+	<div class="layout layout-col p10 bgeee" style="margin: -5px">
+		
+		<div class="layout flex-row">
+			
+			<div class="bg-white m5 bs">
+				<!-- 		
+						<highchart config="chartOptions1" class="flex-absolute" style="top: 15px; right: 15px; bottom: 15px; left: 15px;" highcharts-panning hm-pan="onPanning" hm-pinch="onPinching" hm-tap="onTap" hm-doubletap="onDoubletap"></highchart>
+				 -->			
+				<div lazy-highcharts="chartOptions1" class="flex-absolute" style="top: 15px; right: 15px; bottom: 15px; left: 15px;"></div>
+ 			</div>
+			
+			<div class="layout bg-white m5 flex-noresize bs" style="min-width: 33%; max-width: 33%;">
+				
+				<div class="p15 b1eee">
+
+					<h3 class="fs30">{{alertItem.title}}</h3>
+					<p class="fs20 lh36" ng-bind-html="alertItem.description | to_trusted"></p>
+					<!--
+					<span>样本指标说明</span>
+ 					<h2 class="cblue">375.1 <sup>kwh</sup></h2> 
+ 					-->
+				</div>
+
+<!-- 				<div class="indi b1eee">
+					<span>样本指标说明</span>
+					<h2 class="cgreen">259 <sup>kwh</sup></h2>
+				</div>
+
+				<div class="indi b1eee">
+					<span>样本指标说明</span>
+					<h2 class="cblue">0.68 > 0.2</h2>
+				</div>
+
+				<div class="indi b1eee">
+					<span>样本指标说明</span>
+					<h2>---</h2>
+				</div>
+
+				<div class="indi b1eee">
+					<span>样本指标说明</span>
+					<h2>---</h2>
+				</div> -->
+			</div>
+		</div>
+
+		<div class="layout flex-row h100 flex-noresize bg-white m5 bs">
+			<div class="indi b1eee blue">
+				<span>样本指标说明</span>
+				<h3 class="jcfs fs34">{{ alertItem.saving_potential }} <sub> kWh</sub></h3>
+			</div>
+			<div class="indi b1eee green">
+				<span>样本指标说明</span>
+				<h3 class="jcfs fs34">{{ alertItem.energy_saved }} <sub> kWh</sub></h3>
+			</div>
+<!-- 			<div class="indi b1eee orange">
+				<span>样本指标说明</span>
+				<h3 class="jcfs fs34">{{ alertItem.saving_potential }} <sub> kWh</sub></h3>
+			</div> -->
+			<div class="indi b1eee orange">
+				<span>样本指标说明</span>
+				<h3 class="jcfs fs34">{{ alertItem.alert_time | date:'yyyy-MM-dd HH:mm' }}</h3>
+			</div>
+		</div>
+	</div>
+	
+</ion-view>

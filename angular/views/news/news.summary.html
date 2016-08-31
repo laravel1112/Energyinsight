@@ -1,0 +1,10 @@
+<ion-view view-title="楼宇信息">
+	<ion-list>
+		<ion-item ui-sref="root.news.details({id: $index})" nav-direction="forward" ng-repeat="item in newsItems" >
+	            <h4 class="lh20 m0" ng-bind="item.title">节能信息早知道</h4>
+	            <span class="fs14 wsnw" ng-bind="item.created| date:'MMM dd, yyyy'"></span> &mdash; 
+	            <span class="fs14" ng-bind="item.category" ng-style="{color: getCategoryColor(item.category)}"></span>
+	            <p ng-bind-html="item.content | to_trusted">在过度季节及冬季，可以通过室外 含值比对送风设置点，当室外温度...</p>
+		</ion-item>
+	</ion-list>
+</ion-view>

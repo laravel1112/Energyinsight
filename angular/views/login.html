@@ -1,0 +1,57 @@
+﻿<ion-view view-title="Browse">
+    <div class="login-form" layout="column" layout-align="center center" layout-xs="row" layout-align-xs="center stretch" flex style="min-height: 100%">
+        <form method="post" action="" layout-align="center center" layout-align-xs="center stretch" layout="column" flex>
+
+            <md-card style="min-width:300px; background: rgba(255,255,255,0.9); margin: 0!important;" layout="column" layout-align-xs="center stretch" layout-align-xs="center stretch" flex-xs>
+
+                <md-card-header flex layout="row" layout-align="center center">
+                    <div style="width:199px">
+                        <img src="static/image/EQuota(project-edition).gif">
+                    </div>
+
+                </md-card-header>
+                
+                <md-card-content flex>
+                    
+                    <label>
+                      <input type="text" name="text" ng-model="credentials.username" required placeholder="Username" autocomplete="off">
+                    </label>
+                    <label>
+                      <input type="password" name="password" ng-model="credentials.password" required placeholder="Password" autocomplete="new-password">
+                    </label>
+                    
+                    <md-button class="md-raised md-primary mt15" ng-click="login()">Sign in</md-button>
+
+                </md-card-content>
+                
+                <md-card-footer layout-align="center stretch" layout="row" flex class="tac pt0" style="min-height:112px;">
+                    <a href="#">Forgot password</a>
+                </md-card-footer>
+
+            </md-card>
+           
+        </form>
+    </div>
+</ion-view>
+
+<!--    
+        <md-input-container class="md-block">
+            <label>Username</label>
+            <input required name="username" ng-model="project.description">
+            <div ng-messages="projectForm.description.$error">
+                <div ng-message="required">This is required.</div>
+                <div ng-message="md-maxlength">The name has to be less than 30 characters long.</div>
+            </div>
+        </md-input-container>
+
+        <md-input-container class="md-block">
+            <label>Password</label>
+            <input type="password" autocomplete="new-password" required name="password" ng-model="project.clientName">
+            <div ng-messages="projectForm.clientName.$error">
+              <div ng-message="required">This is required.</div>
+            </div>
+        </md-input-container>
+        <md-input-container class="tac" layout="row" layout-align="center center">
+            <a href="#">Forgot password?</a>
+        </md-input-container> 
+-->
