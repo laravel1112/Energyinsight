@@ -8,7 +8,7 @@ celery==3.1.18
 certifi==2015.9.6.2
 configparser==3.5.0b2
 decorator==4.0.2
-Django==1.8.3
+Django==2.2.24
 django-celery==3.1.16
 django-compat==1.0.8
 django-cors-headers==1.1.0
