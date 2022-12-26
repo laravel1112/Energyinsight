@@ -41,7 +41,7 @@ six==1.10.0
 tini==3.0.1
 tornado==4.2.1
 urllib3==1.10.1
-wheel==0.24.0
+wheel==0.38.1
 xlrd==0.9.4
 pyjwt>=0.0
 django-jwt-auth==0.0.2
